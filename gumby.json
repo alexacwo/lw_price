@@ -1,0 +1,8 @@
+{
+	"build": {
+		"gumbyPath": "bower_components/gumby",
+		"outPath": "js",
+		"modules": ["skiplink", "toggleswitch", "checkbox", "radiobtn", "tabs", "navbar"],
+        "buildSourceMap": true
+	}
+}

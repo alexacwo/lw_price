@@ -1,0 +1,75 @@
+.pager {
+    @extend %clearfix;
+    background: #f0f0f0;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 5px;
+
+    .short {
+        float: right;
+
+        .btn {
+            color: #fff;
+            background: $orange;
+            text-transform: uppercase;
+            border: 1px solid $orange;
+            @include border-radius($button-radius);
+            font-weight: normal;
+            padding: 0 10px !important;
+            @include font-size(14px);
+            font-family: $helvetica-stack;
+            line-height: 26px;
+
+            &:hover, &:focus {
+                background: lighten($orange, 5%);
+                cursor: pointer;
+            }
+        }
+    }
+
+    span {
+        margin-top: 3px;
+        margin-right: 3px;
+        float: left;
+    }
+
+    ul {
+        float: left;
+        margin: 2px 20px 0 0;
+
+        li {
+            display: inline;
+            
+
+            a {
+                padding: 0 9px;
+                margin-right: 5px;
+                border: 1px solid $blue;
+                @include border-radius($button-radius);
+                display: inline-block;
+
+                &:hover, &:focus {
+                    border-color: $orange;
+                }
+                
+                &.active {
+                    border-color: darken($border-gray, 8%);
+                    cursor: default;
+                    color: $body-font-color;
+
+                    &:hover, &:focus {
+                        border-color: darken($border-gray, 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    .short {
+        input[type="text"] {
+            max-width: 40px;
+            line-height: 24px;
+            border: 1px solid darken($border-gray, 8%);
+            @include border-radius($button-radius);
+        }
+    }
+}

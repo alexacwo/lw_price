@@ -1,0 +1,2969 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Compare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-09 12:34-0000\n"
+"PO-Revision-Date: 2015-03-09 12:34-0000\n"
+"Last-Translator: T\n"
+"Language-Team: AWESEM Limited\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:7
+msgid "Not Found"
+msgstr "Non trouvé"
+
+#: 404.php:10
+msgid "We are really sorry, but the page you requested cannot be found."
+msgstr ""
+
+#: archive.php:15 functions/views/frontend/content-breadcrumb.php:159
+#, php-format
+msgid "All posts in %s"
+msgstr "Tous les articles dans %s"
+
+#: archive.php:17 functions/views/frontend/content-breadcrumb.php:163
+#, php-format
+msgid "All posts tagged %s"
+msgstr "Tous les articles taggés %s"
+
+#: archive.php:19 archive.php:21 archive.php:23
+#: functions/views/frontend/content-breadcrumb.php:167
+#: functions/views/frontend/content-breadcrumb.php:171
+#: functions/views/frontend/content-breadcrumb.php:175
+msgid "Archive for"
+msgstr "Archives pour "
+
+#: archive.php:25 functions/views/frontend/content-breadcrumb.php:183
+msgid "All posts by"
+msgstr "Tous les articles par"
+
+#: archive.php:27
+#, fuzzy
+msgid "Blog archives"
+msgstr "Archives du blog"
+
+#: archive.php:35 home.php:12 index.php:12 page.php:12 single.php:12
+#: template-full-width.php:17
+msgid "Written by"
+msgstr ""
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+msgid "No comments"
+msgstr "Pas de commentaires"
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+#, fuzzy
+msgid "1 comment"
+msgstr "1 Commentaire"
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+#, fuzzy, php-format
+msgid "% comments"
+msgstr "% Commentaires"
+
+#: archive.php:57 home.php:34
+#, fuzzy
+msgid "Read more"
+msgstr "Lire la suite..."
+
+#: comments.php:46
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:47
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:48
+#, fuzzy
+msgid "Newer Comments &rarr;"
+msgstr "Pas de commentaires"
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr "Commentaires fermés."
+
+#: comments.php:78 functions/views/admin/merchants_management.php:339
+#: functions/views/admin/merchants_management.php:350
+#: functions/views/frontend/content-single-product-reviews-template.php:71
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:96
+msgid "Email"
+msgstr ""
+
+#: comments.php:114
+#, fuzzy
+msgid "Website"
+msgstr "Site de la marque"
+
+#: comments.php:137
+#, fuzzy
+msgid "Comment"
+msgstr "1 Commentaire"
+
+#: footer.php:38
+msgid "Powered by"
+msgstr "Propulsé par"
+
+#: functions/classes/class_aw_products_management.php:13
+msgid "Feed management"
+msgstr "Gestion du Catalogue"
+
+#: functions/classes/class_aw_products_management.php:13
+msgid "Manage Feed"
+msgstr "Gérer le catalogue"
+
+#: functions/classes/class_aw_products_management.php:14
+msgid "Product management"
+msgstr "Gestion des produits"
+
+#: functions/classes/class_aw_products_management.php:14
+msgid "Manage Products"
+msgstr "Gérer les produits"
+
+#: functions/classes/class_aw_products_management.php:15
+msgid "Retailer management"
+msgstr "Gestion des Revendeurs"
+
+#: functions/classes/class_aw_products_management.php:15
+msgid "Manage Retailers"
+msgstr "Gérer Revendeurs"
+
+#: functions/classes/class_aw_theme_options.php:132
+#: functions/classes/class_aw_theme_options.php:158
+msgid "I confirm I want to reset"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:133
+msgid ""
+"I know this action cannot be reversed and that the blog layout might change."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:134
+#: functions/classes/class_aw_theme_options.php:160
+msgid "I have backed up my database and want to continue."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:159
+msgid ""
+"I know this action cannot be reversed and that I might loose data that I "
+"have manually added to the blog."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:340
+msgid "Settings have been reset to factory settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:451
+msgid "selected"
+msgstr "sélectionné(es)"
+
+#: functions/classes/class_aw_theme_options.php:460
+msgid "Logo and Favicon Settings"
+msgstr "Logo et Favicon"
+
+#: functions/classes/class_aw_theme_options.php:464
+msgid "Upload Logo"
+msgstr "Upload Logo"
+
+#: functions/classes/class_aw_theme_options.php:471
+msgid "Enable plain text logo"
+msgstr "Activer le logo textuel"
+
+#: functions/classes/class_aw_theme_options.php:472
+msgid ""
+"Check this box to use a plain text logo rather than an image. Info will be "
+"taken from your WordPress settings."
+msgstr ""
+"Cocher cette case pour utiliser du texte au lieu d'une image. Utilise les "
+"réglages WordPress."
+
+#: functions/classes/class_aw_theme_options.php:477
+msgid "Upload Favicon"
+msgstr "Upload Favicon"
+
+#: functions/classes/class_aw_theme_options.php:484
+msgid "Upload Apple Touch Icon (.png)"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:495
+msgid "Analytics Settings"
+msgstr "Réglages de Analytics"
+
+#: functions/classes/class_aw_theme_options.php:499
+msgid "Google Analytics Code"
+msgstr "Code Google Analytics"
+
+#: functions/classes/class_aw_theme_options.php:500
+msgid ""
+"Enter your full Google Analytics code (or any other site tracking code) "
+"here. It will be inserted before the closing head tag."
+msgstr ""
+"Entrer votre code Google Analytics complet (ou tout autre tracker) ici. Il "
+"sera inséré avant la fermeture de la balise 'body'"
+
+#: functions/classes/class_aw_theme_options.php:509
+#, fuzzy
+msgid "AdSense Settings"
+msgstr "Sauver les Réglages"
+
+#: functions/classes/class_aw_theme_options.php:513
+msgid "Enable ad sense for products with no retailers"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:514
+#, fuzzy
+msgid "Check this box to use google ad sense on products with no retailers."
+msgstr "Cocher cette case pour activer le partage via Technorati"
+
+#: functions/classes/class_aw_theme_options.php:519
+msgid "Google AdSense Client ID"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:520
+#, fuzzy
+msgid "Enter your ad sense client id."
+msgstr "Entrez l'adresse de votre site Internet"
+
+#: functions/classes/class_aw_theme_options.php:529
+#, fuzzy
+msgid "Footer advertising area"
+msgstr "En-tête publicitaire"
+
+#: functions/classes/class_aw_theme_options.php:533
+msgid "Leaderboard"
+msgstr "Leaderboard"
+
+#: functions/classes/class_aw_theme_options.php:534
+msgid "Enter your leaderboard ad code."
+msgstr "Entrez le code pour une publicité au format \"leaderboard\""
+
+#: functions/classes/class_aw_theme_options.php:547
+#: functions/views/admin/theme-options.php:20
+msgid "Price Comparison"
+msgstr "Comparaison de prix"
+
+#: functions/classes/class_aw_theme_options.php:551
+#, fuzzy
+msgid "Currency Options"
+msgstr "Devise affichée"
+
+#: functions/classes/class_aw_theme_options.php:552
+msgid ""
+"Paste each currency you wish to use in this text area. Please use a new line "
+"for each currency and use the example format ([Left|Right], Code, Symbol, "
+"Decimal Places, [Comma Format]): Left, USD, $, 2, [3,3,3,3]"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:557
+msgid "Display Currency"
+msgstr "Devise affichée"
+
+#: functions/classes/class_aw_theme_options.php:563
+msgid "Buy button text"
+msgstr "Bouton acheter"
+
+#: functions/classes/class_aw_theme_options.php:564
+msgid "Text used on the button in the price comparison table"
+msgstr "Texte utilisé dans la table de prix"
+
+#: functions/classes/class_aw_theme_options.php:569
+msgid "Date format"
+msgstr "Format de la date"
+
+#: functions/classes/class_aw_theme_options.php:570
+msgid "Documentation on date and time formatting"
+msgstr "Documentation pour les formats de date et heure"
+
+#: functions/classes/class_aw_theme_options.php:583
+#, fuzzy
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: functions/classes/class_aw_theme_options.php:587
+msgid "Menu elements"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:592
+msgid "Submenu elements"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:601
+msgid "Gradient #1 Settings"
+msgstr "Dégradé #1"
+
+#: functions/classes/class_aw_theme_options.php:605
+#: functions/classes/class_aw_theme_options.php:623
+msgid "Color #1"
+msgstr "Couleur #1"
+
+#: functions/classes/class_aw_theme_options.php:610
+#: functions/classes/class_aw_theme_options.php:628
+msgid "Color #2"
+msgstr "Couleur #2"
+
+#: functions/classes/class_aw_theme_options.php:619
+msgid "Gradient #2 Settings"
+msgstr "Dégradé #2"
+
+#: functions/classes/class_aw_theme_options.php:637
+msgid "Footer"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:641
+#, fuzzy
+msgid "Footer Background"
+msgstr "Couleur de fond"
+
+#: functions/classes/class_aw_theme_options.php:646
+#, fuzzy
+msgid "Footer Header"
+msgstr "En-tête publicitaire"
+
+#: functions/classes/class_aw_theme_options.php:651
+msgid "Footer Text"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:660
+#: functions/classes/class_aw_theme_options.php:664
+#, fuzzy
+msgid "Background"
+msgstr "Couleur de fond"
+
+#: functions/classes/class_aw_theme_options.php:681
+msgid "Default result layout style"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:682
+msgid "Choose between grid or list ."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:686
+msgid "Grid Layout"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:686
+msgid "List Layout"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:692
+#, fuzzy
+msgid "Product detail page"
+msgstr "Produits par page"
+
+#: functions/classes/class_aw_theme_options.php:696
+msgid ""
+"Check this box to force show comparison table on product page even if there "
+"is just one retailer"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:701
+msgid ""
+"Check this box to open product deeplinks in the same window or leave it "
+"unchecked to open deeplink in new window"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:706
+#, fuzzy
+msgid "Check this box to disallow shortcodes in product description"
+msgstr "Cocher cette case pour activer le partage via Technorati"
+
+#: functions/classes/class_aw_theme_options.php:711
+#, fuzzy
+msgid "Check this box to disallow html tags in product description"
+msgstr "Cocher cette case pour activer le partage via Technorati"
+
+#: functions/classes/class_aw_theme_options.php:716
+#, fuzzy
+msgid "Check this box to disallow reviews for products"
+msgstr "Cocher cette case pour activer le partage via Delicious"
+
+#: functions/classes/class_aw_theme_options.php:721
+#, fuzzy
+msgid "Check this box to disallow related products"
+msgstr "Cocher cette case pour activer le partage via Reddit"
+
+#: functions/classes/class_aw_theme_options.php:726
+#, fuzzy
+msgid "Number of related products to display"
+msgstr "Nombre d'articles à sauter :"
+
+#: functions/classes/class_aw_theme_options.php:736
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:13
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:24
+msgid "Products"
+msgstr "Produits"
+
+#: functions/classes/class_aw_theme_options.php:740
+msgid "Categories URL slug"
+msgstr "URL (slug) Catégories"
+
+#: functions/classes/class_aw_theme_options.php:741
+msgid "Categories URL slug MUST BE different from product URL slug."
+msgstr "URL (slug) Catégories DOIT ÊTRE différente de l'URL (slug) Produits."
+
+#: functions/classes/class_aw_theme_options.php:741
+#: functions/classes/class_aw_theme_options.php:747
+#: functions/classes/class_aw_theme_options.php:753
+#: functions/classes/class_aw_theme_options.php:759
+msgid "Visit this page after any change"
+msgstr "Visitez cette page après chaque changement."
+
+#: functions/classes/class_aw_theme_options.php:746
+msgid "Brands URL slug"
+msgstr "URL (slug) Marques"
+
+#: functions/classes/class_aw_theme_options.php:747
+msgid "Brands URL slug MUST BE different from product URL slug."
+msgstr "URL (slug) Marques DOIT ÊTRE différente de l'URL (slug) Produits."
+
+#: functions/classes/class_aw_theme_options.php:752
+msgid "Product URL slug"
+msgstr "URL (slug) Produits"
+
+#: functions/classes/class_aw_theme_options.php:753
+msgid "Product URL slug MUST BE different from categories and brands URL slug."
+msgstr ""
+"URL (slug) Produits DOIT ÊTRE différente des URLs (slug) Catégories et "
+"Marques."
+
+#: functions/classes/class_aw_theme_options.php:758
+msgid "Allow short product URLs"
+msgstr "Autoriser URL courtes des produits"
+
+#: functions/classes/class_aw_theme_options.php:759
+msgid ""
+"Allow Compare to have short URLs instead of the /%category%/%brand%/"
+"%product_name%/ pattern"
+msgstr ""
+"Permettre Compare d'utiliser les URL courtes au lieu de /%category%/%brand%/"
+"%product_name%/ pattern"
+
+#: functions/classes/class_aw_theme_options.php:763
+msgid "YES"
+msgstr "OUI"
+
+#: functions/classes/class_aw_theme_options.php:763
+msgid "NO"
+msgstr "NO"
+
+#: functions/classes/class_aw_theme_options.php:765
+#, fuzzy
+msgid "Products per comparison table page"
+msgstr "Produits par page"
+
+#: functions/classes/class_aw_theme_options.php:771
+msgid "Default product order by"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:772
+msgid ""
+"Which the field products should be sorted by, by default, users may select "
+"their own sorting afterwards."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:776
+msgid "Minimum Price"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:776
+#, fuzzy
+msgid "Title"
+msgstr "Titre:"
+
+#: functions/classes/class_aw_theme_options.php:776
+msgid "Date added"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:779
+#, fuzzy
+msgid "Default product order"
+msgstr "Effacer Revendeur"
+
+#: functions/classes/class_aw_theme_options.php:780
+msgid "Ascending or Descending."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:784
+msgid "Ascending"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:784
+msgid "Descending"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:794
+#, fuzzy
+msgid "Social Network URLs"
+msgstr "Réseaux sociaux"
+
+#: functions/classes/class_aw_theme_options.php:798
+msgid "Twitter"
+msgstr "Twitter"
+
+#: functions/classes/class_aw_theme_options.php:799
+#, fuzzy
+msgid "Please enter your Twitter public profile URL"
+msgstr "Veuillez entrer votre adresse e-mail"
+
+#: functions/classes/class_aw_theme_options.php:804
+msgid "Facebook"
+msgstr "Facebook"
+
+#: functions/classes/class_aw_theme_options.php:805
+#, fuzzy
+msgid "Please enter your Facebook public profile URL"
+msgstr "Veuillez entrer votre adresse e-mail"
+
+#: functions/classes/class_aw_theme_options.php:810
+msgid "RSS"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:811
+#, fuzzy
+msgid "Please enter your RSS feed URL"
+msgstr "Veuillez entrer votre nom"
+
+#: functions/classes/class_aw_theme_options.php:816
+#, fuzzy
+msgid "Tumblr"
+msgstr "Stumble"
+
+#: functions/classes/class_aw_theme_options.php:817
+#, fuzzy
+msgid "Please enter your Tumblr public profile URL"
+msgstr "Veuillez entrer votre adresse e-mail"
+
+#: functions/classes/class_aw_theme_options.php:822
+msgid "Pinterest"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:823
+msgid "Please enter your Pinterest public profile URL"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:14
+msgid "Product"
+msgstr "Produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:15
+msgid "Add new"
+msgstr "Nouveau"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:16
+#: functions/views/admin/products_management.php:513
+msgid "Add new product"
+msgstr "Ajouter un nouveau produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:17
+#: functions/views/admin/merchants_management.php:387
+#: functions/views/admin/products_management.php:405
+msgid "Edit"
+msgstr "Editer"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:18
+msgid "New product"
+msgstr "Nouveau produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:19
+msgid "View product"
+msgstr "Voir le produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:20
+#: functions/views/admin/products_management.php:557
+msgid "Search product"
+msgstr "Rechercher un produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:21
+msgid "No product found"
+msgstr "Pas de produit trouvé"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:22
+msgid "No product found in trash"
+msgstr "Pas de produit trouvé dans la corbeille"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:106
+msgid "Product image"
+msgstr "Image du produit"
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:107
+#: functions/views/admin/products_management.php:350
+#: functions/views/admin/products_management.php:366
+msgid "Product description"
+msgstr "Description du produit"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:23
+msgid "Product brands"
+msgstr "Marques"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:24
+msgid "Product brand"
+msgstr "Marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:25
+msgid "Search a brand"
+msgstr "Rechercher une marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:26
+msgid "All brands"
+msgstr "Toutes les marques"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:27
+msgid "Parent brand"
+msgstr "Marque parente"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:28
+msgid "Parent brand:"
+msgstr "Marque parent:"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:29
+msgid "Edit brand"
+msgstr "Editer une marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:30
+msgid "Update brand"
+msgstr "Mettre à jour une marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:31
+msgid "Add new brand"
+msgstr "Ajouter une nouvelle marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:32
+msgid "New brand"
+msgstr "Nouvelle marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:33
+#: functions/classes/widgets/widget-sidebar-product-search.php:389
+msgid "Brands"
+msgstr "Marques"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:84
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:94
+msgid "Brand website"
+msgstr "Site de la marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:86
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:97
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:82
+msgid "Use full URL (with http://)"
+msgstr "URL complète (avec http://)"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:207
+msgid "Brand image"
+msgstr "Image de la marque"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:210
+msgid "Consider uploading an image of 150x100px"
+msgstr "Uploadez une image de 150x100 pixels"
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:229
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:156
+#: functions/views/admin/merchants_management.php:338
+#: functions/views/admin/merchants_management.php:349
+#: functions/views/admin/products_management.php:584
+#: functions/views/admin/products_management.php:597
+msgid "Image"
+msgstr "Image"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:18
+msgid "Product categories"
+msgstr "Catégories"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:19
+msgid "Product category"
+msgstr "Catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:20
+msgid "Search a category"
+msgstr "Rechercher une catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:21
+msgid "All categories"
+msgstr "Toutes les catégories"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:22
+msgid "Parent category"
+msgstr "Catégorie parente"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:23
+msgid "Parent category:"
+msgstr "Catégorie parente:"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:24
+msgid "Edit category"
+msgstr "Editer une catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:25
+msgid "Update category"
+msgstr "Mettre à jour la catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:26
+msgid "Add new category"
+msgstr "Ajouter une nouvelle catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:27
+msgid "New category"
+msgstr "Nouvelle catégorie"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:28
+#: functions/classes/widgets/widget-sidebar-product-search.php:365
+#: functions/views/admin/products_management.php:585
+#: functions/views/admin/products_management.php:598
+msgid "Categories"
+msgstr "Catégories"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:79
+msgid "Icon URL"
+msgstr "URL de l'icone"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:87
+msgid "Category image"
+msgstr "Catégorie image"
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:90
+#, fuzzy
+msgid "Consider uploading an image of 250x150px"
+msgstr "Uploadez une image de 150x100 pixels"
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:21
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:24
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:9
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#. translators: 1: date, 2: time
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:31
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:31
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:12
+#, fuzzy
+msgid "(Edit)"
+msgstr "Editer"
+
+#: functions/classes/widgets/widget-homepage-brands.php:35
+#, fuzzy
+msgid "A widget that displays product brands on homepage."
+msgstr ""
+"Un widget qui affiche les marques de produits sous la forme d'un caroussel."
+
+#: functions/classes/widgets/widget-homepage-brands.php:41
+#, fuzzy
+msgid "COMPARE: Homepage Brands"
+msgstr "Homepage Brands"
+
+#: functions/classes/widgets/widget-homepage-brands.php:127
+#: functions/classes/widgets/widget-homepage-categories.php:135
+#: functions/classes/widgets/widget-homepage-products.php:144
+#, fuzzy
+msgid "Widget Title:"
+msgstr "Titre:"
+
+#: functions/classes/widgets/widget-homepage-categories.php:35
+#, fuzzy
+msgid "A widget that displays product categories on homepage."
+msgstr "Un widget qui affiche les catégories de produits sur la page d'accueil"
+
+#: functions/classes/widgets/widget-homepage-categories.php:41
+#, fuzzy
+msgid "COMPARE: Homepage Categories Widget"
+msgstr "Homepage Categories"
+
+#: functions/classes/widgets/widget-homepage-products.php:35
+#, fuzzy
+msgid "A widget that displays products on homepage."
+msgstr "Un widget qui affiche les catégories de produits sur la page d'accueil"
+
+#: functions/classes/widgets/widget-homepage-products.php:41
+#, fuzzy
+msgid "COMPARE: Homepage Products Widget"
+msgstr "Page d'acceuil des produits"
+
+#: functions/classes/widgets/widget-homepage-products.php:89
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:117
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:117
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:119
+msgid "from"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-products.php:98
+#, fuzzy, php-format
+msgid " (Available from %s retailers)"
+msgstr "Disponibilité du produit chez le revendeur"
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:35
+#, fuzzy
+msgid "A widget that displays a text for SEO purposes on homepage."
+msgstr "Un widget qui affiche du texte pour l'optimisation SEO."
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:41
+#, fuzzy
+msgid "COMPARE: Custom Homepage SEO Text Widget"
+msgstr "Widget Texte SEO"
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:122
+msgid "SEO Title:"
+msgstr "Titre SEO :"
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:128
+msgid "SEO Text:"
+msgstr "Texte SEO :"
+
+#: functions/classes/widgets/widget-homepage-slider.php:37
+#, fuzzy
+msgid "A widget that displays a slider on homepage."
+msgstr "Un widget qui affiche un slider"
+
+#: functions/classes/widgets/widget-homepage-slider.php:43
+#, fuzzy
+msgid "COMPARE: Homepage Slider Widget"
+msgstr "Homepage Double Widget"
+
+#: functions/classes/widgets/widget-homepage-slider.php:173
+msgid "Delay between Images (ms):"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:179
+msgid "Navigation:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:187
+#, fuzzy
+msgid "Pagination:"
+msgstr "Durée d'animation :"
+
+#: functions/classes/widgets/widget-homepage-slider.php:196
+msgid "Pause on Hover:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:34
+msgid "A widget that allows the integration of a sidebar search module."
+msgstr "Un widget qui permet l'affichage d'une zone de recherche"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:40
+#, fuzzy
+msgid "COMPARE: Sidebar Product Search"
+msgstr "Sidebar product search"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:77
+msgid "Search..."
+msgstr "Rechercher..."
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:113
+#: functions/classes/widgets/widget-sidebar-product-search.php:150
+#: functions/classes/widgets/widget-sidebar-product-search.php:267
+msgid "Sort By"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:400
+msgid "Price range:"
+msgstr "Prix :"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:411
+msgid "Filter"
+msgstr "Filtre"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:502
+msgid "Title:"
+msgstr "Titre:"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:508
+msgid "Min price:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:517
+msgid "Max price:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:526
+msgid "Step:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:531
+msgid "Hide widget sections:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:532
+#, fuzzy
+msgid "Search box"
+msgstr "Recherche pour :"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:533
+#, fuzzy
+msgid "Brands select box "
+msgstr "Suppression d'une marque"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:534
+#, fuzzy
+msgid "Categories select box"
+msgstr "URL (slug) Catégories"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:535
+#, fuzzy
+msgid "Price Slider"
+msgstr "Voir Slide"
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:536
+#, fuzzy
+msgid "Filter Button"
+msgstr "Filtre"
+
+#: functions/other.php:203
+#, php-format
+msgid "%s Review"
+msgstr ""
+
+#: functions/other.php:205
+#, php-format
+msgid "%s Reviews"
+msgstr ""
+
+#: functions/other.php:441 functions/other.php:499
+#: functions/views/frontend/content-listing-options.php:46
+#: single-product.php:16 taxonomy-product_category.php:19
+msgid "More"
+msgstr "Plus"
+
+#: functions/other.php:1412 functions/other.php:1416 functions/other.php:1421
+msgid "Compare price comparison theme requires custom permalinks structure."
+msgstr ""
+
+#: functions/other.php:1412 functions/other.php:1416 functions/other.php:1421
+#, fuzzy
+msgid "Enable permalinks here."
+msgstr "Activer le slider"
+
+#: functions/shortcodes.php:86
+msgid "No merchant"
+msgstr "Pas de marchand"
+
+#: functions/shortcodes.php:88
+msgid "1 merchant"
+msgstr "1 marchand"
+
+#: functions/shortcodes.php:90
+msgid "merchants"
+msgstr "marchands"
+
+#: functions/shortcodes.php:93
+#: functions/views/frontend/content-single-product-price-header.php:11
+#: functions/views/frontend/content-single-product-price-header.php:52
+msgid "From"
+msgstr "De"
+
+#: functions/shortcodes.php:100
+#: functions/views/frontend/content-price-table.php:80
+#: functions/views/frontend/content-single-product-price-header.php:29
+msgid "BUY NOW"
+msgstr "ACHETER"
+
+#: functions/views/admin/home.php:94
+msgid "Compare - Premium Price Comparison Theme"
+msgstr "Compare - Thème Premium de Comparaison de Prix"
+
+#: functions/views/admin/home.php:201
+msgid ""
+"If you have any questions or problems, please read the documentation or "
+"contact us."
+msgstr ""
+"Si vous avez une questions ou un problème, merci de lire la documentation ou "
+"de nous contacter."
+
+#: functions/views/admin/home.php:207
+#: functions/views/admin/theme-options.php:3
+msgid "Theme Options"
+msgstr "Options du thème"
+
+#: functions/views/admin/home.php:208
+msgid ""
+"Compare has extensive theme options to change the logo, header banner, "
+"tracking code, currency, colours and background pattern."
+msgstr ""
+"Compare vient avec des options de thème pour changer le logo, la bannière "
+"d'en-tête, le code tracking, la devise, les couleurs et le motif de fond."
+
+#: functions/views/admin/home.php:208
+msgid "Customise your theme"
+msgstr "Personnaliser votre thème"
+
+#: functions/views/admin/home.php:214
+msgid "Support &amp; Contact"
+msgstr "Support & Contact"
+
+#: functions/views/admin/home.php:215
+#, fuzzy
+msgid ""
+"We included detailed theme documentation and in case you still encounter "
+"problems please contact us using our Helpdesk."
+msgstr ""
+"Nous avons inclus la documentation du thème et au cas où vous auriez un "
+"problème, contactez nous via notre forum de support ou Helpdesk."
+
+#: functions/views/admin/home.php:215
+#, fuzzy
+msgid "Visit our support area"
+msgstr "Visitez notre support"
+
+#: functions/views/admin/home.php:222
+msgid ""
+"Give your price comparison website another dimension and add XML/CSV product "
+"feed capabilities and utilise another set of additional features."
+msgstr ""
+"Donnez à votre comparateur de prix une autre dimension avec les possibilités "
+"des catalogues de produits XML/CSV et de nouvelles fonctionnalités."
+
+#: functions/views/admin/home.php:222
+msgid "More about Compare +"
+msgstr "Plus sur Compare +"
+
+#: functions/views/admin/home.php:229
+msgid "What to do next ?"
+msgstr "Que faire maintenant?"
+
+#: functions/views/admin/home.php:231
+#, php-format
+msgid "%1$sCreate your homepage%2$s and %3$sset it up as your front page%4$s"
+msgstr ""
+"%1$sCréez votre page d'accueil%2$s et %3$sréglez là comme étant votre page "
+"d'accueil%4$s"
+
+#: functions/views/admin/home.php:233
+#, php-format
+msgid "%1$sCreate your blog page%2$s and %3$sset it up as your posts page%4$s"
+msgstr ""
+"%1$sCréez une page pour le blog%2$s et %3$sréglez-la comme étant votre page "
+"d'articles%4$s"
+
+#: functions/views/admin/home.php:235
+#, php-format
+msgid ""
+"%1$sSetup your permalink structure%2$s as explained in the documentation"
+msgstr ""
+"%1$sRéglez votre structure de permaliens%2$s comme expliqué dans la "
+"documentation"
+
+#: functions/views/admin/home.php:237
+#, php-format
+msgid "%1$sAdd some widgets%2$s to your homepage, your sidebar and your footer"
+msgstr ""
+"%1$sAjoutez des widgets%2$s à votre page d'accueil, votre zone latérale ou "
+"votre pied de page"
+
+#: functions/views/admin/home.php:239
+#, php-format
+msgid ""
+"%1$sImport products%2$s or manage them from the %3$sproduct management%4$s "
+"panel"
+msgstr ""
+"%1$sImporter des produits%2$s ou gérer les depuis la section de %3$sgestion "
+"des produits%4$s"
+
+#: functions/views/admin/home.php:241
+#, php-format
+msgid ""
+"Customise %1$sRetailers%2$s, %3$sBrands%4$s or %5$sProduct Categories%6$s"
+msgstr ""
+"Personnalisez %1$sMarchants%2$s, %3$sMarques%4$s or %5$sCatégories Produits"
+"%6$s"
+
+#: functions/views/admin/home.php:247
+msgid "Check database tables existence"
+msgstr "Vérifiez l'existence de tableaux dans la base de donnée"
+
+#: functions/views/admin/home.php:292
+msgid "Check folder permissions"
+msgstr "Vérifiez l'état de permission des dossiers"
+
+#: functions/views/admin/home.php:332
+msgid "Visit us on ThemeForest"
+msgstr "Rendez-nous visite sur ThemeForest"
+
+#: functions/views/admin/home.php:333
+msgid "Follow us on Twitter"
+msgstr "Follow us on Twitter"
+
+#: functions/views/admin/merchants_management.php:39
+#: functions/views/admin/products_management.php:121
+msgid "Retailer name is required"
+msgstr "Nom du revendeur requis"
+
+#: functions/views/admin/merchants_management.php:40
+#: functions/views/admin/merchants_management.php:125
+msgid "Slug is already used, please choose another one"
+msgstr "Slug déjà utilisé, veuillez en choisir un autre."
+
+#: functions/views/admin/merchants_management.php:55
+msgid "Retailer successfully added to database"
+msgstr "Revendeur ajouté à la base de données avec succès"
+
+#: functions/views/admin/merchants_management.php:61
+#: functions/views/admin/products_management.php:494
+msgid "Add retailer"
+msgstr "Ajouter un revendeur"
+
+#: functions/views/admin/merchants_management.php:65
+#: functions/views/admin/merchants_management.php:169
+#: functions/views/admin/merchants_management.php:269
+#: functions/views/admin/merchants_management.php:303
+#: functions/views/admin/merchants_management.php:309
+#: functions/views/admin/merchants_management.php:316
+msgid "View Retailers"
+msgstr "Voir les Revendeurs"
+
+#: functions/views/admin/merchants_management.php:68
+msgid "Use this form to add a new retailer to the database"
+msgstr "Utilisez ce formulaire pour ajouter un nouveau revendeur"
+
+#: functions/views/admin/merchants_management.php:81
+#: functions/views/admin/merchants_management.php:186
+#: functions/views/admin/products_management.php:346
+#: functions/views/admin/products_management.php:362
+msgid "Retailer name"
+msgstr "Nom du revendeur"
+
+#: functions/views/admin/merchants_management.php:85
+#: functions/views/admin/merchants_management.php:190
+msgid "Retailer slug"
+msgstr "Slug du revendeur"
+
+#: functions/views/admin/merchants_management.php:88
+msgid "(slug will be automatically generated if the field is empty)"
+msgstr "(le slug sera généré automatiquement si vide)"
+
+#: functions/views/admin/merchants_management.php:92
+#: functions/views/admin/merchants_management.php:197
+msgid "Retailer URL"
+msgstr "URL du revendeur"
+
+#: functions/views/admin/merchants_management.php:97
+#: functions/views/admin/merchants_management.php:201
+msgid "Retailer logo"
+msgstr "Logo du revendeur"
+
+#: functions/views/admin/merchants_management.php:101
+msgid "Upload image with 150x100 pixels"
+msgstr "Uploadez une image de 150x100 pixels"
+
+#: functions/views/admin/merchants_management.php:107
+msgid "Add New Retailer"
+msgstr "Ajouter Nouveau Revendeur"
+
+#: functions/views/admin/merchants_management.php:147
+msgid "Retailer successfully updated in the database"
+msgstr "Revendeur ajoutée à la base de données"
+
+#: functions/views/admin/merchants_management.php:158
+msgid "Retailer not found."
+msgstr "Revendeur non trouvé"
+
+#: functions/views/admin/merchants_management.php:164
+msgid "Edit retailer"
+msgstr "Editer le revendeur"
+
+#: functions/views/admin/merchants_management.php:173
+msgid "Use this form to edit the retailer"
+msgstr "Utilisez ce formulaire pour editer un revendeur"
+
+#: functions/views/admin/merchants_management.php:193
+msgid "(slug will be automatically generated if empty)"
+msgstr "(le slug sera généré automatiquement si vide)"
+
+#: functions/views/admin/merchants_management.php:207
+msgid "Current retailer logo"
+msgstr "Logo actuel:"
+
+#: functions/views/admin/merchants_management.php:220
+#: functions/views/admin/products_management.php:421
+msgid "Save"
+msgstr "Sauver"
+
+#: functions/views/admin/merchants_management.php:262
+#: functions/views/admin/merchants_management.php:275
+msgid "Retailer deletion"
+msgstr "Suppression de revendeur(s)"
+
+#: functions/views/admin/merchants_management.php:265
+msgid "One or more retailer has not been deleted"
+msgstr "Un ou plusieurs revendeur(s) n'ont pas été supprimés"
+
+#: functions/views/admin/merchants_management.php:267
+msgid "Retailers deleted successfully from database"
+msgstr "Revendeur supprimé avec succès"
+
+#: functions/views/admin/merchants_management.php:302
+msgid "Retailer deleted successfully from database"
+msgstr "Revendeur supprimé avec succès"
+
+#: functions/views/admin/merchants_management.php:308
+msgid "This retailer cannot be deleted because it has been created by a feed"
+msgstr "Ce revendeur ne peut être supprimé car il a été créé via un catalogue"
+
+#: functions/views/admin/merchants_management.php:315
+msgid "Retailer not found"
+msgstr "Revendeur non trouvé"
+
+#: functions/views/admin/merchants_management.php:323
+msgid "Retailer Management"
+msgstr "Gestion des Revendeurs"
+
+#: functions/views/admin/merchants_management.php:323
+msgid "Add new retailer"
+msgstr "Ajouter un nouveau revendeur"
+
+#: functions/views/admin/merchants_management.php:327
+#: functions/views/admin/merchants_management.php:399
+#: functions/views/admin/products_management.php:564
+#: functions/views/admin/products_management.php:716
+msgid "Bulk Actions"
+msgstr "Actions groupées"
+
+#: functions/views/admin/merchants_management.php:328
+#: functions/views/admin/merchants_management.php:389
+#: functions/views/admin/merchants_management.php:400
+#: functions/views/admin/products_management.php:405
+#: functions/views/admin/products_management.php:565
+#: functions/views/admin/products_management.php:717
+msgid "Delete"
+msgstr "Effacer"
+
+#: functions/views/admin/merchants_management.php:330
+#: functions/views/admin/merchants_management.php:402
+#: functions/views/admin/products_management.php:567
+#: functions/views/admin/products_management.php:719
+msgid "Apply"
+msgstr "Valider"
+
+#: functions/views/admin/merchants_management.php:340
+#: functions/views/admin/merchants_management.php:351
+msgid "Slug"
+msgstr "Slug"
+
+#: functions/views/admin/merchants_management.php:341
+#: functions/views/admin/merchants_management.php:352
+msgid "URL"
+msgstr "URL"
+
+#: functions/views/admin/merchants_management.php:342
+#: functions/views/admin/merchants_management.php:353
+#: functions/views/admin/products_management.php:356
+#: functions/views/admin/products_management.php:372
+#: functions/views/admin/products_management.php:589
+#: functions/views/admin/products_management.php:602
+msgid "Actions"
+msgstr "Actions"
+
+#: functions/views/admin/merchants_management.php:366
+#: functions/views/admin/products_management.php:384
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:135
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:123
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:136
+msgid "No retailer"
+msgstr "Pas de revendeur"
+
+#: functions/views/admin/merchants_management.php:389
+#: functions/views/admin/products_management.php:405
+msgid "Are you sure ?"
+msgstr "Etes-vous sur ?"
+
+#: functions/views/admin/products_feed.php:15
+msgid "Import Product Feed"
+msgstr "Importer un catalogue de produits"
+
+#: functions/views/admin/products_feed.php:17
+msgid ""
+"Import process will insert posts, categories, brands and retailers into the "
+"database"
+msgstr ""
+"Le processus d'import va ajouter les articles, categories, marques et "
+"revendeurs a la base de données."
+
+#: functions/views/admin/products_feed.php:81
+#: functions/views/admin/products_feed.php:87
+#: functions/views/admin/products_feed.php:93
+#: functions/views/admin/products_feed.php:174
+#: functions/views/admin/products_feed.php:209
+#: functions/views/admin/products_feed.php:254
+#: functions/views/admin/products_feed.php:260
+msgid "Line"
+msgstr "Ligne"
+
+#: functions/views/admin/products_feed.php:81
+msgid "No category detected"
+msgstr "Pas de catégorie détectée"
+
+#: functions/views/admin/products_feed.php:87
+msgid "No brand detected"
+msgstr "Pas de marque détectée"
+
+#: functions/views/admin/products_feed.php:93
+msgid "Full product name required"
+msgstr "Nom du produit requis"
+
+#: functions/views/admin/products_feed.php:174
+msgid "created"
+msgstr "créé(s)"
+
+#: functions/views/admin/products_feed.php:174
+#: functions/views/admin/products_feed.php:209
+msgid ", no retailer information was supplied"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:209
+msgid "updated"
+msgstr "mis(es) à jour"
+
+#: functions/views/admin/products_feed.php:254
+msgid "Retail price must be a number"
+msgstr "Le prix du revendeur doit être un nombre"
+
+#: functions/views/admin/products_feed.php:260
+msgid "Retailer product link required"
+msgstr "Lien vers le produit requis"
+
+#: functions/views/admin/products_feed.php:340
+msgid "Import finished"
+msgstr "Import terminé"
+
+#: functions/views/admin/products_feed.php:343
+msgid "File not found"
+msgstr "Fichier non trouvé"
+
+#: functions/views/admin/products_feed.php:350
+msgid "Feed Management"
+msgstr "Gestion du Catalogue"
+
+#: functions/views/admin/products_feed.php:402
+msgid "Export Feed"
+msgstr "Exporter le flux"
+
+#: functions/views/admin/products_feed.php:403
+msgid ""
+"Copy the content from the textpane below into your text editor and save as "
+"a .csv file"
+msgstr ""
+"Copiez le contenu du champs de texte suivant dans votre éditeur et "
+"enregistrer le fichier avec l'extension .csv"
+
+#: functions/views/admin/products_feed.php:427
+msgid "File successfully uploaded, you can now import products into WordPress"
+msgstr ""
+"Fichier uploadé, vous pouvez maintenancer importer vos produits dans "
+"WordPress"
+
+#: functions/views/admin/products_feed.php:434
+msgid "Upload failed"
+msgstr "Echec de l'upload"
+
+#: functions/views/admin/products_feed.php:441
+msgid "Products Feed"
+msgstr "Flux de produits"
+
+#: functions/views/admin/products_feed.php:470
+#: functions/views/admin/products_feed.php:492
+msgid "Import"
+msgstr "Importer"
+
+#: functions/views/admin/products_feed.php:473
+msgid "Step 1: Upload feed"
+msgstr "Etape 1 : Envoyer le catalogue"
+
+#: functions/views/admin/products_feed.php:474
+msgid "Upload your manual CSV feed"
+msgstr "Envoyer votre catalogue CSV"
+
+#: functions/views/admin/products_feed.php:474
+msgid "sample file"
+msgstr "fichier d'exemple"
+
+#: functions/views/admin/products_feed.php:479
+msgid "Last upload:"
+msgstr "Dernier upload:"
+
+#: functions/views/admin/products_feed.php:479
+#: functions/views/admin/products_feed.php:493
+msgid "Never"
+msgstr "Jamais"
+
+#: functions/views/admin/products_feed.php:482
+msgid "Step 2: Import products"
+msgstr "Etape 2 : Importer les produits"
+
+#: functions/views/admin/products_feed.php:483
+msgid "Import products from the feed into WordPress"
+msgstr "Importe les produits du fichier CSV dans WordPress"
+
+#: functions/views/admin/products_feed.php:486
+msgid "Semicolon"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:487
+msgid "Comma"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:488
+msgid "Pipe"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:489
+msgid "Tab"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:490
+#, fuzzy
+msgid "Choose delimiter"
+msgstr "Choisir un revendeur"
+
+#: functions/views/admin/products_feed.php:493
+msgid "Last import :"
+msgstr "Dernier import :"
+
+#: functions/views/admin/products_feed.php:497
+msgid "Export"
+msgstr "Exporter"
+
+#: functions/views/admin/products_feed.php:500
+msgid "Download feed"
+msgstr "Télecharger le catalogue"
+
+#: functions/views/admin/products_feed.php:501
+msgid "Download feed to your computer in order to edit it manually"
+msgstr ""
+"Télécharge le catalogue de produits sur votre ordinateur dans le but de "
+"l'éditer manuellement"
+
+#: functions/views/admin/products_feed.php:502
+msgid "Download"
+msgstr "Télécharger"
+
+#: functions/views/admin/products_management.php:34
+msgid "Delete Product"
+msgstr "Effacer un produit"
+
+#: functions/views/admin/products_management.php:37
+msgid "Product successfully deleted"
+msgstr "Produit supprimé avec succès"
+
+#: functions/views/admin/products_management.php:38
+#: functions/views/admin/products_management.php:77
+msgid "View Products"
+msgstr "Voir les produits"
+
+#: functions/views/admin/products_management.php:73
+msgid "Delete Products"
+msgstr "Effacer des produits"
+
+#: functions/views/admin/products_management.php:76
+msgid "Products successfully deleted"
+msgstr "Produits supprimés avec succès"
+
+#: functions/views/admin/products_management.php:96
+msgid "Delete Product Retailer"
+msgstr "Effacer Revendeur"
+
+#: functions/views/admin/products_management.php:99
+msgid "Product Retailer successfully deleted"
+msgstr "Revendeur supprimé avec succès"
+
+#: functions/views/admin/products_management.php:100
+msgid "View Product"
+msgstr "Voir le produit"
+
+#: functions/views/admin/products_management.php:122
+#: functions/views/admin/products_management.php:183
+#: functions/views/admin/products_management.php:235
+msgid "Not numeric"
+msgstr "Non numérique"
+
+#: functions/views/admin/products_management.php:123
+#: functions/views/admin/products_management.php:184
+msgid "Price required"
+msgstr "Prix requis"
+
+#: functions/views/admin/products_management.php:126
+#: functions/views/admin/products_management.php:187
+msgid "Product URL required"
+msgstr "URL du produit requise"
+
+#: functions/views/admin/products_management.php:132
+msgid "Product Image URL required"
+msgstr "URL du produit requise"
+
+#: functions/views/admin/products_management.php:168
+msgid "Retailer successfully added to this product"
+msgstr "Revendeur ajouté à ce produit avec succès"
+
+#: functions/views/admin/products_management.php:218
+msgid "Retailer successfully updated"
+msgstr "Revendeur mis à jour"
+
+#: functions/views/admin/products_management.php:246
+#, fuzzy
+msgid "Display order successfully updated"
+msgstr "Revendeur mis à jour"
+
+#: functions/views/admin/products_management.php:255
+#: functions/views/admin/products_management.php:513
+msgid "Products Management"
+msgstr "Gestion des produits"
+
+#: functions/views/admin/products_management.php:281
+#, fuzzy
+msgid "Product Information"
+msgstr "Editer le produit"
+
+#: functions/views/admin/products_management.php:288
+msgid "No image"
+msgstr "Pas d'image"
+
+#: functions/views/admin/products_management.php:294
+msgid "ID:"
+msgstr "ID:"
+
+#: functions/views/admin/products_management.php:295
+msgid "Categories:"
+msgstr "Catégories:"
+
+#: functions/views/admin/products_management.php:304
+msgid "Brand:"
+msgstr "Marque:"
+
+#: functions/views/admin/products_management.php:313
+msgid "Full name:"
+msgstr "Nom du produit:"
+
+#: functions/views/admin/products_management.php:314
+#, fuzzy
+msgid "Display order:"
+msgstr "Devise affichée"
+
+#: functions/views/admin/products_management.php:319
+msgid "Change Display Order"
+msgstr ""
+
+#: functions/views/admin/products_management.php:332
+msgid ""
+"This must be numeric.  Setting this to 0 means it will always appear at the "
+"top of the results for all order types, after this the lower the number the "
+"higher up the list it will be for the default ordering setting."
+msgstr ""
+
+#: functions/views/admin/products_management.php:336
+msgid "Save Display Order"
+msgstr ""
+
+#: functions/views/admin/products_management.php:340
+msgid "Existing retailers"
+msgstr "Revendeurs existants"
+
+#: functions/views/admin/products_management.php:348
+#: functions/views/admin/products_management.php:364
+#, fuzzy
+msgid "Product title"
+msgstr "Image du produit"
+
+#: functions/views/admin/products_management.php:351
+#: functions/views/admin/products_management.php:367
+msgid "Product Image"
+msgstr "Image du produit"
+
+#: functions/views/admin/products_management.php:352
+#: functions/views/admin/products_management.php:368
+#: functions/views/frontend/content-price-table.php:24
+#: functions/views/frontend/content-single-product-price-header.php:27
+msgid "Price"
+msgstr "Prix"
+
+#: functions/views/admin/products_management.php:353
+#: functions/views/admin/products_management.php:369
+msgid "Shipping"
+msgstr "Livraison :"
+
+#: functions/views/admin/products_management.php:354
+#: functions/views/admin/products_management.php:370
+msgid "Voucher"
+msgstr "Code de réduction"
+
+#: functions/views/admin/products_management.php:355
+#: functions/views/admin/products_management.php:371
+msgid "Deeplink"
+msgstr "Lien vers le produit"
+
+#: functions/views/admin/products_management.php:404
+msgid "Retailer site"
+msgstr "Site du revendeur"
+
+#: functions/views/admin/products_management.php:436
+msgid "Associate another retailer with this product"
+msgstr "Associer un revendeur à ce produit"
+
+#: functions/views/admin/products_management.php:437
+msgid "Use this form to add an existing retailer to this product."
+msgstr "Utilisez ce formulaire pour ajouter un nouveau revendeur à ce produit"
+
+#: functions/views/admin/products_management.php:437
+msgid "Click here to"
+msgstr "Cliquez ici pour"
+
+#: functions/views/admin/products_management.php:437
+msgid "create new retailer"
+msgstr "créer un nouveau revendeur"
+
+#: functions/views/admin/products_management.php:441
+msgid "Choose retailer"
+msgstr "Choisir un revendeur"
+
+#: functions/views/admin/products_management.php:453
+msgid "Product price"
+msgstr "Prix du produit"
+
+#: functions/views/admin/products_management.php:456
+msgid "Must be a numeric value (eg: 99 or 99.99 or 99,99)"
+msgstr "Doit être un nombre (ex: 99 ou 99.99 ou 99,99)"
+
+#: functions/views/admin/products_management.php:461
+msgid "Shipping cost"
+msgstr "Frais de livraison"
+
+#: functions/views/admin/products_management.php:464
+msgid "A numeric value or a something like \"Free delivery\"."
+msgstr "Une valeur numérique ou une phrase comme \"Livraison offerte\"."
+
+#: functions/views/admin/products_management.php:469
+msgid "Voucher Code"
+msgstr "Code de réduction"
+
+#: functions/views/admin/products_management.php:472
+msgid ""
+"A code that you can use to redeem a discount when you reach the checkout"
+msgstr ""
+"Un code que vous pouvez utiliser avant le paiement pour bénéficier d'une "
+"réduction"
+
+#: functions/views/admin/products_management.php:477
+msgid "Retailer product page URL"
+msgstr "URL du produit"
+
+#: functions/views/admin/products_management.php:480
+msgid "Full URL, with \"http://\""
+msgstr "URL complète (avec http://)"
+
+#: functions/views/admin/products_management.php:485
+msgid "Retailer product image URL"
+msgstr "URL du produit"
+
+#: functions/views/admin/products_management.php:488
+msgid "Full Product Image URL, with \"http://\""
+msgstr "URL complète (avec http://)"
+
+#: functions/views/admin/products_management.php:502
+msgid "Product not found"
+msgstr "Produit non trouvé"
+
+#: functions/views/admin/products_management.php:549
+msgid "All"
+msgstr "Tous"
+
+#: functions/views/admin/products_management.php:554
+msgid "Search product:"
+msgstr "Chercher un produit:"
+
+#: functions/views/admin/products_management.php:583
+#: functions/views/admin/products_management.php:596
+msgid "PID"
+msgstr "PID"
+
+#: functions/views/admin/products_management.php:586
+#: functions/views/admin/products_management.php:599
+msgid "Brand"
+msgstr "Marque"
+
+#: functions/views/admin/products_management.php:587
+#: functions/views/admin/products_management.php:600
+msgid "Product name"
+msgstr "Nom du produit"
+
+#: functions/views/admin/products_management.php:588
+#: functions/views/admin/products_management.php:601
+#: functions/views/frontend/content-single-product-shortlinks.php:11
+msgid "Retailers"
+msgstr "Revendeurs"
+
+#: functions/views/admin/products_management.php:646
+#: functions/views/admin/products_management.php:702
+msgid "Manage product retailers and default ordering"
+msgstr ""
+
+#: functions/views/admin/products_management.php:648
+#: functions/views/admin/products_management.php:704
+msgid "Edit product information"
+msgstr "Editer le produit"
+
+#: functions/views/admin/products_management.php:650
+#: functions/views/admin/products_management.php:706
+msgid "Are you sure ? It will delete every occurences of this product."
+msgstr "Etes vous sur ? Toutes les occurences du produit seront effacées."
+
+#: functions/views/admin/products_management.php:650
+#: functions/views/admin/products_management.php:706
+msgid "Delete product &amp; retailers"
+msgstr "Effacer produit &amp; revendeurs"
+
+#: functions/views/admin/products_management.php:661
+msgid "No product"
+msgstr "Pas de produit"
+
+#: functions/views/admin/theme-options.php:5
+msgid "settings saved"
+msgstr "réglages sauvegardés"
+
+#: functions/views/admin/theme-options.php:6
+msgid "settings reset"
+msgstr "réglages réinitialisés"
+
+#: functions/views/admin/theme-options.php:7
+msgid "settings have been reset to factory settings"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:10
+#, fuzzy, php-format
+msgid ""
+"For help, please read our %1$stheme documentation%2$s. In case you still "
+"experience problems please visit our %3$sTheme Support Forum%4$s."
+msgstr ""
+"Nous avons inclus la documentation du thème et au cas où vous auriez un "
+"problème, contactez nous via notre forum de support ou Helpdesk."
+
+#: functions/views/admin/theme-options.php:19
+msgid "General Settings"
+msgstr "Réglages généraux"
+
+#: functions/views/admin/theme-options.php:21
+msgid "Color settings"
+msgstr "Couleurs"
+
+#: functions/views/admin/theme-options.php:22
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#: functions/views/admin/theme-options.php:23
+msgid "Social"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:108
+msgid "Current file:"
+msgstr "Fichier actuel :"
+
+#: functions/views/admin/theme-options.php:174
+msgid "Save Settings"
+msgstr "Sauver les Réglages"
+
+#: functions/views/admin/theme-options.php:189
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: functions/views/admin/theme-options.php:191
+msgid ""
+"Caution: will restore theme defaults. It is highly recommended that you "
+"backup your database first."
+msgstr ""
+
+#: functions/views/admin/theme-options.php:197
+msgid "Reset To Factory Defaults"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:199
+msgid ""
+"Caution: This will restore the theme to factory defaults (It will also "
+"restore the Compare+ plugin to factory defaults if it is installed and "
+"activated), it is highly recommended that you backup your database first."
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:13
+msgid "You are here"
+msgstr "Vous êtes ici"
+
+#: functions/views/frontend/content-breadcrumb.php:13
+msgid "Home"
+msgstr "Accueil"
+
+#: functions/views/frontend/content-breadcrumb.php:63
+msgid "Blog"
+msgstr "Blog"
+
+#: functions/views/frontend/content-breadcrumb.php:151
+msgid "Search:"
+msgstr "Rechercher:"
+
+#: functions/views/frontend/content-breadcrumb.php:155
+msgid "404 Not Found"
+msgstr "404 Non Trouvé"
+
+#: functions/views/frontend/content-breadcrumb.php:187
+msgid "Blog Archives"
+msgstr "Archives du blog"
+
+#: functions/views/frontend/content-listing-options.php:8
+#, fuzzy
+msgid "Search results"
+msgstr "Rechercher un produit"
+
+#: functions/views/frontend/content-listing-options.php:13
+msgid "Visit brand's website"
+msgstr "Visiter le site de la marque"
+
+#: functions/views/frontend/content-listing-options.php:20
+#, php-format
+msgid "Showing products %s of %s"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:27
+#, fuzzy
+msgid "View"
+msgstr "Voir les marques"
+
+#: functions/views/frontend/content-listing-options.php:46
+#: single-product.php:16 taxonomy-product_category.php:19
+msgid "Less"
+msgstr "Moins"
+
+#: functions/views/frontend/content-pagination.php:13
+msgid "Prev"
+msgstr ""
+
+#: functions/views/frontend/content-pagination.php:14
+msgid "Next"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:16
+#, fuzzy, php-format
+msgid "%s Retailers"
+msgstr "Revendeurs"
+
+#: functions/views/frontend/content-price-table.php:21
+msgid "Retailer"
+msgstr "Revendeur"
+
+#: functions/views/frontend/content-price-table.php:22
+#, fuzzy
+msgid "Details"
+msgstr "revendeurs"
+
+#: functions/views/frontend/content-price-table.php:23
+#: functions/views/frontend/content-single-product-price-header.php:21
+#: functions/views/frontend/content-single-product-price-header.php:23
+msgid "Delivery"
+msgstr "Livraison"
+
+#: functions/views/frontend/content-price-table.php:58
+msgid "Last update:"
+msgstr "Actualisé le :"
+
+#: functions/views/frontend/content-price-table.php:64
+msgid "VOUCHER CODE:"
+msgstr "CODE DE REDUCTION:"
+
+#: functions/views/frontend/content-related-products.php:4
+#, fuzzy
+msgid "Related Products"
+msgstr "Effacer des produits"
+
+#: functions/views/frontend/content-single-product-price-header.php:11
+#: functions/views/frontend/content-single-product-price-header.php:52
+msgid "to"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:28
+#: functions/views/frontend/content-single-product-shortlinks.php:16
+#, fuzzy
+msgid "Product Reviews"
+msgstr "Catégories"
+
+#: functions/views/frontend/content-single-product-reviews-template.php:39
+#, fuzzy
+msgid "&larr; Older reviews"
+msgstr "Suivants"
+
+#: functions/views/frontend/content-single-product-reviews-template.php:40
+msgid "Newer Reviews &rarr;"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:53
+msgid "Submit Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:59
+#: functions/views/frontend/content-single-product-reviews-template.php:127
+msgid "Write A Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:89
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: functions/views/frontend/content-single-product-reviews-template.php:113
+msgid "Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:133
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-shortlinks.php:8
+msgid "Overview"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:106
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:106
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:108
+#, fuzzy
+msgid "View more"
+msgstr "Voir Slide"
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:138
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:125
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:139
+msgid "1 retailer"
+msgstr "1 revendeur"
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:140
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:127
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:141
+msgid "retailers"
+msgstr "revendeurs"
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:146
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:133
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:147
+#, fuzzy
+msgid "Compare Prices"
+msgstr "Page d'acceuil des produits"
+
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:176
+#, fuzzy
+msgid "Read More"
+msgstr "Lire la suite..."
+
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:7
+#, php-format
+msgid "Review by %s"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:12
+#, fuzzy, php-format
+msgid "reviewed on %1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: header.php:181
+msgid "I am shopping for..."
+msgstr ""
+
+#: search.php:32 search.php:65
+msgid "No results."
+msgstr "Pas de résultats"
+
+#: single-product.php:79 single.php:26
+msgid "Tags:"
+msgstr "Tags:"
+
+#~ msgid "by"
+#~ msgstr "par"
+
+#~ msgid "Lighter color"
+#~ msgstr "Couleur claire"
+
+#~ msgid "Background Settings"
+#~ msgstr "Réglages du fond"
+
+#~ msgid "Background Pattern"
+#~ msgstr "Motif de fond"
+
+#~ msgid "none"
+#~ msgstr "aucun"
+
+#~ msgid "Enable Custom Background Pattern"
+#~ msgstr "Activer le motif de fond"
+
+#~ msgid "Check this box to use a custom background image."
+#~ msgstr ""
+#~ "Cocher cette case pour activer le fond d'écran personnalisé (upload de "
+#~ "votre propre image)."
+
+#~ msgid "Upload Background Pattern"
+#~ msgstr "Uploader un motif de fond"
+
+#~ msgid "Brands:"
+#~ msgstr "Marques :"
+
+#~ msgid "Retailer name required"
+#~ msgstr "Nom du revendeur requis"
+
+#~ msgid "Sorry, but you are looking for something that isn't here."
+#~ msgstr "Désolé, mais ce que vous recherchez ne se trouve pas ici."
+
+#~ msgid "Posted in"
+#~ msgstr "Publié dans"
+
+#~ msgid "By"
+#~ msgstr "Par"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Voir tous les articles de %s"
+
+#~ msgid "Leave a Comment"
+#~ msgstr "Ecrire un commentaire"
+
+#~ msgid "Newer Entries"
+#~ msgstr "Précédents"
+
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view comments."
+#~ msgstr ""
+#~ "Cet article est protégé par un mot de passe. Entrer le mot de passe pour "
+#~ "voir les commentaires."
+
+#~ msgid "Trackbacks for this post"
+#~ msgstr "Trackbacks pour cet article"
+
+#~ msgid "Comments are now closed for this article."
+#~ msgstr "Les commentaires sont maintenant fermés pour cet article."
+
+#~ msgid "Leave a Comment to %s"
+#~ msgstr "Ecrire un commentaire à %s"
+
+#~ msgid "You must be %1$slogged in%2$s to post a comment."
+#~ msgstr "Vous devez être %1$sconnecté%2$s pour écrire un commentaire."
+
+#~ msgid "Logged in as %1$s. %2$sLog out &raquo;%3$s"
+#~ msgstr "Connecté en tant que %1$s. %2$s Déconnexion &raquo;%3$s"
+
+#~ msgid "Log out of this account"
+#~ msgstr "Déconnexion"
+
+#~ msgid "Enter your name"
+#~ msgstr "Entrez votre nom"
+
+#~ msgid "(required)"
+#~ msgstr "(requis)"
+
+#~ msgid "Enter your email address"
+#~ msgstr "Entrez votre adresse e-mail"
+
+#~ msgid "Mail (will not be published)"
+#~ msgstr "E-mail (ne sera pas publié)"
+
+#~ msgid "Website (including http://)"
+#~ msgstr "Site Internet (avec http://)"
+
+#~ msgid "Enter a comment"
+#~ msgstr "Ecrire un commentaire"
+
+#~ msgid "Send comment"
+#~ msgstr "Envoyer le commentaire"
+
+#~ msgid "Search"
+#~ msgstr "Rechercher"
+
+#~ msgid "FROM"
+#~ msgstr "A PARTIR DE"
+
+#~ msgid "Enter a keyword"
+#~ msgstr "Entrer un mot clé"
+
+#~ msgid "No retailer found"
+#~ msgstr "Aucun revendeur trouvé"
+
+#~ msgid "Digg"
+#~ msgstr "Digg"
+
+#~ msgid "Reddit"
+#~ msgstr "Reddit"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Technorati"
+#~ msgstr "Technorati"
+
+#~ msgid "LinkedIn"
+#~ msgstr "LinkedIn"
+
+#~ msgid "XING"
+#~ msgstr "XING"
+
+#~ msgid "Email a friend"
+#~ msgstr "Email"
+
+#~ msgid "Flattr"
+#~ msgstr "Flattr"
+
+#~ msgid "Thanks, your message was sent successfully."
+#~ msgstr "Merci, votre message a été envoyé."
+
+#~ msgid "Sorry, an error occured."
+#~ msgstr "Désolé, une erreur s'est produite."
+
+#~ msgid "Name (required)"
+#~ msgstr "Nom (requis)"
+
+#~ msgid "Email address (required)"
+#~ msgstr "Adresse e-mail (requis)"
+
+#~ msgid "Enter a message"
+#~ msgstr "Entrer un message"
+
+#~ msgid "Send message"
+#~ msgstr "Envoyer le message"
+
+#~ msgid "Slides"
+#~ msgstr "Slides"
+
+#~ msgid "Slide"
+#~ msgstr "Slide"
+
+#~ msgid "Add Slide"
+#~ msgstr "Ajouter Slide"
+
+#~ msgid "Add New Slide"
+#~ msgstr "Ajouter Nouveau Slide"
+
+#~ msgid "Edit Slide"
+#~ msgstr "Editer Slide"
+
+#~ msgid "New Slide"
+#~ msgstr "Nouveau Slide"
+
+#~ msgid "Search Slide"
+#~ msgstr "Rechercher Slide"
+
+#~ msgid "No Slides found"
+#~ msgstr "Aucun Slide trouvé"
+
+#~ msgid "No Slides found in Trash"
+#~ msgstr "Aucun Slide trouvé dans la corbeille"
+
+#~ msgid "Slide URL"
+#~ msgstr "URL du slide"
+
+#~ msgid "FeedBurner URL"
+#~ msgstr "URL FeedBurner"
+
+#~ msgid ""
+#~ "Enter your full FeedBurner URL (or any other preferred feed URL) if you "
+#~ "wish to use FeedBurner over the standard WordPress Feed e.g. http://feeds."
+#~ "feedburner.com/yoururlhere"
+#~ msgstr ""
+#~ "Entrez votre adresse FeedBurner URL si vous voulez utiliser FeedBurner au "
+#~ "lieu du flux RSS de WordPress (ex: http://feeds.feedburner.com/"
+#~ "yoururlhere)"
+
+#~ msgid "Contact Form Settings"
+#~ msgstr "Formulaire de contact"
+
+#~ msgid ""
+#~ "Enter the email address where you'd like to receive emails from the "
+#~ "contact form, or leave blank to use admin email."
+#~ msgstr ""
+#~ "Entrer l'adresse qui recevra les emails du formulaire de contact, laisser "
+#~ "blanc pour utiliser l'adresse de l'administrateur."
+
+#~ msgid "Post sharing"
+#~ msgstr "Partage d'articles"
+
+#~ msgid "Enable post sharing links"
+#~ msgstr "Activer les liens de partage"
+
+#~ msgid "Check this box to enable post sharing links on single post pages. "
+#~ msgstr "Cocher cette case pour activer le partage depuis les articles."
+
+#~ msgid "Enable sharing via e-mail"
+#~ msgstr "Activer le partage par e-mail"
+
+#~ msgid "Check this box to enable post sharing via e-mail."
+#~ msgstr "Cocher cette case pour activer le partage via e-mail"
+
+#~ msgid "Enable sharing with Google +1"
+#~ msgstr "Activer le partage avec Google +1"
+
+#~ msgid "Check this box to enable post sharing with Google +1."
+#~ msgstr "Cocher cette case pour activer le partage via Google +1"
+
+#~ msgid "Enable sharing to Facebook"
+#~ msgstr "Activer le partage avec Facebook"
+
+#~ msgid "Check this box to enable post sharing to Facebook."
+#~ msgstr "Cocher cette case pour activer le partage via Facebook"
+
+#~ msgid "Enable sharing to Twitter"
+#~ msgstr "Activer le partage avec Twitter"
+
+#~ msgid "Check this box to enable post sharing to Twitter."
+#~ msgstr "Cocher cette case pour activer le partage via Twitter"
+
+#~ msgid "Enable sharing to Digg"
+#~ msgstr "Activer le partage avec Digg"
+
+#~ msgid "Check this box to enable post sharing to Digg."
+#~ msgstr "Cocher cette case pour activer le partage via Digg"
+
+#~ msgid "Enable sharing to Reddit"
+#~ msgstr "Activer le partage avec Reddit"
+
+#~ msgid "Check this box to enable post sharing to Reddit."
+#~ msgstr "Cocher cette case pour activer le partage via Reddit"
+
+#~ msgid "Enable sharing to Delicious"
+#~ msgstr "Activer le partage avec Delicious"
+
+#~ msgid "Check this box to enable post sharing to Delicious."
+#~ msgstr "Cocher cette case pour activer le partage via Delicious"
+
+#~ msgid "Enable sharing to Stumble"
+#~ msgstr "Activer le partage avec Stumble"
+
+#~ msgid "Check this box to enable post sharing to Stumble."
+#~ msgstr "Cocher cette case pour activer le partage via Stumble"
+
+#~ msgid "Enable sharing to Technorati"
+#~ msgstr "Activer le partage avec Technorati"
+
+#~ msgid "Check this box to enable post sharing to Technorati."
+#~ msgstr "Cocher cette case pour activer le partage via Technorati"
+
+#~ msgid "Enable sharing to LinkedIn"
+#~ msgstr "Activer le partage avec LinkedIn"
+
+#~ msgid "Check this box to enable post sharing to LinkedIn."
+#~ msgstr "Cocher cette case pour activer le partage via LinkedIn"
+
+#~ msgid "Enable sharing to Xing"
+#~ msgstr "Activer le partage avec Xing"
+
+#~ msgid "Check this box to enable post sharing to Xing."
+#~ msgstr "Cocher cette case pour activer le partage via Xing"
+
+#~ msgid "Enable support via Flattr"
+#~ msgstr "Activer le partage avec Flattr"
+
+#~ msgid "Check this box to enable support via Flattr."
+#~ msgstr "Flattr"
+
+#~ msgid "Flattr ID"
+#~ msgstr "Flattr ID"
+
+#~ msgid "Enter your Flattr ID to enable the donate button"
+#~ msgstr "Entrer votre ID Flattr pour activer les donations"
+
+#~ msgid "Default Thumbnails"
+#~ msgstr "Images par défaut"
+
+#~ msgid "Upload Slide Thumbnail (920x340)"
+#~ msgstr "Image par défaut des Slides (920x340)"
+
+#~ msgid "Upload Post Thumbnail (690x190)"
+#~ msgstr "Image par défaut des articles (690x190)"
+
+#, fuzzy
+#~ msgid "Category page"
+#~ msgstr "Catégorie image"
+
+#, fuzzy
+#~ msgid "Check this box to show brands on Category pages"
+#~ msgstr ""
+#~ "Cocher cette case pour activer le fond d'écran personnalisé (upload de "
+#~ "votre propre image)."
+
+#~ msgid "Caution: will restore theme defaults"
+#~ msgstr ""
+#~ "Attention: cette opération restaure les paramètres par défaut du thème"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of 6 125x125 ads "
+#~ "blocks."
+#~ msgstr "Un widget qui affiche 6 blocs publicitaires 125x125."
+
+#~ msgid "Custom 125x125 Ads"
+#~ msgstr "Custom 125x125 Ads"
+
+#~ msgid "Ad 1 image url:"
+#~ msgstr "URL de l'image Pub #1"
+
+#~ msgid "Ad 1 link url:"
+#~ msgstr "Lien Pub #1"
+
+#~ msgid "Ad 2 image url:"
+#~ msgstr "URL de l'image Pub #2"
+
+#~ msgid "Ad 2 link url:"
+#~ msgstr "Lien Pub #2"
+
+#~ msgid "Ad 3 image url:"
+#~ msgstr "URL de l'image Pub #3"
+
+#~ msgid "Ad 3 link url:"
+#~ msgstr "Lien Pub #3"
+
+#~ msgid "Ad 4 image url:"
+#~ msgstr "URL de l'image Pub #4"
+
+#~ msgid "Ad 4 link url:"
+#~ msgstr "Lien Pub #4"
+
+#~ msgid "Ad 5 image url:"
+#~ msgstr "URL de l'image Pub #5"
+
+#~ msgid "Ad 5 link url:"
+#~ msgstr "Lien Pub #5"
+
+#~ msgid "Ad 6 image url:"
+#~ msgstr "URL de l'image Pub #6"
+
+#~ msgid "Ad 6 link url:"
+#~ msgstr "Lien Pub #6"
+
+#~ msgid "Randomize ads order?"
+#~ msgstr "Ordre aléatoire ?"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of of a single 160x600 "
+#~ "Banner."
+#~ msgstr "Un widget qui affiche une bannière publicitaire de 160x600."
+
+#~ msgid "Custom 160x600 Ad"
+#~ msgstr "Bannière 160x600"
+
+#~ msgid "Ad image url:"
+#~ msgstr "URL de l'image de la publicité"
+
+#~ msgid "Ad link url:"
+#~ msgstr "Lien de la publicité:"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of of a single 180x150 "
+#~ "Banner."
+#~ msgstr "Un widget qui affiche une bannière publicitaire de 180x150."
+
+#~ msgid "Custom 180x150 Ad"
+#~ msgstr "Bannière 180x150"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of of a single 300x250 "
+#~ "Banner."
+#~ msgstr "Un widget qui affiche une bannière 300x250."
+
+#~ msgid "Custom 300x250 Ad"
+#~ msgstr "Bannière 300x250"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of of a single 300x600 "
+#~ "Banner (Half Page Ad)."
+#~ msgstr "Un widget qui affiche une bannière 600 (demi page)."
+
+#~ msgid "Custom 300x600 Ad"
+#~ msgstr "Bannière 300x600"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of of a single 728x90 "
+#~ "Banner."
+#~ msgstr "Un widget qui affiche une bannière 728x90."
+
+#~ msgid "Custom 728x90 Ad"
+#~ msgstr "Bannière 728x90"
+
+#~ msgid "A custom double widget."
+#~ msgstr "Un double widget"
+
+#~ msgid "Title #1:"
+#~ msgstr "Titre #1:"
+
+#~ msgid "Icon #1:"
+#~ msgstr "Icone #1:"
+
+#~ msgid "Content #1:"
+#~ msgstr "Contenu #1:"
+
+#~ msgid "Title #2:"
+#~ msgstr "Titre #2:"
+
+#~ msgid "Icon #2:"
+#~ msgstr "Icone #2:"
+
+#~ msgid "Content #2:"
+#~ msgstr "Contenu #2:"
+
+#~ msgid "A widget that displays your Flickr photos."
+#~ msgstr "Un widget qui affiche vos photos Flickr"
+
+#~ msgid "Custom Flickr Photos"
+#~ msgstr "Custom Flickr Photos"
+
+#~ msgid "Flickr ID:"
+#~ msgstr "Flickr ID:"
+
+#~ msgid "Number of Photos:"
+#~ msgstr "Nombre de photos:"
+
+#~ msgid "Type (user or group):"
+#~ msgstr "Type (utilisateur ou groupe):"
+
+#~ msgid "Display (random or latest):"
+#~ msgstr "Affichage (aléatoires ou derniers):"
+
+#~ msgid ""
+#~ "A widget that allows the display and configuration of an highlighted area."
+#~ msgstr "Un widget qui permet l'affichage d'une zone de mise en évidence"
+
+#~ msgid "Homepage Highlight"
+#~ msgstr "Homepage Highlight"
+
+#~ msgid "Text:"
+#~ msgstr "Texte:"
+
+#~ msgid "Carousel effect:"
+#~ msgstr "Effet du carousel :"
+
+#~ msgid "Duration (ms):"
+#~ msgstr "Durée (ms) :"
+
+#~ msgid "Scrolled items:"
+#~ msgstr "Items scrollés :"
+
+#~ msgid "Auto play:"
+#~ msgstr "Autoplay :"
+
+#~ msgid "A widget that displays featured products as a caroussel."
+#~ msgstr "Un widget qui affiche les produits sous la forme d'un caroussel."
+
+#~ msgid "A widget that displays a search bar."
+#~ msgstr "Un widget qui affiche une barre de recherche"
+
+#~ msgid "Custom Search Widget"
+#~ msgstr "Custom Search Widget"
+
+#~ msgid "Label:"
+#~ msgstr "Label :"
+
+#~ msgid "A widget that displays the products categories in the sidebar"
+#~ msgstr "Un widget qui affiche les catégories dans la sidebar"
+
+#~ msgid "Sidebar Products Categories"
+#~ msgstr "Sidebar Products Categories"
+
+#~ msgid "A widget that displays your latest posts in a slider"
+#~ msgstr "Un widget qui affiche vos derniers articles sous forme de slider"
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Permalien vers %s"
+
+#~ msgid "Autoplay:"
+#~ msgstr "Autoplay :"
+
+#~ msgid "Enable paging control navigation:"
+#~ msgstr "Activer la pagination :"
+
+#~ msgid "Enable keyboard:"
+#~ msgstr "Activer le clavier :"
+
+#~ msgid "Enable mousewheel:"
+#~ msgstr "Activer mollette souris :"
+
+#~ msgid "Enable randomisation:"
+#~ msgstr "Afficher au hasard ?"
+
+#~ msgid "Number of posts:"
+#~ msgstr "Nombre d'articles"
+
+#~ msgid "Exclude:"
+#~ msgstr "Exclure :"
+
+#~ msgid "Custom Slider Widget"
+#~ msgstr "Custom Slider Widget"
+
+#~ msgid ""
+#~ "A tabbed widget that display popular posts, recent posts, comments and "
+#~ "tags."
+#~ msgstr ""
+#~ "Un widget pour créer des onglets pour les articles récents, propulaires, "
+#~ "les commentaires et les tags."
+
+#~ msgid "Custom Tabbed Widget"
+#~ msgstr "Custom Tabbed Widget"
+
+#~ msgid "on "
+#~ msgstr "le"
+
+#~ msgid "Tab 1 Title:"
+#~ msgstr "Titre de l'onglet #1"
+
+#~ msgid "Tab 2 Title:"
+#~ msgstr "Titre de l'onglet #2"
+
+#~ msgid "Tab 3 Title:"
+#~ msgstr "Titre de l'onglet #3"
+
+#~ msgid "Tab 4 Title:"
+#~ msgstr "Titre de l'onglet #4"
+
+#~ msgid "A widget that displays your client's testimonial."
+#~ msgstr "Un widget qui affiche l'avis de vos clients"
+
+#~ msgid "Custom Testimonial Widget"
+#~ msgstr "Custom Testimonial Widget"
+
+#~ msgid "Testimonial:"
+#~ msgstr "Avis Client:"
+
+#~ msgid "Client's Name:"
+#~ msgstr "Nom du client:"
+
+#~ msgid "Client's Company"
+#~ msgstr "Société du client:"
+
+#, fuzzy
+#~ msgid "A widget that displays your latest tweets"
+#~ msgstr "Un widget qui affiche vos derniers tweets."
+
+#, fuzzy
+#~ msgid "No tweets found."
+#~ msgstr "Aucun Slide trouvé"
+
+#, fuzzy
+#~ msgid "Number of tweets:"
+#~ msgstr "Nombre d'articles"
+
+#~ msgid "A widget that displays your YouTube or Vimeo Video."
+#~ msgstr "Un widget qui affiche un vidéo YouTube ou Vimeo"
+
+#~ msgid "Custom Video Widget"
+#~ msgstr "Custom Video Widget"
+
+#~ msgid "Embed Code (Best at 290px wide)"
+#~ msgstr "Embed Code (optimisé pour 290px de large)"
+
+#~ msgid "Short Description:"
+#~ msgstr "Courte description :"
+
+#~ msgid "Delivery:"
+#~ msgstr "Livraison:"
+
+#, fuzzy
+#~ msgid "Required"
+#~ msgstr "(requis)"
+
+#, fuzzy
+#~ msgid "Recommended"
+#~ msgstr "Envoyer le commentaire"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "Voir les Revendeurs"
+
+#, fuzzy
+#~ msgid "Hide Details"
+#~ msgstr "Voir les Revendeurs"
+
+#~ msgid "File is too large"
+#~ msgstr "Le fichier est trop gros"
+
+#~ msgid "Manage retailers"
+#~ msgstr "Gérer les revendeurs"
+
+#~ msgid "Page %s"
+#~ msgstr "Page %s"
+
+#~ msgid "Slider"
+#~ msgstr "Slider"
+
+#~ msgid "Check this box to enable the homepage slider"
+#~ msgstr "Cocher cette case pour activer le slider sur la page d'acceuil"
+
+#~ msgid "Custom Latest Tweets"
+#~ msgstr "Custom Latest Tweets"
+
+#~ msgid "Twitter Username e.g. awesemthemes"
+#~ msgstr "Nom d'utilisateur Twitter (ex: awesemthemes)"
+
+#~ msgid "Number of tweets (max 20)"
+#~ msgstr "Nombre de tweets (max 20)"
+
+#~ msgid "Follow Text e.g. Follow on Twitter"
+#~ msgstr "Follow Text (ex. Follow on Twitter)"
+
+#~ msgid "UID must be a number"
+#~ msgstr "UID doit être un nombre"
+
+#~ msgid "Brand name is required"
+#~ msgstr "Nom de la marque requis"
+
+#~ msgid "Brand successfully added to the database"
+#~ msgstr "Marque ajoutée à la base de donnée avec succès"
+
+#~ msgid "Add brand"
+#~ msgstr "Ajouter une marque"
+
+#~ msgid "Use this form to add a new brand to the database"
+#~ msgstr "Utilisez ce formulaire pour ajouter une nouvelle marque"
+
+#~ msgid "Brand name"
+#~ msgstr "Nom de la marque"
+
+#~ msgid "Brand URL"
+#~ msgstr "URL de la marque"
+
+#~ msgid "Add New Brand"
+#~ msgstr "Ajouter Nouvelle Marque"
+
+#~ msgid "Brand successfully updated in the database"
+#~ msgstr "Marque ajoutée à la base de données"
+
+#~ msgid "Brand not found."
+#~ msgstr "Marque non trouvée"
+
+#~ msgid "Use this form to edit the brand"
+#~ msgstr "Utilisez ce formulaire pour editer une marque"
+
+#~ msgid "Edit The Brand"
+#~ msgstr "Editer la marque"
+
+#~ msgid "Brand deleted successfully from the database"
+#~ msgstr "Marque supprimée avec succès"
+
+#~ msgid "Brands Management"
+#~ msgstr "Gestion des marques"
+
+#~ msgid "ALL"
+#~ msgstr "ALL"
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid "WHAT ARE YOU SHOPPING FOR?"
+#~ msgstr "QUE VOULEZ-VOUS ACHETER ?"
+
+#~ msgid "SEARCH"
+#~ msgstr "RECHERCHER"
+
+#~ msgid "Google Buzz"
+#~ msgstr "Google Buzz"
+
+#~ msgid "Yahoo Buzz"
+#~ msgstr "Yahoo Buzz"
+
+#~ msgid "You entered an invalid email address"
+#~ msgstr "Adresse e-mail invalide"
+
+#~ msgid "Please enter your message"
+#~ msgstr "Veuillez entrer votre message"
+
+#~ msgid "Text shadow"
+#~ msgstr "Ombre du texte"
+
+#~ msgid "Enable sharing to Google Buzz"
+#~ msgstr "Activer le partage avec Google Buzz"
+
+#~ msgid "Check this box to enable post sharing to Google Buzz."
+#~ msgstr "Cocher cette case pour activer le partage via Google Buzz"
+
+#~ msgid "Enable sharing to Yahoo Buzz"
+#~ msgstr "Activer le partage avec Yahoo Buzz"
+
+#~ msgid "Check this box to enable post sharing to Yahoo Buzz."
+#~ msgstr "Cocher cette case pour activer le partage via Yahoo Buzz"
+
+#~ msgid "Homepage 300x250 Ad"
+#~ msgstr "Homepage 300x250 Ad"
+
+#~ msgid "Homepage 300x600 Ad"
+#~ msgstr "Homepage 300x600 Ad"
+
+#~ msgid "Homepage 728x90 Ad"
+#~ msgstr "Homepage 728x90 Ad"
+
+#~ msgid ""
+#~ "Import process will create posts, categories, brands and retailers in the "
+#~ "database"
+#~ msgstr ""
+#~ "Le processus d'import va ajouter les articles, categories, marques et "
+#~ "revendeurs a la base de données."
+
+#~ msgid "Product full name required"
+#~ msgstr "Nom du produit requis"
+
+#~ msgid "Manage products"
+#~ msgstr "Gérer les produits"
+
+#~ msgid ""
+#~ "Copy the content of the following textpane in your text editor and use "
+#~ "the .csv extension"
+#~ msgstr ""
+#~ "Copiez le contenu du champs de texte suivant dans votre éditeur et "
+#~ "enregistrer le fichier avec l'extension .csv"
+
+#~ msgid "File successfully uploaded"
+#~ msgstr "Fichier uploadé avec succès"
+
+#~ msgid "Upload the feed"
+#~ msgstr "Uploader le cataogue"
+
+#~ msgid "Upload your feed in CSV format on the server"
+#~ msgstr "Uploadez votre catalogue de produit au format CSV sur le serveur"
+
+#~ msgid "Import products from the feed into the database"
+#~ msgstr "Importe les produits du fichier CSV vers la base de données"
+
+#~ msgid "Download the feed"
+#~ msgstr "Télecharger le catalogue"
+
+#~ msgid "Download the feed on your computer in order to edit it manually"
+#~ msgstr ""
+#~ "Télécharge le catalogue de produits sur votre ordinateur dans le but de "
+#~ "l'éditer manuellement"
+
+#~ msgid "Availability"
+#~ msgstr "Disponibilité"
+
+#~ msgid "Product availability"
+#~ msgstr "Disponibilité"
+
+#~ msgid "Image support for taxonomies successfully updated"
+#~ msgstr "Le support des images pour la taxonomie mis a jour"
+
+#~ msgid "Image support has been disabled for all taxonomies."
+#~ msgstr "Le support des images a été désactivé pour toutes les taxonomies."
+
+#~ msgid "term"
+#~ msgstr "terme"
+
+#~ msgid "Associate an image with the %1$s named &#8220;%2$s&#8221;."
+#~ msgstr "Associer l'image avec le %1$s &#8220;%2$s&#8221;."
+
+#~ msgid "Upload a new image for this %s."
+#~ msgstr "Uploader une nouvelle image pour %s"
+
+#~ msgid "Remove image from this %s."
+#~ msgstr "Supprimer l'image de %s"
+
+#~ msgid "Settings"
+#~ msgstr "Réglages"
+
+#~ msgid "Donate"
+#~ msgstr "Donation"
+
+#~ msgid "Manage Settings"
+#~ msgstr "Réglages"
+
+#~ msgid "No merchant found"
+#~ msgstr "Pas de marchand trouvé"
+
+#~ msgid "Merchant"
+#~ msgstr "Marchand"
+
+#~ msgid "Delete Product Merchant"
+#~ msgstr "Effacer l'association produit/marchand"
+
+#~ msgid "Product Merchant successfully deleted"
+#~ msgstr "Association produit/marchand supprimée avec succès"
+
+#~ msgid "Merchant name is required"
+#~ msgstr "Nom du marchand requis"
+
+#~ msgid "Merchant successfully updated"
+#~ msgstr "Marchand supprimé avec succès"
+
+#~ msgid "Existing merchants"
+#~ msgstr "Marchands existants"
+
+#~ msgid ""
+#~ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nulla "
+#~ "libero, luctus a vulputate eget, euismod vitae diam. In malesuada "
+#~ "tristique ipsum, non rhoncus velit congue ac. Proin vitae lacus nec massa "
+#~ "hendrerit fringilla."
+#~ msgstr ""
+#~ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nulla "
+#~ "libero, luctus a vulputate eget, euismod vitae diam. In malesuada "
+#~ "tristique ipsum, non rhoncus velit congue ac. Proin vitae lacus nec massa "
+#~ "hendrerit fringilla."
+
+#~ msgid ""
+#~ "You have a problem or a question? Start by reading the documentation or "
+#~ "contact us via our support forum right now."
+#~ msgstr ""
+#~ "Vous avez un problème ou une question? Commencez par lire la "
+#~ "documentation ou contactez nous grâce à notre forum de support dès "
+#~ "maintenant."
+
+#~ msgid ""
+#~ "Compare + is an amazing plugin for Compare which add a lot of features "
+#~ "and allows you to manage and import affiliate product feeds. Give to your "
+#~ "price comparison website another dimension with Compare + !"
+#~ msgstr ""
+#~ "Compare + est un superbe plugin pour Compare qui ajoute de nouvelles "
+#~ "fonctionnalités et vous permet de gérer et importer les catalogues de "
+#~ "produits en provenance des plateformes d'affiliation. Donnez à votre site "
+#~ "une autre dimension avec Compare + !"
+
+#~ msgid "Merchant successfully added to the database"
+#~ msgstr "Marchand ajouté avec succès"
+
+#~ msgid "Add merchant"
+#~ msgstr "Ajouter un marchand"
+
+#~ msgid "View Merchants"
+#~ msgstr "Voir les marchands"
+
+#~ msgid "Use this form to add a new merchant to the database"
+#~ msgstr ""
+#~ "Utilisez ce formulaire pour ajouter un nouveau marchand à la base de "
+#~ "données"
+
+#~ msgid "Merchant name"
+#~ msgstr "Nom du marchand"
+
+#~ msgid "Merchant slug"
+#~ msgstr "Slug du marchand"
+
+#~ msgid "Merchant URL"
+#~ msgstr "URL du marchand"
+
+#~ msgid "Merchant image"
+#~ msgstr "Image du marchand"
+
+#~ msgid "Add New Merchant"
+#~ msgstr "Nouveau marchand"
+
+#~ msgid "Merchant successfully updated in the database"
+#~ msgstr "Marchand mis à jour"
+
+#~ msgid "Merchant not found."
+#~ msgstr "Marchand non trouvé"
+
+#~ msgid "Edit merchant"
+#~ msgstr "Editer le marchand"
+
+#~ msgid "Use this form to edit the merchant"
+#~ msgstr "Utilisez ce formulaire pour éditer un marchand"
+
+#~ msgid "Current merchant image"
+#~ msgstr "Image actuelle"
+
+#~ msgid "Merchant deleted successfully from the database"
+#~ msgstr "Marchand supprimé avec succès"
+
+#~ msgid "Merchant not found"
+#~ msgstr "Marchand non trouvé"
+
+#~ msgid "Merchants Management"
+#~ msgstr "Gestion des marchands"
+
+#~ msgid "Add new merchant"
+#~ msgstr "Nouveau marchand"
+
+#~ msgid "Merchant management"
+#~ msgstr "Gestion des marchands"
+
+#~ msgid "Manage Merchants"
+#~ msgstr "Gérer les marchands"
+
+#~ msgid "Invalid URL"
+#~ msgstr "URL invalide"
+
+#~ msgid "Merchant page"
+#~ msgstr "Page du marchand"
+
+#~ msgid "Associate a merchant"
+#~ msgstr "Associer  un marchand"
+
+#~ msgid "Merchants"
+#~ msgstr "Marchands"
+
+#~ msgid "Manage merchants"
+#~ msgstr "Gestion des marchands"
+
+#~ msgid "On"
+#~ msgstr "Le"
+
+#~ msgid "A widget that displays your YouTube Video."
+#~ msgstr "Un widget qui affiche une vidéo YouTube"
+
+#~ msgid "Homepage Screencast Widget"
+#~ msgstr "Homepage Screencast Widget"
+
+#~ msgid "YouTube Link:"
+#~ msgstr "Lien YouTube:"
+
+#~ msgid "Thumbnail (best at 290px wide):"
+#~ msgstr "Thumbnail (optimisé pour 290px de largeur)"
+
+#~ msgid ""
+#~ "A widget that displays your latest screenshots (with lightbox effect)."
+#~ msgstr ""
+#~ "Un widget qui affiche vos derniers screenshots (avec un effet lightbox)"
+
+#~ msgid "Homepage Screenshots Widget"
+#~ msgstr "Homepage Screenshots Widget"
+
+#~ msgid "Screenshot #1:"
+#~ msgstr "Screenshot #1:"
+
+#~ msgid "Thumbnail #1:"
+#~ msgstr "Thumbnail #1:"
+
+#~ msgid "Screenshot #2:"
+#~ msgstr "Screenshot #2:"
+
+#~ msgid "Thumbnail #2:"
+#~ msgstr "Thumbnail #2:"
+
+#~ msgid "Screenshot #3:"
+#~ msgstr "Screenshot #3:"
+
+#~ msgid "Thumbnail #3:"
+#~ msgstr "Thumbnail #3:"
+
+#~ msgid "Screenshot #4:"
+#~ msgstr "Screenshot #4:"
+
+#~ msgid "Thumbnail #4:"
+#~ msgstr "Thumbnail #4:"
+
+#~ msgid ""
+#~ "Compare is a price comparison theme with basic product management system. "
+#~ "For more features, have a look to Compare +, the advanced price "
+#~ "comparison plugin for affiliate product feed management."
+#~ msgstr ""
+#~ "Compare est thème permettant la comparaison de prix et une gestion "
+#~ "basique des produits. Pour plus de fonctionnalités, jetez un oeil à "
+#~ "GoGompare +, le plugin de comparaison de prix avancée avec la gestion des "
+#~ "catalogues de produits des plateformes d'affiliation."
+
+#~ msgid "Edit The Merchant"
+#~ msgstr "Editer le marchand"
+
+#~ msgid "Global Settings"
+#~ msgstr "Réglages généraux"
+
+#~ msgid "New merchant"
+#~ msgstr "Nouveau marchand"
+
+#~ msgid "Voucher if any"
+#~ msgstr "Code de réduction si disponible"

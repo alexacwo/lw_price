@@ -1,0 +1,1879 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GoCompare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-09 12:35-0000\n"
+"PO-Revision-Date: 2015-03-09 12:35-0000\n"
+"Last-Translator: T\n"
+"Language-Team: AWESEM Limited\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:7
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:10
+msgid "We are really sorry, but the page you requested cannot be found."
+msgstr ""
+
+#: archive.php:15 functions/views/frontend/content-breadcrumb.php:159
+#, php-format
+msgid "All posts in %s"
+msgstr ""
+
+#: archive.php:17 functions/views/frontend/content-breadcrumb.php:163
+#, php-format
+msgid "All posts tagged %s"
+msgstr ""
+
+#: archive.php:19 archive.php:21 archive.php:23
+#: functions/views/frontend/content-breadcrumb.php:167
+#: functions/views/frontend/content-breadcrumb.php:171
+#: functions/views/frontend/content-breadcrumb.php:175
+msgid "Archive for"
+msgstr ""
+
+#: archive.php:25 functions/views/frontend/content-breadcrumb.php:183
+msgid "All posts by"
+msgstr ""
+
+#: archive.php:27
+msgid "Blog archives"
+msgstr ""
+
+#: archive.php:35 home.php:12 index.php:12 page.php:12 single.php:12
+#: template-full-width.php:17
+msgid "Written by"
+msgstr ""
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+msgid "No comments"
+msgstr ""
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+msgid "1 comment"
+msgstr ""
+
+#: archive.php:37 home.php:14 index.php:14 page.php:14 single.php:14
+#: template-full-width.php:19
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: archive.php:57 home.php:34
+msgid "Read more"
+msgstr ""
+
+#: comments.php:46
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:47
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:48
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:78 functions/views/admin/merchants_management.php:339
+#: functions/views/admin/merchants_management.php:350
+#: functions/views/frontend/content-single-product-reviews-template.php:71
+msgid "Name"
+msgstr ""
+
+#: comments.php:96
+msgid "Email"
+msgstr ""
+
+#: comments.php:114
+msgid "Website"
+msgstr ""
+
+#: comments.php:137
+msgid "Comment"
+msgstr ""
+
+#: footer.php:38
+msgid "Powered by"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:13
+msgid "Feed management"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:13
+msgid "Manage Feed"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:14
+msgid "Product management"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:14
+msgid "Manage Products"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:15
+msgid "Retailer management"
+msgstr ""
+
+#: functions/classes/class_aw_products_management.php:15
+msgid "Manage Retailers"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:132
+#: functions/classes/class_aw_theme_options.php:158
+msgid "I confirm I want to reset"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:133
+msgid ""
+"I know this action cannot be reversed and that the blog layout might change."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:134
+#: functions/classes/class_aw_theme_options.php:160
+msgid "I have backed up my database and want to continue."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:159
+msgid ""
+"I know this action cannot be reversed and that I might loose data that I "
+"have manually added to the blog."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:340
+msgid "Settings have been reset to factory settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:451
+msgid "selected"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:460
+msgid "Logo and Favicon Settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:464
+msgid "Upload Logo"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:471
+msgid "Enable plain text logo"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:472
+msgid ""
+"Check this box to use a plain text logo rather than an image. Info will be "
+"taken from your WordPress settings."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:477
+msgid "Upload Favicon"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:484
+msgid "Upload Apple Touch Icon (.png)"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:495
+msgid "Analytics Settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:499
+msgid "Google Analytics Code"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:500
+msgid ""
+"Enter your full Google Analytics code (or any other site tracking code) "
+"here. It will be inserted before the closing head tag."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:509
+msgid "AdSense Settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:513
+msgid "Enable ad sense for products with no retailers"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:514
+msgid "Check this box to use google ad sense on products with no retailers."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:519
+msgid "Google AdSense Client ID"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:520
+msgid "Enter your ad sense client id."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:529
+msgid "Footer advertising area"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:533
+msgid "Leaderboard"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:534
+msgid "Enter your leaderboard ad code."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:547
+#: functions/views/admin/theme-options.php:20
+msgid "Price Comparison"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:551
+msgid "Currency Options"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:552
+msgid ""
+"Paste each currency you wish to use in this text area. Please use a new line "
+"for each currency and use the example format ([Left|Right], Code, Symbol, "
+"Decimal Places, [Comma Format]): Left, USD, $, 2, [3,3,3,3]"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:557
+msgid "Display Currency"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:563
+msgid "Buy button text"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:564
+msgid "Text used on the button in the price comparison table"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:569
+msgid "Date format"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:570
+msgid "Documentation on date and time formatting"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:583
+msgid "Main menu"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:587
+msgid "Menu elements"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:592
+msgid "Submenu elements"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:601
+msgid "Gradient #1 Settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:605
+#: functions/classes/class_aw_theme_options.php:623
+msgid "Color #1"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:610
+#: functions/classes/class_aw_theme_options.php:628
+msgid "Color #2"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:619
+msgid "Gradient #2 Settings"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:637
+msgid "Footer"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:641
+msgid "Footer Background"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:646
+msgid "Footer Header"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:651
+msgid "Footer Text"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:660
+#: functions/classes/class_aw_theme_options.php:664
+msgid "Background"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:681
+msgid "Default result layout style"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:682
+msgid "Choose between grid or list ."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:686
+msgid "Grid Layout"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:686
+msgid "List Layout"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:692
+msgid "Product detail page"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:696
+msgid ""
+"Check this box to force show comparison table on product page even if there "
+"is just one retailer"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:701
+msgid ""
+"Check this box to open product deeplinks in the same window or leave it "
+"unchecked to open deeplink in new window"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:706
+msgid "Check this box to disallow shortcodes in product description"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:711
+msgid "Check this box to disallow html tags in product description"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:716
+msgid "Check this box to disallow reviews for products"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:721
+msgid "Check this box to disallow related products"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:726
+msgid "Number of related products to display"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:736
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:13
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:24
+msgid "Products"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:740
+msgid "Categories URL slug"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:741
+msgid "Categories URL slug MUST BE different from product URL slug."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:741
+#: functions/classes/class_aw_theme_options.php:747
+#: functions/classes/class_aw_theme_options.php:753
+#: functions/classes/class_aw_theme_options.php:759
+msgid "Visit this page after any change"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:746
+msgid "Brands URL slug"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:747
+msgid "Brands URL slug MUST BE different from product URL slug."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:752
+msgid "Product URL slug"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:753
+msgid "Product URL slug MUST BE different from categories and brands URL slug."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:758
+msgid "Allow short product URLs"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:759
+msgid ""
+"Allow Compare to have short URLs instead of the /%category%/%brand%/"
+"%product_name%/ pattern"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:763
+msgid "YES"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:763
+msgid "NO"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:765
+msgid "Products per comparison table page"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:771
+msgid "Default product order by"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:772
+msgid ""
+"Which the field products should be sorted by, by default, users may select "
+"their own sorting afterwards."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:776
+msgid "Minimum Price"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:776
+msgid "Title"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:776
+msgid "Date added"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:779
+msgid "Default product order"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:780
+msgid "Ascending or Descending."
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:784
+msgid "Ascending"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:784
+msgid "Descending"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:794
+msgid "Social Network URLs"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:798
+msgid "Twitter"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:799
+msgid "Please enter your Twitter public profile URL"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:804
+msgid "Facebook"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:805
+msgid "Please enter your Facebook public profile URL"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:810
+msgid "RSS"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:811
+msgid "Please enter your RSS feed URL"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:816
+msgid "Tumblr"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:817
+msgid "Please enter your Tumblr public profile URL"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:822
+msgid "Pinterest"
+msgstr ""
+
+#: functions/classes/class_aw_theme_options.php:823
+msgid "Please enter your Pinterest public profile URL"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:14
+msgid "Product"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:15
+msgid "Add new"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:16
+#: functions/views/admin/products_management.php:513
+msgid "Add new product"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:17
+#: functions/views/admin/merchants_management.php:387
+#: functions/views/admin/products_management.php:405
+msgid "Edit"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:18
+msgid "New product"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:19
+msgid "View product"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:20
+#: functions/views/admin/products_management.php:557
+msgid "Search product"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:21
+msgid "No product found"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:22
+msgid "No product found in trash"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:106
+msgid "Product image"
+msgstr ""
+
+#: functions/classes/custom_post_types/class_aw_products_post_type.php:107
+#: functions/views/admin/products_management.php:350
+#: functions/views/admin/products_management.php:366
+msgid "Product description"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:23
+msgid "Product brands"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:24
+msgid "Product brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:25
+msgid "Search a brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:26
+msgid "All brands"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:27
+msgid "Parent brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:28
+msgid "Parent brand:"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:29
+msgid "Edit brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:30
+msgid "Update brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:31
+msgid "Add new brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:32
+msgid "New brand"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:33
+#: functions/classes/widgets/widget-sidebar-product-search.php:389
+msgid "Brands"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:84
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:94
+msgid "Brand website"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:86
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:97
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:82
+msgid "Use full URL (with http://)"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:207
+msgid "Brand image"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:210
+msgid "Consider uploading an image of 150x100px"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_brand_taxonomy.php:229
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:156
+#: functions/views/admin/merchants_management.php:338
+#: functions/views/admin/merchants_management.php:349
+#: functions/views/admin/products_management.php:584
+#: functions/views/admin/products_management.php:597
+msgid "Image"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:18
+msgid "Product categories"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:19
+msgid "Product category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:20
+msgid "Search a category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:21
+msgid "All categories"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:22
+msgid "Parent category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:23
+msgid "Parent category:"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:24
+msgid "Edit category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:25
+msgid "Update category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:26
+msgid "Add new category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:27
+msgid "New category"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:28
+#: functions/classes/widgets/widget-sidebar-product-search.php:365
+#: functions/views/admin/products_management.php:585
+#: functions/views/admin/products_management.php:598
+msgid "Categories"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:79
+msgid "Icon URL"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:87
+msgid "Category image"
+msgstr ""
+
+#: functions/classes/custom_taxonomies/class_aw_product_category_taxonomy.php:90
+msgid "Consider uploading an image of 250x150px"
+msgstr ""
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:21
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:24
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:9
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:31
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions/classes/walkers/class_aw_walker_comment_gumby.php:31
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:12
+msgid "(Edit)"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-brands.php:35
+msgid "A widget that displays product brands on homepage."
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-brands.php:41
+msgid "COMPARE: Homepage Brands"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-brands.php:127
+#: functions/classes/widgets/widget-homepage-categories.php:135
+#: functions/classes/widgets/widget-homepage-products.php:144
+msgid "Widget Title:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-categories.php:35
+msgid "A widget that displays product categories on homepage."
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-categories.php:41
+msgid "COMPARE: Homepage Categories Widget"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-products.php:35
+msgid "A widget that displays products on homepage."
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-products.php:41
+msgid "COMPARE: Homepage Products Widget"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-products.php:89
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:117
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:117
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:119
+msgid "from"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-products.php:98
+#, php-format
+msgid " (Available from %s retailers)"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:35
+msgid "A widget that displays a text for SEO purposes on homepage."
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:41
+msgid "COMPARE: Custom Homepage SEO Text Widget"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:122
+msgid "SEO Title:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-seo-text.php:128
+msgid "SEO Text:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:37
+msgid "A widget that displays a slider on homepage."
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:43
+msgid "COMPARE: Homepage Slider Widget"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:173
+msgid "Delay between Images (ms):"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:179
+msgid "Navigation:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:187
+msgid "Pagination:"
+msgstr ""
+
+#: functions/classes/widgets/widget-homepage-slider.php:196
+msgid "Pause on Hover:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:34
+msgid "A widget that allows the integration of a sidebar search module."
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:40
+msgid "COMPARE: Sidebar Product Search"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:77
+msgid "Search..."
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:113
+#: functions/classes/widgets/widget-sidebar-product-search.php:150
+#: functions/classes/widgets/widget-sidebar-product-search.php:267
+msgid "Sort By"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:400
+msgid "Price range:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:411
+msgid "Filter"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:502
+msgid "Title:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:508
+msgid "Min price:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:517
+msgid "Max price:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:526
+msgid "Step:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:531
+msgid "Hide widget sections:"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:532
+msgid "Search box"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:533
+msgid "Brands select box "
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:534
+msgid "Categories select box"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:535
+msgid "Price Slider"
+msgstr ""
+
+#: functions/classes/widgets/widget-sidebar-product-search.php:536
+msgid "Filter Button"
+msgstr ""
+
+#: functions/other.php:203
+#, php-format
+msgid "%s Review"
+msgstr ""
+
+#: functions/other.php:205
+#, php-format
+msgid "%s Reviews"
+msgstr ""
+
+#: functions/other.php:441 functions/other.php:499
+#: functions/views/frontend/content-listing-options.php:46
+#: single-product.php:16 taxonomy-product_category.php:19
+msgid "More"
+msgstr ""
+
+#: functions/other.php:1412 functions/other.php:1416 functions/other.php:1421
+msgid "Compare price comparison theme requires custom permalinks structure."
+msgstr ""
+
+#: functions/other.php:1412 functions/other.php:1416 functions/other.php:1421
+msgid "Enable permalinks here."
+msgstr ""
+
+#: functions/shortcodes.php:86
+msgid "No merchant"
+msgstr ""
+
+#: functions/shortcodes.php:88
+msgid "1 merchant"
+msgstr ""
+
+#: functions/shortcodes.php:90
+msgid "merchants"
+msgstr ""
+
+#: functions/shortcodes.php:93
+#: functions/views/frontend/content-single-product-price-header.php:11
+#: functions/views/frontend/content-single-product-price-header.php:52
+msgid "From"
+msgstr ""
+
+#: functions/shortcodes.php:100
+#: functions/views/frontend/content-price-table.php:80
+#: functions/views/frontend/content-single-product-price-header.php:29
+msgid "BUY NOW"
+msgstr ""
+
+#: functions/views/admin/home.php:94
+msgid "Compare - Premium Price Comparison Theme"
+msgstr ""
+
+#: functions/views/admin/home.php:201
+msgid ""
+"If you have any questions or problems, please read the documentation or "
+"contact us."
+msgstr ""
+
+#: functions/views/admin/home.php:207
+#: functions/views/admin/theme-options.php:3
+msgid "Theme Options"
+msgstr ""
+
+#: functions/views/admin/home.php:208
+msgid ""
+"Compare has extensive theme options to change the logo, header banner, "
+"tracking code, currency, colours and background pattern."
+msgstr ""
+
+#: functions/views/admin/home.php:208
+msgid "Customise your theme"
+msgstr ""
+
+#: functions/views/admin/home.php:214
+msgid "Support &amp; Contact"
+msgstr ""
+
+#: functions/views/admin/home.php:215
+msgid ""
+"We included detailed theme documentation and in case you still encounter "
+"problems please contact us using our Helpdesk."
+msgstr ""
+
+#: functions/views/admin/home.php:215
+msgid "Visit our support area"
+msgstr ""
+
+#: functions/views/admin/home.php:222
+msgid ""
+"Give your price comparison website another dimension and add XML/CSV product "
+"feed capabilities and utilise another set of additional features."
+msgstr ""
+
+#: functions/views/admin/home.php:222
+msgid "More about Compare +"
+msgstr ""
+
+#: functions/views/admin/home.php:229
+msgid "What to do next ?"
+msgstr ""
+
+#: functions/views/admin/home.php:231
+#, php-format
+msgid "%1$sCreate your homepage%2$s and %3$sset it up as your front page%4$s"
+msgstr ""
+
+#: functions/views/admin/home.php:233
+#, php-format
+msgid "%1$sCreate your blog page%2$s and %3$sset it up as your posts page%4$s"
+msgstr ""
+
+#: functions/views/admin/home.php:235
+#, php-format
+msgid ""
+"%1$sSetup your permalink structure%2$s as explained in the documentation"
+msgstr ""
+
+#: functions/views/admin/home.php:237
+#, php-format
+msgid "%1$sAdd some widgets%2$s to your homepage, your sidebar and your footer"
+msgstr ""
+
+#: functions/views/admin/home.php:239
+#, php-format
+msgid ""
+"%1$sImport products%2$s or manage them from the %3$sproduct management%4$s "
+"panel"
+msgstr ""
+
+#: functions/views/admin/home.php:241
+#, php-format
+msgid ""
+"Customise %1$sRetailers%2$s, %3$sBrands%4$s or %5$sProduct Categories%6$s"
+msgstr ""
+
+#: functions/views/admin/home.php:247
+msgid "Check database tables existence"
+msgstr ""
+
+#: functions/views/admin/home.php:292
+msgid "Check folder permissions"
+msgstr ""
+
+#: functions/views/admin/home.php:332
+msgid "Visit us on ThemeForest"
+msgstr ""
+
+#: functions/views/admin/home.php:333
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:39
+#: functions/views/admin/products_management.php:121
+msgid "Retailer name is required"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:40
+#: functions/views/admin/merchants_management.php:125
+msgid "Slug is already used, please choose another one"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:55
+msgid "Retailer successfully added to database"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:61
+#: functions/views/admin/products_management.php:494
+msgid "Add retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:65
+#: functions/views/admin/merchants_management.php:169
+#: functions/views/admin/merchants_management.php:269
+#: functions/views/admin/merchants_management.php:303
+#: functions/views/admin/merchants_management.php:309
+#: functions/views/admin/merchants_management.php:316
+msgid "View Retailers"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:68
+msgid "Use this form to add a new retailer to the database"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:81
+#: functions/views/admin/merchants_management.php:186
+#: functions/views/admin/products_management.php:346
+#: functions/views/admin/products_management.php:362
+msgid "Retailer name"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:85
+#: functions/views/admin/merchants_management.php:190
+msgid "Retailer slug"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:88
+msgid "(slug will be automatically generated if the field is empty)"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:92
+#: functions/views/admin/merchants_management.php:197
+msgid "Retailer URL"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:97
+#: functions/views/admin/merchants_management.php:201
+msgid "Retailer logo"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:101
+msgid "Upload image with 150x100 pixels"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:107
+msgid "Add New Retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:147
+msgid "Retailer successfully updated in the database"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:158
+msgid "Retailer not found."
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:164
+msgid "Edit retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:173
+msgid "Use this form to edit the retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:193
+msgid "(slug will be automatically generated if empty)"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:207
+msgid "Current retailer logo"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:220
+#: functions/views/admin/products_management.php:421
+msgid "Save"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:262
+#: functions/views/admin/merchants_management.php:275
+msgid "Retailer deletion"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:265
+msgid "One or more retailer has not been deleted"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:267
+msgid "Retailers deleted successfully from database"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:302
+msgid "Retailer deleted successfully from database"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:308
+msgid "This retailer cannot be deleted because it has been created by a feed"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:315
+msgid "Retailer not found"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:323
+msgid "Retailer Management"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:323
+msgid "Add new retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:327
+#: functions/views/admin/merchants_management.php:399
+#: functions/views/admin/products_management.php:564
+#: functions/views/admin/products_management.php:716
+msgid "Bulk Actions"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:328
+#: functions/views/admin/merchants_management.php:389
+#: functions/views/admin/merchants_management.php:400
+#: functions/views/admin/products_management.php:405
+#: functions/views/admin/products_management.php:565
+#: functions/views/admin/products_management.php:717
+msgid "Delete"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:330
+#: functions/views/admin/merchants_management.php:402
+#: functions/views/admin/products_management.php:567
+#: functions/views/admin/products_management.php:719
+msgid "Apply"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:340
+#: functions/views/admin/merchants_management.php:351
+msgid "Slug"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:341
+#: functions/views/admin/merchants_management.php:352
+msgid "URL"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:342
+#: functions/views/admin/merchants_management.php:353
+#: functions/views/admin/products_management.php:356
+#: functions/views/admin/products_management.php:372
+#: functions/views/admin/products_management.php:589
+#: functions/views/admin/products_management.php:602
+msgid "Actions"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:366
+#: functions/views/admin/products_management.php:384
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:135
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:123
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:136
+msgid "No retailer"
+msgstr ""
+
+#: functions/views/admin/merchants_management.php:389
+#: functions/views/admin/products_management.php:405
+msgid "Are you sure ?"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:15
+msgid "Import Product Feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:17
+msgid ""
+"Import process will insert posts, categories, brands and retailers into the "
+"database"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:81
+#: functions/views/admin/products_feed.php:87
+#: functions/views/admin/products_feed.php:93
+#: functions/views/admin/products_feed.php:174
+#: functions/views/admin/products_feed.php:209
+#: functions/views/admin/products_feed.php:254
+#: functions/views/admin/products_feed.php:260
+msgid "Line"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:81
+msgid "No category detected"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:87
+msgid "No brand detected"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:93
+msgid "Full product name required"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:174
+msgid "created"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:174
+#: functions/views/admin/products_feed.php:209
+msgid ", no retailer information was supplied"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:209
+msgid "updated"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:254
+msgid "Retail price must be a number"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:260
+msgid "Retailer product link required"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:340
+msgid "Import finished"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:343
+msgid "File not found"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:350
+msgid "Feed Management"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:402
+msgid "Export Feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:403
+msgid ""
+"Copy the content from the textpane below into your text editor and save as "
+"a .csv file"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:427
+msgid "File successfully uploaded, you can now import products into WordPress"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:434
+msgid "Upload failed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:441
+msgid "Products Feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:470
+#: functions/views/admin/products_feed.php:492
+msgid "Import"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:473
+msgid "Step 1: Upload feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:474
+msgid "Upload your manual CSV feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:474
+msgid "sample file"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:479
+msgid "Last upload:"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:479
+#: functions/views/admin/products_feed.php:493
+msgid "Never"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:482
+msgid "Step 2: Import products"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:483
+msgid "Import products from the feed into WordPress"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:486
+msgid "Semicolon"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:487
+msgid "Comma"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:488
+msgid "Pipe"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:489
+msgid "Tab"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:490
+msgid "Choose delimiter"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:493
+msgid "Last import :"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:497
+msgid "Export"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:500
+msgid "Download feed"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:501
+msgid "Download feed to your computer in order to edit it manually"
+msgstr ""
+
+#: functions/views/admin/products_feed.php:502
+msgid "Download"
+msgstr ""
+
+#: functions/views/admin/products_management.php:34
+msgid "Delete Product"
+msgstr ""
+
+#: functions/views/admin/products_management.php:37
+msgid "Product successfully deleted"
+msgstr ""
+
+#: functions/views/admin/products_management.php:38
+#: functions/views/admin/products_management.php:77
+msgid "View Products"
+msgstr ""
+
+#: functions/views/admin/products_management.php:73
+msgid "Delete Products"
+msgstr ""
+
+#: functions/views/admin/products_management.php:76
+msgid "Products successfully deleted"
+msgstr ""
+
+#: functions/views/admin/products_management.php:96
+msgid "Delete Product Retailer"
+msgstr ""
+
+#: functions/views/admin/products_management.php:99
+msgid "Product Retailer successfully deleted"
+msgstr ""
+
+#: functions/views/admin/products_management.php:100
+msgid "View Product"
+msgstr ""
+
+#: functions/views/admin/products_management.php:122
+#: functions/views/admin/products_management.php:183
+#: functions/views/admin/products_management.php:235
+msgid "Not numeric"
+msgstr ""
+
+#: functions/views/admin/products_management.php:123
+#: functions/views/admin/products_management.php:184
+msgid "Price required"
+msgstr ""
+
+#: functions/views/admin/products_management.php:126
+#: functions/views/admin/products_management.php:187
+msgid "Product URL required"
+msgstr ""
+
+#: functions/views/admin/products_management.php:132
+msgid "Product Image URL required"
+msgstr ""
+
+#: functions/views/admin/products_management.php:168
+msgid "Retailer successfully added to this product"
+msgstr ""
+
+#: functions/views/admin/products_management.php:218
+msgid "Retailer successfully updated"
+msgstr ""
+
+#: functions/views/admin/products_management.php:246
+msgid "Display order successfully updated"
+msgstr ""
+
+#: functions/views/admin/products_management.php:255
+#: functions/views/admin/products_management.php:513
+msgid "Products Management"
+msgstr ""
+
+#: functions/views/admin/products_management.php:281
+msgid "Product Information"
+msgstr ""
+
+#: functions/views/admin/products_management.php:288
+msgid "No image"
+msgstr ""
+
+#: functions/views/admin/products_management.php:294
+msgid "ID:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:295
+msgid "Categories:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:304
+msgid "Brand:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:313
+msgid "Full name:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:314
+msgid "Display order:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:319
+msgid "Change Display Order"
+msgstr ""
+
+#: functions/views/admin/products_management.php:332
+msgid ""
+"This must be numeric.  Setting this to 0 means it will always appear at the "
+"top of the results for all order types, after this the lower the number the "
+"higher up the list it will be for the default ordering setting."
+msgstr ""
+
+#: functions/views/admin/products_management.php:336
+msgid "Save Display Order"
+msgstr ""
+
+#: functions/views/admin/products_management.php:340
+msgid "Existing retailers"
+msgstr ""
+
+#: functions/views/admin/products_management.php:348
+#: functions/views/admin/products_management.php:364
+msgid "Product title"
+msgstr ""
+
+#: functions/views/admin/products_management.php:351
+#: functions/views/admin/products_management.php:367
+msgid "Product Image"
+msgstr ""
+
+#: functions/views/admin/products_management.php:352
+#: functions/views/admin/products_management.php:368
+#: functions/views/frontend/content-price-table.php:24
+#: functions/views/frontend/content-single-product-price-header.php:27
+msgid "Price"
+msgstr ""
+
+#: functions/views/admin/products_management.php:353
+#: functions/views/admin/products_management.php:369
+msgid "Shipping"
+msgstr ""
+
+#: functions/views/admin/products_management.php:354
+#: functions/views/admin/products_management.php:370
+msgid "Voucher"
+msgstr ""
+
+#: functions/views/admin/products_management.php:355
+#: functions/views/admin/products_management.php:371
+msgid "Deeplink"
+msgstr ""
+
+#: functions/views/admin/products_management.php:404
+msgid "Retailer site"
+msgstr ""
+
+#: functions/views/admin/products_management.php:436
+msgid "Associate another retailer with this product"
+msgstr ""
+
+#: functions/views/admin/products_management.php:437
+msgid "Use this form to add an existing retailer to this product."
+msgstr ""
+
+#: functions/views/admin/products_management.php:437
+msgid "Click here to"
+msgstr ""
+
+#: functions/views/admin/products_management.php:437
+msgid "create new retailer"
+msgstr ""
+
+#: functions/views/admin/products_management.php:441
+msgid "Choose retailer"
+msgstr ""
+
+#: functions/views/admin/products_management.php:453
+msgid "Product price"
+msgstr ""
+
+#: functions/views/admin/products_management.php:456
+msgid "Must be a numeric value (eg: 99 or 99.99 or 99,99)"
+msgstr ""
+
+#: functions/views/admin/products_management.php:461
+msgid "Shipping cost"
+msgstr ""
+
+#: functions/views/admin/products_management.php:464
+msgid "A numeric value or a something like \"Free delivery\"."
+msgstr ""
+
+#: functions/views/admin/products_management.php:469
+msgid "Voucher Code"
+msgstr ""
+
+#: functions/views/admin/products_management.php:472
+msgid ""
+"A code that you can use to redeem a discount when you reach the checkout"
+msgstr ""
+
+#: functions/views/admin/products_management.php:477
+msgid "Retailer product page URL"
+msgstr ""
+
+#: functions/views/admin/products_management.php:480
+msgid "Full URL, with \"http://\""
+msgstr ""
+
+#: functions/views/admin/products_management.php:485
+msgid "Retailer product image URL"
+msgstr ""
+
+#: functions/views/admin/products_management.php:488
+msgid "Full Product Image URL, with \"http://\""
+msgstr ""
+
+#: functions/views/admin/products_management.php:502
+msgid "Product not found"
+msgstr ""
+
+#: functions/views/admin/products_management.php:549
+msgid "All"
+msgstr ""
+
+#: functions/views/admin/products_management.php:554
+msgid "Search product:"
+msgstr ""
+
+#: functions/views/admin/products_management.php:583
+#: functions/views/admin/products_management.php:596
+msgid "PID"
+msgstr ""
+
+#: functions/views/admin/products_management.php:586
+#: functions/views/admin/products_management.php:599
+msgid "Brand"
+msgstr ""
+
+#: functions/views/admin/products_management.php:587
+#: functions/views/admin/products_management.php:600
+msgid "Product name"
+msgstr ""
+
+#: functions/views/admin/products_management.php:588
+#: functions/views/admin/products_management.php:601
+#: functions/views/frontend/content-single-product-shortlinks.php:11
+msgid "Retailers"
+msgstr ""
+
+#: functions/views/admin/products_management.php:646
+#: functions/views/admin/products_management.php:702
+msgid "Manage product retailers and default ordering"
+msgstr ""
+
+#: functions/views/admin/products_management.php:648
+#: functions/views/admin/products_management.php:704
+msgid "Edit product information"
+msgstr ""
+
+#: functions/views/admin/products_management.php:650
+#: functions/views/admin/products_management.php:706
+msgid "Are you sure ? It will delete every occurences of this product."
+msgstr ""
+
+#: functions/views/admin/products_management.php:650
+#: functions/views/admin/products_management.php:706
+msgid "Delete product &amp; retailers"
+msgstr ""
+
+#: functions/views/admin/products_management.php:661
+msgid "No product"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:5
+msgid "settings saved"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:6
+msgid "settings reset"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:7
+msgid "settings have been reset to factory settings"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:10
+#, php-format
+msgid ""
+"For help, please read our %1$stheme documentation%2$s. In case you still "
+"experience problems please visit our %3$sTheme Support Forum%4$s."
+msgstr ""
+
+#: functions/views/admin/theme-options.php:19
+msgid "General Settings"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:21
+msgid "Color settings"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:22
+msgid "Miscellaneous"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:23
+msgid "Social"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:108
+msgid "Current file:"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:174
+msgid "Save Settings"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:189
+msgid "Reset"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:191
+msgid ""
+"Caution: will restore theme defaults. It is highly recommended that you "
+"backup your database first."
+msgstr ""
+
+#: functions/views/admin/theme-options.php:197
+msgid "Reset To Factory Defaults"
+msgstr ""
+
+#: functions/views/admin/theme-options.php:199
+msgid ""
+"Caution: This will restore the theme to factory defaults (It will also "
+"restore the Compare+ plugin to factory defaults if it is installed and "
+"activated), it is highly recommended that you backup your database first."
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:13
+msgid "You are here"
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:13
+msgid "Home"
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:63
+msgid "Blog"
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:151
+msgid "Search:"
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:155
+msgid "404 Not Found"
+msgstr ""
+
+#: functions/views/frontend/content-breadcrumb.php:187
+msgid "Blog Archives"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:8
+msgid "Search results"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:13
+msgid "Visit brand's website"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:20
+#, php-format
+msgid "Showing products %s of %s"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:27
+msgid "View"
+msgstr ""
+
+#: functions/views/frontend/content-listing-options.php:46
+#: single-product.php:16 taxonomy-product_category.php:19
+msgid "Less"
+msgstr ""
+
+#: functions/views/frontend/content-pagination.php:13
+msgid "Prev"
+msgstr ""
+
+#: functions/views/frontend/content-pagination.php:14
+msgid "Next"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:16
+#, php-format
+msgid "%s Retailers"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:21
+msgid "Retailer"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:22
+msgid "Details"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:23
+#: functions/views/frontend/content-single-product-price-header.php:21
+#: functions/views/frontend/content-single-product-price-header.php:23
+msgid "Delivery"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:58
+msgid "Last update:"
+msgstr ""
+
+#: functions/views/frontend/content-price-table.php:64
+msgid "VOUCHER CODE:"
+msgstr ""
+
+#: functions/views/frontend/content-related-products.php:4
+msgid "Related Products"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-price-header.php:11
+#: functions/views/frontend/content-single-product-price-header.php:52
+msgid "to"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:28
+#: functions/views/frontend/content-single-product-shortlinks.php:16
+msgid "Product Reviews"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:39
+msgid "&larr; Older reviews"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:40
+msgid "Newer Reviews &rarr;"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:53
+msgid "Submit Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:59
+#: functions/views/frontend/content-single-product-reviews-template.php:127
+msgid "Write A Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:89
+msgid "Email address"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:113
+msgid "Review"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-reviews-template.php:133
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: functions/views/frontend/content-single-product-shortlinks.php:8
+msgid "Overview"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:106
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:106
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:108
+msgid "View more"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:138
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:125
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:139
+msgid "1 retailer"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:140
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:127
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:141
+msgid "retailers"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-archive-products-loop-item.php:146
+#: functions/views/frontend/loop/loop-content-related-products-loop-item.php:133
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:147
+msgid "Compare Prices"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-content-search-loop-item.php:176
+msgid "Read More"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:7
+#, php-format
+msgid "Review by %s"
+msgstr ""
+
+#: functions/views/frontend/loop/loop-single-review-loop-item.php:12
+#, php-format
+msgid "reviewed on %1$s at %2$s"
+msgstr ""
+
+#: header.php:181
+msgid "I am shopping for..."
+msgstr ""
+
+#: search.php:32 search.php:65
+msgid "No results."
+msgstr ""
+
+#: single-product.php:79 single.php:26
+msgid "Tags:"
+msgstr ""
