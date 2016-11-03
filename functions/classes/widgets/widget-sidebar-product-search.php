@@ -45,7 +45,7 @@ class TZ_product_search_widget extends WP_Widget {
 	/* ------- Display Widget -------- */
 	/* ---------------------------- */
 	function widget( $args, $instance ) {
-		echo "<br><br><br><br>";
+		
 		global $wp_query;
 		extract( $args );
 		
@@ -355,41 +355,13 @@ class TZ_product_search_widget extends WP_Widget {
                         </ul>
                 </div>
                
-		<?php 
-		$categories = get_terms( 'product_category' );
-		$children = $this->_get_term_hierarchy( 'product_category' );
-		
-		/*Переписать лабуду на AngularJS (красиво):
-		
-		Задача:
-			Имеется каталог продукции с различными категориями
-		Фронт-енд:
-			1. Для каждой категории слева вывести фильтр с соответствующими характеристиками для фильтрации (количество характеристик и их типы могут различаться для каждой категории)
-			2. Для каждой характеристики вывести список доступных опций (например, Характеристика: "Размеры экрана", Опции: 1200x600, 1400x700 )
-			3. При нажатии на чекбокс соответствующей опции в списке продуктов этой категории остаются только те продукты, которые соответствуют выбранной опции
-		Бэк-енд:
-			1. ?
-		
-		Решение:
-			1. При загрузке страницы для конкретной категории
-		
-		
-		2. Для каждой категории вывести список опций для ф*/
-		
-		var_dump(wp_get_post_terms());
-		var_dump($wp_query->query_vars['taxonomy']);
-		   $taxonomy_names = get_post_taxonomies( );
-   print_r( $taxonomy_names );
-   
-   $term_list = wp_get_post_terms(5, 'product_category', array("fields" => "all"));
-print_r($term_list);
-
-		$this_category = "";
-                if(isset($wp_query->query_vars['taxonomy']) && $wp_query->query_vars['taxonomy'] == 'product_category'){
-                    $this_category = $wp_query->query_vars['term'];
-                }
-		
-		?>
+				<?php 
+					$this_category = "";
+					if(isset($wp_query->query_vars['taxonomy']) && $wp_query->query_vars['taxonomy'] == 'product_category'){
+					$this_category = $wp_query->query_vars['term'];
+					}
+				
+				?>
                 <div style="<?php echo $hide_category_input; ?>">
                     <h4 id="compare-sidebar-search-category-header" class="widget-title"><?php _e('Categories','framework'); ?>
                         <div class="arrow"></div>
