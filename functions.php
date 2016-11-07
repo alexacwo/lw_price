@@ -56,4 +56,6 @@ require_once('functions/helpers.php');
 // Other
 require_once('functions/other.php');
 
+require_once('functions/classes/PHPExcel.php');
+
 ?>

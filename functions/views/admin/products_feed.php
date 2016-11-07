@@ -18,7 +18,7 @@ global $wpdb;
 
 		<?php
 		
-		$filePath = ABSPATH.'wp-content/uploads/compare/data.csv';
+		$filePath = ABSPATH.'wp-content/uploads/compare/data.xlsx';
 		// Step 1 : check the file
 		if(file_exists($filePath)) {
 			// Step 2 : read the file
@@ -56,7 +56,91 @@ global $wpdb;
 				$params_names = array();   
 				$total_col = 0;          
 				
-			    while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE) {
+				$inputFileType = 'Excel2007';
+				$objReader = PHPExcel_IOFactory::createReader($inputFileType);
+				$objReader->setReadDataOnly(true);
+				$objPHPExcel = $objReader->load($filePath);
+				$objWorksheet = $objPHPExcel->getActiveSheet();
+				$CurrentWorkSheetIndex = 0;
+
+				$sheet_names = $objPHPExcel->getSheetNames();
+
+				//iterate through each Excel sheet				
+				foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
+
+					$sheet_index = $objPHPExcel->getIndex($worksheet);
+					//sheet name is a main category name
+					$sheet_name = $sheet_names[$sheet_index];
+					
+					if(!($main_category_term = term_exists($sheet_name, 'product_category'))) {
+						$main_category_term = wp_insert_term($sheet_name, 'product_category');
+					}
+					// НЕ ЗАБЫТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! wp_set_post_terms(5, intval($main_category_term['term_id']), 'product_category', false);
+
+					$highest_row = $worksheet->getHighestDataRow();
+					$highest_column = $worksheet->getHighestDataColumn();
+
+					$headings = $worksheet->rangeToArray('A1:' . $highest_column . 1, NULL, TRUE, FALSE);
+
+
+						
+					echo '<br><br><strong>Worksheet "' . $sheet_name . '" number: ' . $sheet_index . '</strong><br><br>';
+					echo '<br>Highest row: '.$highest_row.'<br>';
+					echo '<br>Highest column: '.$highest_column.'<br>';
+					
+					//skip reading heading, start from second row
+					for ($row = 2; $row <= $highest_row; $row++) {
+						$next_row = $row + 1;
+						$row_data = $worksheet->rangeToArray('A' . $row . ':' . $highest_column . $next_row, NULL, TRUE, FALSE)[0];
+						
+						$uid = checkortransfromutf8(trim($row_data[0]));
+						$product_category = checkortransfromutf8(trim($row_data[1]));
+						$product_brand = checkortransfromutf8(trim($row_data[2]));
+						$product_full_name = checkortransfromutf8(trim($row_data[3]));
+						$merchant_price = checkortransfromutf8(trim($row_data[4]));
+						$merchant_shipping = checkortransfromutf8(trim($row_data[5]));
+						$product_image = checkortransfromutf8(trim($row_data[6]));
+						$merchant_name = checkortransfromutf8(trim($row_data[7]));
+						$merchant_deeplink = checkortransfromutf8(trim($row_data[8]));
+						$product_description = checkortransfromutf8(trim($row_data[9]));					
+						$product_global_description = checkortransfromutf8(trim($row_data[10]));
+						$merchant_voucher = checkortransfromutf8(trim($row_data[11]));
+						 
+						// Categories
+						$categories = explode(',',$product_category);
+						
+						echo "main term id: ";
+						var_dump($main_category_term['term_id']);
+						echo "<br><bR>";
+						foreach($categories as $category) {
+							$category = trim($category);
+							if(!($term = term_exists($category, 'product_category'))) {
+								// set main category id as parent id
+								$term = wp_insert_term(
+									$category,
+									'product_category',
+									array ('parent' => $main_category_term['term_id'])
+								);
+							}
+							// as we already inserted main category term, append all other category term (last parameter = true)
+							//wp_set_post_terms($id, intval($term['term_id']), 'product_category', true);
+						}
+				
+
+						/*$combined_row = array_combine($headings[0], $row_data[0]);
+
+						echo '<br>Row'.$row . ': ';
+						var_dump($combined_row);
+						echo '<br>';*/
+					}
+				}
+
+				
+				
+				
+				
+				
+			  while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE) {
 					
 			    	if($row == 1) {
 						$row++;
@@ -251,6 +335,8 @@ global $wpdb;
 						$categories = explode(',',$product_category);
 						$f = false;
 						
+						
+						// ?????????????????????????????????????????????????????????????????????????????????????????????????????????
 						$a = wp_get_post_terms($id);
 						
 						foreach($categories as $category) {
@@ -336,11 +422,11 @@ global $wpdb;
 			    	 
 			   		$row++;
 					
-			    }
+			    }*/
 			    fclose($handle);
 			    
 				// # patch wp_post_id = 0
-				$q = "DELETE FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '0'";
+				/*$q = "DELETE FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '0'";
 				$wpdb->query($q);
 				
 				// Merchant out of date
@@ -363,16 +449,16 @@ global $wpdb;
 				
 				// Update terms count
 				$q = "UPDATE ".$wpdb->prefix."term_taxonomy SET count = (SELECT count(*) FROM ".$wpdb->prefix."term_relationships WHERE ".$wpdb->prefix."term_relationships.term_taxonomy_id = ".$wpdb->prefix."term_taxonomy.term_taxonomy_id)";
-				$wpdb->query($q);
+				$wpdb->query($q);*/
 				
 				unlink($filePath);
 				
-				if(get_option('spc_last_import') == NULL) {
+				/*if(get_option('spc_last_import') == NULL) {
 			    	add_option('spc_last_import',time());
 			    } else {
 			    	update_option('spc_last_import',time());
 			    }
-			    flush_rewrite_rules();
+			    flush_rewrite_rules();*/
 			    echo "<p>".__('Import finished','framework')."</p>";
 			}
 		} else {
@@ -458,7 +544,8 @@ global $wpdb;
                     wp_mkdir_p($uploadDir);
             }
             // Upload	
-            $uploadFile = $uploadDir.'data.csv';
+         //   $uploadFile = $uploadDir.'data.csv';
+			$uploadFile = $uploadDir.'data.xlsx';
             if (move_uploaded_file($_FILES['feed']['tmp_name'], $uploadFile)) {
                     $success = __("File successfully uploaded, you can now import products into WordPress",'framework');
                     if(get_option('spc_last_upload') == NULL) {
