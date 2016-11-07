@@ -27,7 +27,7 @@ class aw_theme_installation {
      */
     function aw_check_compare_version(){
         global $compare_version, $wpdb;
-        if(get_option('compare_version') < $compare_version) 
+       if(get_option('compare_version') < $compare_version) 
             $this->aw_compare_do_install();
             flush_rewrite_rules();
     }
@@ -58,7 +58,11 @@ class aw_theme_installation {
         
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	
-        // products_relationships
+	// product parameters
+	$sql = $this->aw_create_mysql_query_string("pc_products_params", $wpdb->prefix);
+	dbDelta($sql);
+	
+	// products_relationships
 	$sql = $this->aw_create_mysql_query_string("pc_products_relationships", $wpdb->prefix);
 	dbDelta($sql);
         
@@ -69,6 +73,7 @@ class aw_theme_installation {
 	// products
 	$sql = $this->aw_create_mysql_query_string("pc_products", $wpdb->prefix);
 	dbDelta($sql);
+	
         
 	//Remove duplicates, bugfix introduced in Compare theme v1.3.1
 	$q = "SELECT count(id_product) AS num_products, id_product, id_merchant, max(last_update) AS last_updated FROM ".$wpdb->prefix."pc_products GROUP BY id_product, id_merchant HAVING  num_products > 1";
@@ -104,6 +109,9 @@ class aw_theme_installation {
 	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_products` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"; 
 	$wpdb->query($sql);
 	
+	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_products_params` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"; 
+	$wpdb->query($sql);
+	
 	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_options` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"; 
 	$wpdb->query($sql);
 	
@@ -118,6 +126,9 @@ class aw_theme_installation {
 	$wpdb->query($sql);
 	
 	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_products` ENGINE=MyISAM"; 
+	$wpdb->query($sql);
+	
+	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_products_params` ENGINE=MyISAM"; 
 	$wpdb->query($sql);
 	
 	$sql = "ALTER TABLE `" . $wpdb->prefix . "pc_options` ENGINE=MyISAM"; 
@@ -317,7 +328,6 @@ class aw_theme_installation {
                             KEY `wp_post_id` (`wp_post_id`)
                             ) ENGINE=MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci;";
 			break;
-			
 		case "pc_products_merchants":
 			$table_name = $table_prefix."pc_products_merchants";
 			$query = "CREATE TABLE `".$table_name."` (
@@ -329,7 +339,6 @@ class aw_theme_installation {
 				UNIQUE KEY `slug` (`slug`)
 			) ENGINE=MyISAM DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
 			break;
-		
 		case "pc_products":
 			$table_name = $table_prefix."pc_products";
 			$query = "CREATE TABLE `".$table_name."` (
@@ -356,7 +365,16 @@ class aw_theme_installation {
 				KEY `id_product` (`id_product`)
 			) ENGINE=MyISAM DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
 			break;
-			
+		case "pc_products_params":
+			$table_name = $table_prefix."pc_products_params";
+			$query = "CREATE TABLE `".$table_name."` (
+				`id` int(11) NOT NULL auto_increment,
+				`product_id` int(11) NOT NULL default '0',
+				`param_name` varchar(100) NOT NULL default '',
+				`param_value` varchar(255) NOT NULL default '',
+				PRIMARY KEY  (`id`)
+			) ENGINE=MyISAM DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
+			break;			
 		case "pc_options":
 			$table_name = $table_prefix."pc_options";
 			$query = "CREATE TABLE `".$table_name."` (

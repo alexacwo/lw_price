@@ -51,31 +51,51 @@ global $wpdb;
 
 				$new_base_products_uids = array();
 
-                               
-                            $is_a_base_feed_product = 0;
-                                
+				$is_a_base_feed_product = 0;
+                    
+				$params_names = array();   
+				$total_col = 0;          
+				
 			    while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE) {
-			    
-			    	if($row == 1) { $row++; continue; } // Jump the first line
+					
+			    	if($row == 1) {
+						$row++;
+						
+						//Get names of product parameters
+						$total_col = count($data);
+						for ($i = 12; $i < $total_col; $i++) {
+							$params_names[] = $data[$i];
+						}
+						
+						continue;
+					}         
+					
+					//Every time empty the array
+					$params_values = array();  
 			    	
 			    	$uid = checkortransfromutf8(trim($data[0]));
 			    	$product_category = checkortransfromutf8(trim($data[1]));
 			    	$product_brand = checkortransfromutf8(trim($data[2]));
 			    	$product_full_name = checkortransfromutf8(trim($data[3]));
-				$merchant_price = checkortransfromutf8(trim($data[4]));
+					$merchant_price = checkortransfromutf8(trim($data[4]));
 			    	$merchant_shipping = checkortransfromutf8(trim($data[5]));
 			    	$product_image = checkortransfromutf8(trim($data[6]));
 			    	$merchant_name = checkortransfromutf8(trim($data[7]));
 			    	$merchant_deeplink = checkortransfromutf8(trim($data[8]));
-				$product_description = checkortransfromutf8(trim($data[9]));
-					
-				$product_global_description = checkortransfromutf8(trim($data[10]));
+					$product_description = checkortransfromutf8(trim($data[9]));					
+					$product_global_description = checkortransfromutf8(trim($data[10]));
 			    	$merchant_voucher = checkortransfromutf8(trim($data[11]));
+					
+					for ($i = 12; $i < $total_col; $i++) {
+						$params_values[] = $data[$i];
+					}
+					
+						 
 			    	
 			    	// Replacement
-				$merchant_price = str_ireplace(',','.',$merchant_price);
+					$merchant_price = str_ireplace(',','.',$merchant_price);
 			    	
-			    	if(!in_array($uid,$uids)) {
+			    	if(!in_array($uid, $uids)) {
 					
 			    		if($product_category == '') {
 							echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('No category detected','framework').'</span>'."<br />";
@@ -174,6 +194,20 @@ global $wpdb;
 								//$counter_created++;
 							}
 							echo '<span style="color:green;">'. __('Line','framework') . ' ' . $row.': '.$product_full_name.' '.__('created','framework').($merchant_name != '' ? '' : __(', no retailer information was supplied','framework')).'</span>'."<br />";
+							
+							for ($j = 0; $j < count($params_names); $j++) {
+								$wpdb->query( $wpdb->prepare( 
+									"
+									INSERT INTO ".$wpdb->prefix."pc_products_params
+									( id, product_id, param_name, param_value )
+									VALUES ( %d, %d, %s, %s )
+									", 
+									'',
+									$id,
+									$params_names[$j], 
+									$params_values[$j]
+								) );
+							}
 						} else {
 							// Update wp_post
 							$id = $post_relation->wp_post_id;

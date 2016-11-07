@@ -115,7 +115,7 @@ float: right;
 			
 			
 			// create table pc_products_relationships
-			if ($pc_products_relationships[0]->table_exist != 1){
+	/*		if ($pc_products_relationships[0]->table_exist != 1){
 				
 				$sql = create_mysql_query_string("pc_products_relationships", $wpdb->prefix);
 				$result = $wpdb->get_results($sql);
@@ -127,7 +127,7 @@ float: right;
 				<li class="<?php if ($pc_products_relationships[0]->table_exist == 1){echo "config-success"; } else { echo "config-error"; } ?>">
 				 <?php if ($pc_products_relationships[0]->table_exist == 1){ echo "Table 'pc_products_relationships' is successfully created."; }else{ echo "There was a problem while creating 'pc_products_relationships' table."; } ?>
 				</li>
-			<?php }	
+			<?php }	*/
 				
 			// create table pc_products_merchants
 			if ($pc_products_merchants[0]->table_exist != 1){

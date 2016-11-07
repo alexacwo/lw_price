@@ -41,62 +41,141 @@ $products = get_posts( $args );
 ?> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<div ng-app="myApp" ng-controller="myCtrl">
 
-	<table border="1">
-		<tr ng-repeat="x in records | filter: {title: title_filter, screen_width: screen_width_filter} ">
-			<td>{{x.title}}</td>
-			<td>{{x.screen_width}}</td>
-			<td>{{x.ram}}</td> 
+<div ng-app="myApp" ng-controller="myCtrl">
+	Products:
+	<table>
+		<tr ng-repeat="product in products | filter: filterProducts">
+			<td style="border:1px solid;">
+				<br>Name: {{product.name}}
+				<br>Parameters: {{product.parameters}}
+			</td>
 		</tr>
 	</table>
-	
-	<input type="checkbox" ng-model='title_filter' ng-true-value="'Putin'" ng-false-value="'Trump'" /> RAM
-	<input type="checkbox" ng-model='screen_width_filter'  value="1200"/> Screen Width
 
+	{{filterSelectedOptions}}
+	<div ng-repeat="(parameterName, parameterOptions) in filterParameterOptions">
+		<h2>{{parameterName}}</h2>
+		<div ng-repeat="option in parameterOptions">
+		  <input
+			type="checkbox"
+			name="selectedOptions[]"
+			value="{{option}}"
+			ng-click="toggleSelection(parameterName, option)"
+		  > {{option}}
+		</div>
+	</div>
 </div>
 
-
-<script>
-	var app = angular.module("myApp", []);
-	 
-	app.controller("myCtrl", function($scope) {
-		$scope.screen_width = {1200: true, 1400: true};
-		
-		$scope.records = [
+        <?php
+			$post_count = 0;
+			$scope_products = '';
+			$scope_filterSelectedOptions = '';
+			while(have_posts())
 			{
-				"title" : "Alfreds Futterkiste",
-				"screen_width" : 1200,
-				"ram" : 'yes'
-			},
-			{
-				"title" : "Putin",
-				"screen_width" : 1400,
-				"ram" : 'yes'
-			},
-			{
-				"title" : "Trump",
-				"screen_width" : 1400,
-				"ram" : 'no'
-			},
-			{
-				"title" : "Trump",
-				"screen_width" : 1200,
-				"ram" : true
+				the_post();
+				$params = $wpdb->get_results( 
+					"
+					SELECT param_name, param_value 
+					FROM ".$wpdb->prefix."pc_products_params
+					WHERE product_id = " . $post->ID
+				);
+				
+				$scope_products .= '{ name: "' . $post->post_title . '",
+									parameters: { ';
+						foreach ( $params as $param ) { 
+							$scope_products .= $param->param_name . ' : "' . $param->param_value . '",';
+							if ($post_count == 0) $scope_filterSelectedOptions.='' . $param->param_name . ' : [],';
+						}
+				$scope_products .= '}}';
+				$post_count++;
 			}
-			<?php
-				$j = 0;
-				/*$k = count($products);
-				foreach($products as $product) {
-					$j++;
-					echo "'" . $product->post_title . "'";
-					if ($j != $k) echo ",";
-				}*/
-			?>
-			
+		?>
+		
+<script>
+var app = angular.module("myApp", []);
+
+app.controller("myCtrl", function($scope) { 
+
+	$scope.toggleSelection = function toggleSelection(parameterName, option) {
+		var idx = $scope.filterSelectedOptions[parameterName].indexOf(option);
+
+		// is currently selected
+		if (idx > -1) {
+			$scope.filterSelectedOptions[parameterName].splice(idx, 1);
+		}
+
+		// is newly selected
+		else {
+			$scope.filterSelectedOptions[parameterName].push(option);
+		}
+	};
+	
+	$scope.filterParameterOptions = {
+		operating_system : [
+			'dw',
+			1200,
+			1300,
+			1400
+		],
+		hdmi : [
+			'wer',
+			'rar',
+			'rrt'			
+		],
+		screen_width : [
+			'dw',
+			'android1'			
+		],
+		green_compliance : [
+			'hdmi',
+			'wr'			
 		]
-	});
+	};
+	
+	$scope.filterProducts = function(product)
+	{
+		var result = true;
+		var keepGoing = true; 
+		
+		for (var parameterName in $scope.filterSelectedOptions){
+			if (Object.keys($scope.filterSelectedOptions[parameterName]).length === 0) {
+					return true;
+				}
+			var parameterValue = product.parameters[parameterName];
+			var parameterIsInSelectedList = $scope.filterSelectedOptions[parameterName].indexOf(parameterValue);
+			
+			if (parameterIsInSelectedList == -1)  {
+				return false;
+			}	 
+		}
+		
+		return true;
+	};
+	
+	/*$scope.filterSelectedOptions = {
+		operating_system : [],
+		hdmi : [],
+		screen_width : [],
+		green_compliance : []
+	};*/
+	
+	/*!!!!!!!!!!!!!!!!!!!!!!
+	var unique = {};
+var distinct = [];
+for( var i in array ){
+ if( typeof(unique[array[i].age]) == "undefined"){
+  distinct.push(array[i].age);
+ unique[array[i].age] = 0;
+ }
+ //unique[array[i].age] = 0;
+}
+	*/
+	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};
+	$scope.products = [<?php echo $scope_products; ?>];
+});
 </script>
+		
 
 <?php
 					echo "<br><br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br>";
@@ -133,7 +212,7 @@ get_header();
         $i = 1; //  1,2,3 iteration in order to set properly responsive design
         $itotal = $number_of_items; // total products in page
         $it = 1; // total iterated
-        while(have_posts()): the_post(); 
+        while(have_posts()): the_post();  
             do_action('aw_show_product_archive_content', $post);
             if($i == 3) $i = 1; else $i++;
             $it++;
