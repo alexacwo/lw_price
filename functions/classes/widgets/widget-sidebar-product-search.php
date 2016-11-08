@@ -76,6 +76,10 @@ class TZ_product_search_widget extends WP_Widget {
                 $ajaxImgHtml = '<p style="width:100%; text-align:center; margin-top:20px;"><img src="' . get_template_directory_uri() . '/img/ajax-loader.gif" / ></p>';
                 $wrapHtml = '<span class="wrap" />';
                 $searchPlaceholder = __('Search...','framework'); ?>
+				
+				
+ 
+
                 <script type='text/javascript'>
                     var ajax_mode = false;			
 		    jQuery(document).ready(function($) {

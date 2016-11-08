@@ -54,6 +54,7 @@ $products = get_posts( $args );
 	</table>
 
 	{{filterSelectedOptions}}
+	<br><br>{{filterParameterOptions}}
 	<div ng-repeat="(parameterName, parameterOptions) in filterParameterOptions">
 		<h2>{{parameterName}}</h2>
 		<div ng-repeat="option in parameterOptions">
@@ -78,16 +79,24 @@ $products = get_posts( $args );
 					"
 					SELECT param_name, param_value 
 					FROM ".$wpdb->prefix."pc_products_params
-					WHERE product_id = " . $post->ID
+					WHERE wp_post_id = " . $post->ID
 				);
 				
 				$scope_products .= '{ name: "' . $post->post_title . '",
 									parameters: { ';
+						$count_params = count($params);
 						foreach ( $params as $param ) { 
-							$scope_products .= $param->param_name . ' : "' . $param->param_value . '",';
-							if ($post_count == 0) $scope_filterSelectedOptions.='' . $param->param_name . ' : [],';
+							$scope_products .= $param->param_name . ' : "' . $param->param_value . '"';
+							if (--$count_params !== 0) $scope_products .= ',';
+							//Get parameter names (as they are equal for each product in the category) from the first product
+							if ($post_count == 0) {
+								$scope_filterSelectedOptions.='' . $param->param_name . ' : []';
+								if ($count_params !== 0) $scope_filterSelectedOptions.= ',';
+							}
 						}
-				$scope_products .= '}}';
+				//if (--$post_desc_count != 0)
+					$scope_products .= '}},';
+				
 				$post_count++;
 			}
 		?>
@@ -97,6 +106,12 @@ var app = angular.module("myApp", []);
 
 app.controller("myCtrl", function($scope) { 
 
+	//$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};
+	$scope.filterSelectedOptions = {"green_compliance":[],"operating_system":[],"hdmi":[]};
+	$scope.filterParameterOptions = {"green_compliance":["yes","no"],"operating_system":["ios","windows"],"hdmi":["wer","de","ee"]};
+	$scope.products = [<?php echo $scope_products; ?>];
+	//$scope.filterParameterOptions = {<?php echo $scope_filterSelectedOptions; ?>};
+	
 	$scope.toggleSelection = function toggleSelection(parameterName, option) {
 		var idx = $scope.filterSelectedOptions[parameterName].indexOf(option);
 
@@ -111,27 +126,7 @@ app.controller("myCtrl", function($scope) {
 		}
 	};
 	
-	$scope.filterParameterOptions = {
-		operating_system : [
-			'dw',
-			1200,
-			1300,
-			1400
-		],
-		hdmi : [
-			'wer',
-			'rar',
-			'rrt'			
-		],
-		screen_width : [
-			'dw',
-			'android1'			
-		],
-		green_compliance : [
-			'hdmi',
-			'wr'			
-		]
-	};
+
 	
 	$scope.filterProducts = function(product)
 	{
@@ -151,28 +146,19 @@ app.controller("myCtrl", function($scope) {
 		}
 		
 		return true;
-	};
+	}; 
 	
-	/*$scope.filterSelectedOptions = {
-		operating_system : [],
-		hdmi : [],
-		screen_width : [],
-		green_compliance : []
-	};*/
-	
-	/*!!!!!!!!!!!!!!!!!!!!!!
-	var unique = {};
-var distinct = [];
-for( var i in array ){
- if( typeof(unique[array[i].age]) == "undefined"){
-  distinct.push(array[i].age);
- unique[array[i].age] = 0;
- }
- //unique[array[i].age] = 0;
-}
-	*/
-	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};
-	$scope.products = [<?php echo $scope_products; ?>];
+		 
+	/*var unique = {};
+	var distinct = [];
+	for( var i in $scope.filterParameterOptions ){	
+		for( var j in $scope.products ){		
+			if( typeof(unique[$scope.products[j].parameters[i]]) == "undefined"){
+				$scope.filterParameterOptions[i].push($scope.products[j].parameters[i]);
+				unique[$scope.products[j].parameters[i]] = 1;
+			}
+		}
+	}*/
 });
 </script>
 		

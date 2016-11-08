@@ -472,7 +472,7 @@ add_action ('aw_the_product_description_detailed', 'aw_show_product_description_
  */
 function aw_show_term_description_detailed ($term, $max_chars = false, $return = false ){
 
-    global $wpdb, $aw_theme_options;
+    global $wpdb, $aw_theme_options, $category;
 
     $content = (isset($term->description) ? $term->description : '');
     if(is_tax("product_brand") || is_tax("product_bisbrand"))
@@ -1352,8 +1352,8 @@ function compare_get_currency($part){
  */
 function compare_slugify($text) {
 	// Need WPLANG if need special chars, e.g. in French é
-	if(WPLANG != ''){	
-		setlocale(LC_CTYPE, WPLANG.'.utf8');
+	if('WPLANG' != ''){	
+		setlocale(LC_CTYPE, 'WPLANG'.'.utf8');
 	}else {
 		setlocale(LC_CTYPE, 'fr_FR.utf8');
 	}

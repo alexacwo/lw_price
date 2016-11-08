@@ -26,10 +26,12 @@ class aw_theme_installation {
      * 
      */
     function aw_check_compare_version(){
-        global $compare_version, $wpdb;
-       if(get_option('compare_version') < $compare_version) 
-            $this->aw_compare_do_install();
-            flush_rewrite_rules();
+		global $compare_version, $wpdb;
+		if(get_option('compare_version') < $compare_version) 
+		{
+			$this->aw_compare_do_install();
+		}
+		flush_rewrite_rules();
     }
     
     /**
@@ -369,7 +371,7 @@ class aw_theme_installation {
 			$table_name = $table_prefix."pc_products_params";
 			$query = "CREATE TABLE `".$table_name."` (
 				`id` int(11) NOT NULL auto_increment,
-				`product_id` int(11) NOT NULL default '0',
+				`wp_post_id` int(11) NOT NULL default '0',
 				`param_name` varchar(100) NOT NULL default '',
 				`param_value` varchar(255) NOT NULL default '',
 				PRIMARY KEY  (`id`)
@@ -382,7 +384,6 @@ class aw_theme_installation {
 					  `value` varchar(255) NOT NULL default ''
 				) ENGINE=MyISAM DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
 			break;
-			
 		case "pc_products_custom":
 			$table_name = $table_prefix."pc_products_custom";
 			$query = "CREATE TABLE `".$table_name."` (
