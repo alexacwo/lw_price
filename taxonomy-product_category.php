@@ -1,22 +1,16 @@
 <?php
-
 global $wpdb, $wp_query, $post, $aw_theme_options;
-
-
 // determine the topmost parent of a term
 function get_product_topmost_parent_cat($term_id){
-
 	$current_cat = get_term_by('id', $term_id, 'product_category');						
 	$parent = $current_cat->parent;
 	
 	return $parent == 0 ? $current_cat->name : get_product_topmost_parent_cat($parent);
 }
-
 //Current taxonomy id
 $term_id = get_queried_object_id();
 //Topmost parent id
 $topmost_parent_cat_id = get_product_topmost_parent_cat($term_id);
-
 ////////////////////////////////////////////////////////////
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -27,8 +21,11 @@ $topmost_parent_cat_id = get_product_topmost_parent_cat($term_id);
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ////////////////////////////////////////////////////////////
- 
-					
+/*
+var_dump($term_id);
+var_dump($topmost_parent_cat_id);
+echo "<br><br>dddddddddddddddddddddddddddddddddddddddd<br><br>";
+				*/	
 $args = array(
     'post_type' => 'product',
 	'product_category' => $term_id
@@ -39,8 +36,8 @@ $products = get_posts( $args );
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 <div ng-app="myApp" ng-controller="myCtrl">
-	 
  
+
         <?php
 			$post_count = 0;
 			$scope_products = '';
@@ -76,41 +73,35 @@ $products = get_posts( $args );
 		
 <script>
 var app = angular.module("myApp", []);
-
 app.filter('removeUnderscores', function() {
     return function(input) {
-		return input.replace("_", " ");
+      return input.replace("_", " ");
     }
 });
-
 app.controller("myCtrl", function($scope) { 
-
-	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};
 	//$scope.filterSelectedOptions = {"green_compliance":[],"operating_system":[],"hdmi":[]};
-	//$scope.filterParameterOptions = {"green_compliance":["yes","no"],"operating_system":["ios","windows"],"hdmi":["wer","de","ee"]};
+	// $scope.filterParameterOptions = {"green_compliance":["yes","no"],"operating_system":["ios","windows"],"hdmi":["wer","de","ee"]};
+	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};	
 	$scope.products = [<?php echo $scope_products; ?>];
-	$scope.filterParameterOptions = {<?php echo $scope_filterSelectedOptions; ?>};
-	
+ $scope.filterParameterOptions = {<?php echo $scope_filterSelectedOptions; ?>};
+		 	
 	$scope.toggleSelection = function toggleSelection(parameterName, option) {
 		var idx = $scope.filterSelectedOptions[parameterName].indexOf(option);
-
 		// is currently selected
 		if (idx > -1) {
 			$scope.filterSelectedOptions[parameterName].splice(idx, 1);
 		}
-
 		// is newly selected
 		else {
 			$scope.filterSelectedOptions[parameterName].push(option);
 		}
 	};
 	
-
-	
 	$scope.filterProducts = function(product)
-	{ 		
-		var keepGoing = true;
-		angular.forEach($scope.filterSelectedOptions, function(parameterValue, parameterName) {
+	{
+		var keepGoing = true; 
+		
+		angular.forEach($scope.filterSelectedOptions, function(array, parameterName) {
 			if (keepGoing) {
 				var parameterValue = product.parameters[parameterName];
 				var parameterIsInSelectedList = $scope.filterSelectedOptions[parameterName].indexOf(parameterValue);
@@ -118,32 +109,16 @@ app.controller("myCtrl", function($scope) {
 				if (parameterIsInSelectedList == -1)  {
 					keepGoing = false;
 				}	
-				if (Object.keys($scope.filterSelectedOptions[parameterName]).length === 0) {
+				if (Object.keys($scope.filterSelectedOptions[parameterName]).length === 0) {					
 					keepGoing = true;
-				} 
+				} 				
 			}
 		});
 		
-		
-		return keepGoing;
-		/*
-		for (var parameterName in $scope.filterSelectedOptions){ 
-	console.log(parameterName);
-			 if (Object.keys($scope.filterSelectedOptions[parameterName]).length === 0) {
-				//	return true;
-				}
-			var parameterValue = product.parameters[parameterName];
-			var parameterIsInSelectedList = $scope.filterSelectedOptions[parameterName].indexOf(parameterValue);
-			
-			if (parameterIsInSelectedList == -1)  {
-				return false;
-			}	 
-		}*/
-		
+		return keepGoing;		
 	}; 
 	
-		 
-	var unique = {};
+	 var unique = {};
 	var distinct = [];
 	for( var i in $scope.filterParameterOptions ){	
 		for( var j in $scope.products ){		
@@ -152,16 +127,13 @@ app.controller("myCtrl", function($scope) {
 				unique[$scope.products[j].parameters[i]] = 1;
 			}
 		}
-	}
+	} 
 });
 </script>
 		
 
 <?php 
-/* Дальше - выводим список продуктов с ангуларовской пагинацией и фильтруем */
-
  
-
 $total_number_of_items = $wp_query->found_posts;
 $number_of_items = $wp_query->post_count;
 $max_num_pages = $wp_query->max_num_pages;
@@ -170,7 +142,7 @@ $term = get_term_by('slug', get_query_var('term'), 'product_category');
 $listOrGrid = aw_get_result_layout_style();
 get_header();
 ?>
-<div class="nine columns push_three product-listing 2222222222222222">
+<div class="nine columns push_three product-listing 444">
     <script type="text/javascript">
         function aw_more() {
                 jQuery('.desc_more').toggle();
@@ -179,12 +151,18 @@ get_header();
         }
         </script>
     
-      
+    <?php if(have_posts() && 1==1 ):  ?>
+    
+        <div class="listing-options">
+            <?php do_action('aw_show_listing_options'); ?>
+        </div>
+        
         <div class="product-listing-container <?php echo $listOrGrid; ?>">
+        
 			<div class="product" ng-repeat="product in products | filter: filterProducts">
 				<div class="product-photo">
 					<a href="#">
-						<img src="#" alt="#" />    
+						<img src="<?php get_template_directory_uri()."/img/no-photo.png"; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />  
 					</a>
 				</div>
 
@@ -200,10 +178,10 @@ get_header();
 					<div>
 						<p class="price">
 							<span>
-								$200.00
+								$222.00
 							</span>
 						</p>
-						<a href="#" class="retailers">
+						<a href="<?php echo get_permalink($post->ID); ?>" class="retailers">
 							1 merchant
 						</a>
 					</div>
@@ -216,9 +194,13 @@ get_header();
 			</div>
         </div>
     
+    <?php endif; ?>
+   
 </div>
+  
 	
 <?php get_sidebar(); ?>
 
 </div>
+
 <?php get_footer(); ?>

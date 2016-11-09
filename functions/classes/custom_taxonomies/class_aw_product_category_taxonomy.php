@@ -36,7 +36,10 @@ class aw_product_category_taxonomy {
 		'labels' => $labels,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array('slug' => $slug)
+		'rewrite' => array(
+			/*'slug' => $slug,*/
+			'hierarchical' => true
+		)
 	);
 	// Register taxonomy
 	register_taxonomy('product_category',array('product'),$args);
@@ -91,7 +94,6 @@ class aw_product_category_taxonomy {
 	echo '	</td>';
 	echo '</tr>';
     }
-
     function aw_product_category_edit_form(){
     ?>
         <script type="text/javascript">
@@ -101,7 +103,6 @@ class aw_product_category_taxonomy {
         </script>
     <?php 
     }
-
    
     function aw_save_extra_product_category($term_id) {
         if (isset($_POST['term_meta'])) {
@@ -115,7 +116,6 @@ class aw_product_category_taxonomy {
             update_option("taxonomy_".$term_id,$term_meta);
             $allowed_formats = array('png','jpeg','jpg','gif','bmp','PNG','JPEG','JPG','GIF','BMP');
             if (is_uploaded_file($_FILES['term_meta_image']['tmp_name'])) {
-
                 // Remove old file if any      
                 $dir = $this->uploadDirCategories.$term_id;			
                 $png = (glob( $dir. '.png') === false)? array() : glob( $dir. '.png');
@@ -133,7 +133,6 @@ class aw_product_category_taxonomy {
                     $oldfilename = str_replace($this->uploadDirCategories,'',$files[0]);
                     unlink($this->uploadDirCategories.$oldfilename);
                 }
-
                 $uploadedFileName = $_FILES['term_meta_image']['name'];
                 $extension_three_symbols = substr($uploadedFileName,-3);
                 $extension_four_symbols  = substr($uploadedFileName,-4);
@@ -149,14 +148,12 @@ class aw_product_category_taxonomy {
             }
         }
     }
-
     function aw_custom_add_product_category_column( $original_columns ) {
             $new_columns = $original_columns;
             array_splice( $new_columns, 1 );
             $new_columns['custom_category_column'] = __('Image','framework');
             return array_merge( $new_columns, $original_columns );
     }
-
     function aw_custom_add_product_category_column_rows($row, $column_name, $term_id) {
             $fileUrl = $this->aw_get_category_image_url($term_id);
             echo '<a href="?action=edit&amp;taxonomy=product_category&amp;tag_ID='.$term_id.'&amp;post_type=product">';
@@ -167,9 +164,7 @@ class aw_product_category_taxonomy {
             }
             echo '</a>';
     }
-
    
-
     function aw_get_category_image_url($term_id) {
            
             $current_blog_id = get_current_blog_id();
@@ -194,7 +189,6 @@ class aw_product_category_taxonomy {
             }
             return '';
     }
-
    
     function aw_delete_category_mapped_categories($term_id) {
             global $wpdb;

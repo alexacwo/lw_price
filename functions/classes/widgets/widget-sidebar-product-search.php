@@ -8,19 +8,16 @@
  * Author URI: http://www.awesem.com
  * 
  */
-
 /*
  * Add function to widgets_init that'll load our widget.
  */
 add_action( 'widgets_init', 'tz_product_search_widget' );
-
 /*
  * Register widget.
  */
 function tz_product_search_widget() {
 	register_widget( 'TZ_product_search_widget' );
 }
-
 /*
  * Widget class.
  */
@@ -35,12 +32,10 @@ class TZ_product_search_widget extends WP_Widget {
 		
 		/* Widget control settings */
 		$control_ops = array( 'width' => 125, 'id_base' => 'tz_product_search_widget' );
-
 		/* Create the widget */
 		parent::__construct('tz_product_search_widget', __('COMPARE: Sidebar Product Search', 'framework'), $widget_ops, $control_ops );
 		
 	}
-
 	/* ---------------------------- */
 	/* ------- Display Widget -------- */
 	/* ---------------------------- */
@@ -72,11 +67,11 @@ class TZ_product_search_widget extends WP_Widget {
                 } elseif ($maxPrice == $minPrice && $minPrice != 0 && $maxPrice != 0){
                     $maxPrice = $maxPrice + 10;
                 }
-
                 $ajaxImgHtml = '<p style="width:100%; text-align:center; margin-top:20px;"><img src="' . get_template_directory_uri() . '/img/ajax-loader.gif" / ></p>';
                 $wrapHtml = '<span class="wrap" />';
                 $searchPlaceholder = __('Search...','framework'); ?>
-				 
+				
+				
  
 
                 <script type='text/javascript'>
@@ -84,21 +79,29 @@ class TZ_product_search_widget extends WP_Widget {
 		    jQuery(document).ready(function($) {
 	
                        // Fix for the ajax loading problem on mobiles.
-                      window.ajaxSearchCheckBoxesAlreadyLoaded = (function(){
+                       window.ajaxSearchCheckBoxesAlreadyLoaded = (function(){
                         var checkBoxInitialValues = {};
                         jQuery('.compare_attribute[type=checkbox]').each(function(i,o){
                                 checkBoxInitialValues[$(o).attr('name')] = $(o).is(':checked');
                             });
                         return checkBoxInitialValues;
                        })();
-                        //Hide sidebar elements by default
-                        $('.compare_sidebar_search').slideToggle( "fast" );
+                        /*Hide sidebar elements by default*/
+                        $('#compare-sidebar-search-categories').slideToggle( "fast" );
                         $('#compare-sidebar-search-brand').slideToggle( "fast" );
+                        $('.compare_sidebar_search').slideToggle( "fast" );
         
-                        //Hide and show sidebar elements
+		
+                        /*Hide and show sidebar elements*/
+						
                         $('.compare_sidebar_search_header').click(function(){
                             $(this).toggleClass('open');
                             $(this).siblings('.compare_sidebar_search').slideToggle( "fast" );
+                        });
+						
+                        $('#compare-sidebar-search-category-header').click(function(){
+                            $('#compare-sidebar-search-category-header').toggleClass('open');
+                            $('#compare-sidebar-search-categories').slideToggle( "fast" );
                         });
                         
                         $('#compare-sidebar-search-brand-header').click(function(){
@@ -115,14 +118,12 @@ class TZ_product_search_widget extends WP_Widget {
                         })
                         var order_by_object  = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>').html();
                         jQuery('#order_by_placeholder').html('<legend><?php _e('Sort By', 'framework'); ?></legend><ul><li class="field"><div class="picker"><select class=\'compare_products_order_by_select_box\'>'+order_by_object+'</select></div></li></ul>');
-
-
                         // Keyword enter event
-                       $('.filterTextField<?php echo $this->number; ?>').keydown(function(e) {
+                        $('.filterTextField<?php echo $this->number; ?>').keydown(function(e) {
                                 if(e.keyCode == 13 || e.which == 13){
                                     <?php echo "jQuery.filterProductsCompare" . $this->number . "();"; ?>
                                 }
-                        }); 
+                        });
                         
                         jQuery('#<?php echo $this->id; ?> .priceSlider').slider({ 
                             from: <?php echo $minPrice; ?>, 
@@ -138,7 +139,7 @@ class TZ_product_search_widget extends WP_Widget {
                         });
                         
                         // Hack so that the pagination links work as ajax request
-		 	jQuery('.ajax-search-navigation-links a').live('click', function(e){
+			jQuery('.ajax-search-navigation-links a').live('click', function(e){
 				e.preventDefault();
 				// scroll body to 0px on click
 				$('body,html').animate({
@@ -157,12 +158,12 @@ class TZ_product_search_widget extends WP_Widget {
 						$('#order_by_placeholder select option[value=\''+order_value +'\']').attr('selected', '');	
 					}					
 				})
-			}); 
+			});
                         
 				
                         
                         /* Gumby hack > elements' on events*/
-                     /*   $('.category_menu_child').on('gumby.onChange', function(e) {
+                        $('.category_menu_child').on('gumby.onChange', function(e) {
                             if(jQuery(e.currentTarget).find('input').attr('type') === 'checkbox'){
                                  // Some code to make sure that we only search if the checkbox has actually been changed and that it isn't just a fake trigger from gumby
                                 if(typeof window.ajaxSearchCheckBoxesAlreadyLoaded === 'undefined'){
@@ -184,10 +185,10 @@ class TZ_product_search_widget extends WP_Widget {
                         })                        
                         $('.ajax-filter-btn').on(Gumby.click, function(e) {                           
                             jQuery.filterProductsCompare<?php echo $this->number; ?>();
-                        }) 
+                        })
                         /* EO Gumby hack */
                         
-                  /*   jQuery('#<?php echo $this->id; ?> .compare_attribute').live('change', jQuery.filterProductsCompare<?php echo $this->number; ?> = function() {
+              /*  jQuery('#<?php echo $this->id; ?> .compare_attribute').live('change', jQuery.filterProductsCompare<?php echo $this->number; ?> = function() {
                             var order_by_object  = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>').html();
                             var order_value = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>');	
                             order_value = order_value.length>0 ? order_value.val().split(','): '<?php echo get_option('tz_products_order'); ?>,<?php echo get_option('tz_products_order_by'); ?>';
@@ -224,11 +225,9 @@ class TZ_product_search_widget extends WP_Widget {
                                             
                                             if($(inputelement).attr('name').indexOf('b[') != -1){					  		
                                                     brands.push($(inputelement).attr('value'));
-
                                             } 
                                             if($(inputelement).attr('name').indexOf('c[') != -1){					  		
                                                     categories.push($(inputelement).attr('value'));
-
                                             }
                                         }
                                     });
@@ -237,13 +236,12 @@ class TZ_product_search_widget extends WP_Widget {
                                     minPrice = minmaxarr[0];
                                     maxPrice = minmaxarr[1];
                                 }
-
                                 if(!jQuery.support.placeholder) { 
                                     if(isEmptyPlaceholder == 1){
                                         jQuery(this).val('<?php echo $searchPlaceholder; ?>');
                                     }								
                                 } 	
-                            })
+                            }) 
 			    		 
 						
 						
@@ -271,17 +269,15 @@ class TZ_product_search_widget extends WP_Widget {
                                     if(jQuery('#order_by_placeholder').html() != null){           
                                             order_by_object  = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>').html();
                                             jQuery('#order_by_placeholder').html('<legend><?php _e('Sort By', 'framework'); ?></legend><ul><li class="field"><div class="picker"><select class=\'compare_products_order_by_select_box\'>'+order_by_object+'</select></div></li></ul>');
-
                                             //Below IE9 hook
                                             $('#order_by_placeholder select option').removeAttr('selected');
                                             $('#order_by_placeholder select option[value=\''+order_value +'\']').attr('selected', '');	
-
                                             jQuery('#order_by_placeholder select option').each (function(){
-
                                             })
                                         }
                                     }
-                            });	 		
+                            });	  					
+                            }  
                     }); */
                 });
             </script>
@@ -292,14 +288,12 @@ class TZ_product_search_widget extends WP_Widget {
                     /* Before widget (defined by themes). */
                     echo $before_widget;
                 }
-
 		/* Display the widget title if one was input (before and after defined by themes). */
 		if ( $title )
 			echo $before_title . $title . $after_title;
 		?>
 		<form <?php if($instance['hide_filter_btn'] == "1" && $instance['hide_keywords'] == "1" && $instance['hide_category'] == "1" && $instance['hide_brand'] == "1" && $instance['hide_price_slider'] == "1") echo " style='display:none;'"; ?>>
 		
-				
 		<div class="product_order_select_wrapper" style="display:none;">
 		<?php $product_order_options = aw_get_product_order_options();
 		$order_by = $product_order_options["order_by"];
@@ -353,24 +347,21 @@ class TZ_product_search_widget extends WP_Widget {
                             </li>
                         </ul>
                 </div>
-				
-				
-		
-		<div ng-repeat="(parameterName, parameterOptions) in filterParameterOptions">
-			<h4 class="compare_sidebar_search_header widget-title" style="text-transform: capitalize;">
-				{{parameterName | removeUnderscores}}
-				<div class="arrow"></div>
-			</h4>
-			<ul class="compare_sidebar_search field row compare_attribute_group">
-				<li class="field category_menu_child" ng-repeat="option in parameterOptions">
-                    <label class="checkbox" for="option_{{parameterName}}_{{option}}" ng-click="toggleSelection(parameterName, option)" >
-					<input class="compare_attribute" type="checkbox" name="selectedOptions[]" title="option_{{parameterName}}_{{option}}" value="{{option}}"/>
-                    <span></span> {{option}}
-                    </label>
-                </li>
-			</ul>
-		</div>
-		
+				 
+                <div ng-repeat="(parameterName, parameterOptions) in filterParameterOptions">
+                    <h4 class="compare_sidebar_search_header widget-title" style="text-transform: capitalize;">
+						{{parameterName | removeUnderscores}}
+                        <div class="arrow"></div>
+                    </h4>
+                    <ul class="compare_sidebar_search field row compare_attribute_group">
+						<li class="field category_menu_child" ng-repeat="option in parameterOptions">
+							<label class="checkbox" for="c_{{parameterName}}_{{option}}" ng-click="toggleSelection(parameterName, option)">
+								<input class="compare_attribute" type="checkbox" name="selectedOptions[]" title="c_{{parameterName}}_{{option}}" value="{{option}}" />
+								<span></span> {{option}}
+							</label>
+						</li>
+                    </ul>
+                </div>
                
 				<?php 
 					$this_category = "";
@@ -439,14 +430,12 @@ class TZ_product_search_widget extends WP_Widget {
                 }
 	
 	}
-
 	/* ---------------------------- */
 	/* ------- Update Widget -------- */
 	/* ---------------------------- */
 	
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		
@@ -582,7 +571,6 @@ class TZ_product_search_widget extends WP_Widget {
         }
         
         function theListTree( $taxonomy = 'product_category', $terms, &$children, $parent = 0, $level = 0, $i = 0, $currentItem ) {
-
 		foreach ( $terms as $key => $term ) {
                         
                     
@@ -599,7 +587,6 @@ class TZ_product_search_widget extends WP_Widget {
                         $i++;
 			
 			unset( $terms[$key] );
-
 			if ( isset( $children[$term->term_id] ) )
 				$this->theListTree( $taxonomy, $terms, $children, $term->term_id, $level + 1, $i, $currentItem );
 		}
@@ -610,7 +597,6 @@ class TZ_product_search_widget extends WP_Widget {
             if ( !is_taxonomy_hierarchical($taxonomy) )
                     return array();
             $children = get_option("{$taxonomy}_children");
-
             if ( is_array($children) )
                     return $children;
             $children = array();
@@ -620,7 +606,6 @@ class TZ_product_search_widget extends WP_Widget {
                             $children[$parent][] = $term_id;
             }
             update_option("{$taxonomy}_children", $children);
-
             return $children;
         
         }
