@@ -56,6 +56,8 @@ class aw_products_post_type {
 		$slug = $slug_first_part."/%product_category_main%/%product_category%";
 	}
 	
+	$slug = /*$slug_first_part.*/"/%product_category_main%/%product_category%";
+	
 	// Arguments
 	$args = array(
 		'labels' => $labels,

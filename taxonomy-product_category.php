@@ -44,6 +44,9 @@ $products = get_posts( $args );
 			$scope_filterSelectedOptions = '';
 			while(have_posts())
 			{
+				$image = get_post_meta($post->ID, 'image_meta')[0];
+				
+				$post_terms = wp_get_post_terms($post->ID, 'product_category');
 				the_post();
 				$params = $wpdb->get_results( 
 					"
@@ -52,25 +55,28 @@ $products = get_posts( $args );
 					WHERE wp_post_id = " . $post->ID
 				);
 				
-				$scope_products .= '{ name: "' . $post->post_title . '",
-									parameters: { ';
-						$count_params = count($params);
-						foreach ( $params as $param ) { 
-							$scope_products .= $param->param_name . ' : "' . $param->param_value . '"';
-							if (--$count_params !== 0) $scope_products .= ',';
-							//Get parameter names (as they are equal for each product in the category) from the first product
-							if ($post_count == 0) {
-								$scope_filterSelectedOptions.='' . $param->param_name . ' : []';
-								if ($count_params !== 0) $scope_filterSelectedOptions.= ',';
-							}
-						}
-				//if (--$post_desc_count != 0)
+				$scope_products .= '{ 	name: "' . $post->post_title . '",
+										image: "' . $image . '",
+										main_category: "' . $post_terms[1]->name . '",
+										category: "' . $post_terms[0]->name . '",
+										parameters: { ';
+											$count_params = count($params);
+											foreach ( $params as $param ) { 
+												$scope_products .= $param->param_name . ' : "' . $param->param_value . '"';
+												if (--$count_params !== 0) $scope_products .= ',';
+												//Get parameter names (as they are equal for each product in the category) from the first product
+												if ($post_count == 0) {
+													$scope_filterSelectedOptions.='' . $param->param_name . ' : []';
+													if ($count_params !== 0) $scope_filterSelectedOptions.= ',';
+												}
+											}
 					$scope_products .= '}},';
 				
 				$post_count++;
 			}
 		?>
 		
+
 <script>
 var app = angular.module("myApp", []);
 app.filter('removeUnderscores', function() {
@@ -130,8 +136,7 @@ app.controller("myCtrl", function($scope) {
 	} 
 });
 </script>
-		
-
+	
 <?php 
  
 $total_number_of_items = $wp_query->found_posts;
@@ -141,7 +146,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 $term = get_term_by('slug', get_query_var('term'), 'product_category');
 $listOrGrid = aw_get_result_layout_style();
 get_header();
-?>
+?>	
 <div class="nine columns push_three product-listing 444">
     <script type="text/javascript">
         function aw_more() {
@@ -161,14 +166,14 @@ get_header();
         
 			<div class="product" ng-repeat="product in products | filter: filterProducts">
 				<div class="product-photo">
-					<a href="#">
-						<img src="<?php get_template_directory_uri()."/img/no-photo.png"; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />  
+					<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
+						<img src="{{product.image}}" alt="<?php echo esc_attr(get_the_title()); ?>" />  
 					</a>
 				</div>
 
 				<div class="product-desc">
 					<h2>
-						<a href="#">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
 							{{product.name}}
 						</a>
 					</h2>
@@ -181,12 +186,12 @@ get_header();
 								$222.00
 							</span>
 						</p>
-						<a href="<?php echo get_permalink($post->ID); ?>" class="retailers">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}" class="retailers">
 							1 merchant
 						</a>
 					</div>
 					<div class="medium primary btn metro rounded">
-						<a href="#">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
 							<?php _e('Compare Prices', 'framework'); ?>
 						</a>
 					</div>

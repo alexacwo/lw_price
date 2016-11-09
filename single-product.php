@@ -8,20 +8,7 @@ $tz_hide_product_comments = $aw_theme_options['tz_hide_product_comments'];
 $tz_force_show_price_table = $aw_theme_options['tz_force_show_price_table'];  
 $listOrGrid = aw_get_result_layout_style();
 ?>
-<div class="nine columns single-product push_three">
-<?php 
-
-   $taxonomy_names = get_post_taxonomies( );
-   print_r( $taxonomy_names );
-
-?>
-<?php 
-
-   $get_post_type = get_post_type( );
-   print_r( $get_post_type );
-
-?>
-
+<div class="nine columns single-product push_three"> 
         <script type="text/javascript">
         function aw_more() {
                 jQuery('.desc_more').toggle();
@@ -158,7 +145,6 @@ $listOrGrid = aw_get_result_layout_style();
         <?php endif; // end have_posts() check ?>
 
 </div>
-
-<?php get_sidebar(); ?>
+ 
 
 <?php get_footer(); ?>
