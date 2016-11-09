@@ -6,7 +6,31 @@ class aw_products_post_type {
        $this->aw_add_post_type_actions();
        $this->aw_add_post_type_filters();
     }
-    
+        
+	public function get_taxonomy_parents($id, $taxonomy, $link = false, $separator = '/', $nicename = false, $visited = array()) {    
+		$chain = '';   
+		//$parent = &get_term($id, $taxonomy);
+		$parent = get_term($id, $taxonomy); 
+		if (is_wp_error($parent)) {
+			return $parent;
+		}
+
+		 
+		if ($nicename)    
+			$name = $parent -> slug;        
+		else    
+			$name = $parent -> name;
+
+		if ($parent -> parent && ($parent -> parent != $parent -> term_id) && !in_array($parent -> parent, $visited)) {    
+			$visited[] = $parent -> parent;    
+			$chain .= $this->get_taxonomy_parents($parent -> parent, $taxonomy, $link, $separator, $nicename, $visited);
+		}
+
+		if (!$link) $chain .= $separator . $name ;    
+
+		return $chain; 
+	}
+	
     public function aw_register_post_type(){        
         // Labels
 	$labels = array(
@@ -29,7 +53,7 @@ class aw_products_post_type {
 	if($short_url == 1) {
 		$slug = $slug_first_part;
 	} else {
-		$slug = $slug_first_part."/%product_category%/%product_brand%";
+		$slug = $slug_first_part."/%product_category_main%/%product_category%";
 	}
 	
 	// Arguments
@@ -43,9 +67,11 @@ class aw_products_post_type {
 		'menu_icon' => get_stylesheet_directory_uri().'/img/admin/admin-products.png',
 		'rewrite' => true,
 		'capability_type' => 'post',
-		'rewrite' => array("slug" => $slug), // Permalinks format
+		'rewrite' => array(
+			'slug' => $slug
+		), // Permalinks format
 		'has_archive' => true, 
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'menu_position' => null,
 		'taxonomies' => array('post_tag'),
 		'supports' => array('title','editor','author','thumbnail','excerpt', 'comments', 'tags')
@@ -64,16 +90,33 @@ class aw_products_post_type {
     
     function aw_add_post_type_filters(){
         add_filter('post_type_link', array($this, 'aw_filter_post_type_link'), 10, 2);
-        add_filter('term_link',  array($this, 'aw_filter_term_link'), 10, 2);
+        add_filter('term_link',  array($this, 'aw_filter_term_link'), 10, 2);				
+		add_filter( 'request', array($this, 'se77513_display_query_vars'), 1 );
+
+
     }
-    
+	    
+		function se77513_display_query_vars( $query_vars ) {
+   /* echo '<pre>' . print_r( $query_vars, true ) . '</pre>';
+
+	die();*/
+    return $query_vars;
+}
     function aw_filter_post_type_link($link, $post) {
         if ($post->post_type != 'product')
             return $link;
-        if ($cats = get_the_terms($post->ID, 'product_brand'))
-            $link = str_replace('%product_brand%', array_pop($cats)->slug, $link);
+        /*if ($cats = get_the_terms($post->ID, 'product_brand'))
+            $link = str_replace('%product_brand%', array_pop($cats)->slug, $link);*/
         if ($cats = get_the_terms($post->ID, 'product_category'))
-            $link = str_replace('%product_category%', array_pop($cats)->slug, $link);
+			//$link = str_replace('%product_category%', array_pop($cats)->slug, $link);	   
+			 $current_term = array_shift($cats);
+			$parent_term =  array_pop($cats); 
+			$link = str_replace('%product_category_main%', $parent_term->slug, $link);	   
+			$link = str_replace('%product_category%', $current_term->slug, $link);	   
+			//$link = str_replace('%product_category_main%', $this->get_taxonomy_parents($current_term, 'product_category', false, '/', true) , $link);
+			
+			//var_dump($link);
+			//die();
         return $link;
     }
     
@@ -161,7 +204,6 @@ class aw_products_post_type {
     function aw_save_product_metas($postID){
       
             global $post, $wpdb;
-
             if( ! empty( $_POST ) ){
            
                     
@@ -175,33 +217,24 @@ class aw_products_post_type {
                             
                             update_post_meta($post->ID, 'image_meta', $_POST['image_meta']);
                         }
-
                         if ( check_admin_referer( 'aw_decription_meta_nonce_check', 'aw_description_meta_nonce' ) ) {
                     
                             update_post_meta($post->ID, 'description_meta', $_POST['description_meta']);
                         }
-
-
                         // Terms brands
                         $brands = wp_get_post_terms($post->ID,'product_brand');
-
                         // Select all old relationships - The aim is to delete relationships and then add again them.
                         $sql = "SELECT * FROM ".$wpdb->prefix."term_relationships tr 
                                         INNER JOIN  ".$wpdb->prefix."term_taxonomy tt 
                                         ON (tr.term_taxonomy_id = tt.term_taxonomy_id) 
                                         WHERE object_id = '".$post->ID."' AND taxonomy = 'product_bisbrand'"; 
-
                         $relationships_todelete = $wpdb->get_results($sql);
-
-
                         if(!empty($relationships_todelete)){
                                 // Loop thru all old relationships
                                 foreach ($relationships_todelete AS $relationship_todelete){
-
                                         //Delete all old relationships 
                                         $sql = "DELETE FROM ".$wpdb->prefix."term_relationships WHERE object_id = '".$post->ID."' AND term_taxonomy_id = '".$relationship_todelete->term_taxonomy_id."'"; 
                                         $wpdb->query($sql);
-
                                         // Recalculate count
                                         $sql = "UPDATE ".$wpdb->prefix."term_taxonomy tt
                                         SET count =
@@ -214,7 +247,6 @@ class aw_products_post_type {
                                         $wpdb->query($sql);	
                                 }
                         }
-
                         // Add new relationships
                         foreach($brands as $brand) {
                                 if(!($bisbrand = term_exists($brand->name, 'product_bisbrand'))) {

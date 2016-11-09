@@ -20,7 +20,7 @@ $current_term = get_term_by('slug',get_query_var('term'), get_query_var('taxonom
                 $parent_array;
                 $array_term = $current_term;
                 //While the current term has a parent
-                while(get_term($array_term->parent,$array_term->taxonomy)->name != "")
+                while(property_exists(get_term($array_term->parent,$array_term->taxonomy), 'name') && get_term($array_term->parent,$array_term->taxonomy)->name != "" )
                 {
                     //Add the parent to the array
                     $parent_array[] = get_term($array_term->parent,$array_term->taxonomy);
@@ -126,7 +126,7 @@ $current_term = get_term_by('slug',get_query_var('term'), get_query_var('taxonom
 				<?php
 			}
 			
-			$brand = get_term_by('slug',$wp_query->query_vars['product_brand'],'product_brand');
+			$brand = false;//get_term_by('slug',$wp_query->query_vars['product_brand'],'product_brand');
 			if(!$brand) {
 				$brands = wp_get_post_terms(get_the_ID(),'product_brand');
 				if(count($brands) > 0)

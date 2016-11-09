@@ -95,8 +95,16 @@ class TZ_product_search_widget extends WP_Widget {
                         /*Hide sidebar elements by default*/
                         $('#compare-sidebar-search-categories').slideToggle( "fast" );
                         $('#compare-sidebar-search-brand').slideToggle( "fast" );
+                        $('.compare_sidebar_search').slideToggle( "fast" );
         
+		
                         /*Hide and show sidebar elements*/
+						
+                        $('.compare_sidebar_search_header').click(function(){
+                            $(this).toggleClass('open');
+                            $(this).siblings('.compare_sidebar_search').slideToggle( "fast" );
+                        });
+						
                         $('#compare-sidebar-search-category-header').click(function(){
                             $('#compare-sidebar-search-category-header').toggleClass('open');
                             $('#compare-sidebar-search-categories').slideToggle( "fast" );
@@ -188,7 +196,7 @@ class TZ_product_search_widget extends WP_Widget {
                         })
                         /* EO Gumby hack */
                         
-                        jQuery('#<?php echo $this->id; ?> .compare_attribute').live('change', jQuery.filterProductsCompare<?php echo $this->number; ?> = function() {
+              /*  jQuery('#<?php echo $this->id; ?> .compare_attribute').live('change', jQuery.filterProductsCompare<?php echo $this->number; ?> = function() {
                             var order_by_object  = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>').html();
                             var order_value = jQuery('#compare_products_order_by_select_box<?php echo $this->number; ?>');	
                             order_value = order_value.length>0 ? order_value.val().split(','): '<?php echo get_option('tz_products_order'); ?>,<?php echo get_option('tz_products_order_by'); ?>';
@@ -244,7 +252,7 @@ class TZ_product_search_widget extends WP_Widget {
                                         jQuery(this).val('<?php echo $searchPlaceholder; ?>');
                                     }								
                                 } 	
-                            })
+                            }) 
 			    		 
 						
 						
@@ -282,13 +290,9 @@ class TZ_product_search_widget extends WP_Widget {
                                             })
                                         }
                                     }
-                            });	 
-                            if(!jQuery.support.placeholder) { 
-                            /*if(isEmptyPlaceholder == 1){
-                                            jQuery(this).val('<?php echo $searchPlaceholder; ?>');
-                            }	*/							
-                            } 			
-                    }); 
+                            });	  					
+                            }  
+                    }); */
                 });
             </script>
 		
@@ -357,6 +361,21 @@ class TZ_product_search_widget extends WP_Widget {
                                     <input placeholder="Search for..."  class="xxwide input compare_attribute_group filterTextFieldStyling filterTextField<?php echo $this->number; ?>" <?php echo (isset($_GET['s']) && trim($_GET['s']) != "") ? "value='".sanitize_text_field(stripslashes(trim($_GET['s'])))."'" : ""; ?> type="search" name="k"  />
                             </li>
                         </ul>
+                </div>
+				 
+                <div ng-repeat="(parameterName, parameterOptions) in filterParameterOptions">
+                    <h4 class="compare_sidebar_search_header widget-title" style="text-transform: capitalize;">
+						{{parameterName | removeUnderscores}}
+                        <div class="arrow"></div>
+                    </h4>
+                    <ul class="compare_sidebar_search field row compare_attribute_group">
+						<li class="field category_menu_child" ng-repeat="option in parameterOptions">
+							<label class="checkbox" for="c_{{parameterName}}_{{option}}" ng-click="toggleSelection(parameterName, option)">
+								<input class="compare_attribute" type="checkbox" name="selectedOptions[]" title="c_{{parameterName}}_{{option}}" value="{{option}}" />
+								<span></span> {{option}}
+							</label>
+						</li>
+                    </ul>
                 </div>
                
 				<?php 
