@@ -26,10 +26,10 @@ class aw_theme_installation {
      * 
      */
     function aw_check_compare_version(){
-		global $compare_version, $wpdb;
+		global $compare_version, $wpdb;	$this->aw_compare_do_install();
 		if(get_option('compare_version') < $compare_version) 
 		{
-			$this->aw_compare_do_install();
+		
 		}
 		flush_rewrite_rules();
     }
@@ -314,6 +314,7 @@ class aw_theme_installation {
      * @return string
      */
     protected function aw_create_mysql_query_string($table_name, $table_prefix){
+		 
 	$query = "";
 	switch($table_name){
 		case "pc_products_relationships": 
