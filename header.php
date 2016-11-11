@@ -158,6 +158,7 @@ $tz_colorset1_c1 = $aw_theme_options['tz_colorset1_c1'];
             <?php
         ?>
 
+ <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
 </head>
 
 <body <?php body_class(); ?>>

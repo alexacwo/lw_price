@@ -171,7 +171,7 @@ class TZ_product_search_widget extends WP_Widget {
 				
                         
                         /* Gumby hack > elements' on events*/
-                        $('.category_menu_child').on('gumby.onChange', function(e) {
+                        /*$('.category_menu_child').on('gumby.onChange', function(e) {
                             if(jQuery(e.currentTarget).find('input').attr('type') === 'checkbox'){
                                  // Some code to make sure that we only search if the checkbox has actually been changed and that it isn't just a fake trigger from gumby
                                 if(typeof window.ajaxSearchCheckBoxesAlreadyLoaded === 'undefined'){
@@ -193,7 +193,7 @@ class TZ_product_search_widget extends WP_Widget {
                         })                        
                         $('.ajax-filter-btn').on(Gumby.click, function(e) {                           
                             jQuery.filterProductsCompare<?php echo $this->number; ?>();
-                        })
+                        })*/
                         /* EO Gumby hack */
                         
               /*  jQuery('#<?php echo $this->id; ?> .compare_attribute').live('change', jQuery.filterProductsCompare<?php echo $this->number; ?> = function() {

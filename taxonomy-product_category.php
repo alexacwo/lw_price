@@ -1,22 +1,16 @@
 <?php
-
 global $wpdb, $wp_query, $post, $aw_theme_options;
-
-
 // determine the topmost parent of a term
 function get_product_topmost_parent_cat($term_id){
-
 	$current_cat = get_term_by('id', $term_id, 'product_category');						
 	$parent = $current_cat->parent;
 	
 	return $parent == 0 ? $current_cat->name : get_product_topmost_parent_cat($parent);
 }
-
 //Current taxonomy id
 $term_id = get_queried_object_id();
 //Topmost parent id
 $topmost_parent_cat_id = get_product_topmost_parent_cat($term_id);
-
 ////////////////////////////////////////////////////////////
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -30,7 +24,6 @@ $topmost_parent_cat_id = get_product_topmost_parent_cat($term_id);
 /*
 var_dump($term_id);
 var_dump($topmost_parent_cat_id);
-
 echo "<br><br>dddddddddddddddddddddddddddddddddddddddd<br><br>";
 				*/	
 $args = array(
@@ -38,11 +31,10 @@ $args = array(
 	'product_category' => $term_id
 );
 $products = get_posts( $args );
-
 ?> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
+<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
 <div ng-app="myApp" ng-controller="myCtrl">
  
 
@@ -52,6 +44,9 @@ $products = get_posts( $args );
 			$scope_filterSelectedOptions = '';
 			while(have_posts())
 			{
+				$image = get_post_meta($post->ID, 'image_meta')[0];
+				
+				$post_terms = wp_get_post_terms($post->ID, 'product_category');
 				the_post();
 				$params = $wpdb->get_results( 
 					"
@@ -60,27 +55,31 @@ $products = get_posts( $args );
 					WHERE wp_post_id = " . $post->ID
 				);
 				
-				$scope_products .= '{ name: "' . $post->post_title . '",
-									parameters: { ';
-						$count_params = count($params);
-						foreach ( $params as $param ) { 
-							$scope_products .= $param->param_name . ' : "' . $param->param_value . '"';
-							if (--$count_params !== 0) $scope_products .= ',';
-							//Get parameter names (as they are equal for each product in the category) from the first product
-							if ($post_count == 0) {
-								$scope_filterSelectedOptions.='' . $param->param_name . ' : []';
-								if ($count_params !== 0) $scope_filterSelectedOptions.= ',';
-							}
-						}
-				//if (--$post_desc_count != 0)
-					$scope_products .= '}},';
+				$scope_products .= '
+				{ 	name: "' . $post->post_title . '",
+										image: "' . $image . '",
+										main_category: "' . $post_terms[1]->name . '",
+										category: "' . $post_terms[0]->name . '",
+										parameters: { ';
+											$count_params = count($params);
+											foreach ( $params as $param ) { 
+												$scope_products .= $param->param_name . ' : "' . $param->param_value . '"';
+												if (--$count_params !== 0) $scope_products .= ',';
+												//Get parameter names (as they are equal for each product in the category) from the first product
+												if ($post_count == 0) {
+													$scope_filterSelectedOptions.='' . $param->param_name . ' : []';
+													if ($count_params !== 0) $scope_filterSelectedOptions.= ',';
+												}
+											}
+					$scope_products .= '}},
+					';
 				
 				$post_count++;
 			}
 		?>
 		
 <script>
-var app = angular.module("myApp", []);
+var app = angular.module("myApp", ['ui.bootstrap']);
 
 app.filter('removeUnderscores', function() {
     return function(input) {
@@ -88,26 +87,45 @@ app.filter('removeUnderscores', function() {
     }
 });
 
-app.controller("myCtrl", function($scope) { 
+app.filter('startFrom', function() {
+    return function(input, start) {
+        if(input) {
+            start = +start; //parse to int
+            return input.slice(start);
+        }
+        return [];
+    }
+});
 
+app.controller("myCtrl", function($scope, $timeout) { 
 	//$scope.filterSelectedOptions = {"green_compliance":[],"operating_system":[],"hdmi":[]};
 	// $scope.filterParameterOptions = {"green_compliance":["yes","no"],"operating_system":["ios","windows"],"hdmi":["wer","de","ee"]};
+	
+    $scope.currentPage = 1; //current page
+    $scope.maxSize = 4; //pagination max size
+    $scope.entryLimit = 3; //max rows for data table
+	
 	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};	
 	$scope.products = [<?php echo $scope_products; ?>];
- $scope.filterParameterOptions = {<?php echo $scope_filterSelectedOptions; ?>};
+	$scope.filterParameterOptions = {<?php echo $scope_filterSelectedOptions; ?>};
 		 	
 	$scope.toggleSelection = function toggleSelection(parameterName, option) {
 		var idx = $scope.filterSelectedOptions[parameterName].indexOf(option);
-
 		// is currently selected
 		if (idx > -1) {
 			$scope.filterSelectedOptions[parameterName].splice(idx, 1);
 		}
-
 		// is newly selected
 		else {
 			$scope.filterSelectedOptions[parameterName].push(option);
 		}
+		
+		// refresh the number of pages in pagination
+		$timeout(function() { 
+			console.log($scope.filteredProducts.length);
+			$scope.noOfPages = Math.ceil($scope.filteredProducts.length/$scope.entryLimit);
+		}, 10);
+		
 	};
 	
 	$scope.filterProducts = function(product)
@@ -141,13 +159,17 @@ app.controller("myCtrl", function($scope) {
 			}
 		}
 	} 
+	
+	
+    $scope.noOfPages = Math.ceil($scope.products.length/$scope.entryLimit);
+	
+	$scope.refreshPagination = function() {
+	};
 });
 </script>
-		
-
+	
 <?php 
  
-
 $total_number_of_items = $wp_query->found_posts;
 $number_of_items = $wp_query->post_count;
 $max_num_pages = $wp_query->max_num_pages;
@@ -155,7 +177,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 $term = get_term_by('slug', get_query_var('term'), 'product_category');
 $listOrGrid = aw_get_result_layout_style();
 get_header();
-?>
+?>	
 <div class="nine columns push_three product-listing 444">
     <script type="text/javascript">
         function aw_more() {
@@ -171,18 +193,20 @@ get_header();
             <?php do_action('aw_show_listing_options'); ?>
         </div>
         
+			 <pagination data-boundary-links="true" data-num-pages="noOfPages" data-current-page="currentPage" max-size="maxSize" class="pagination-small" data-previous-text="&laquo;" data-next-text="&raquo;"></pagination>
+				
         <div class="product-listing-container <?php echo $listOrGrid; ?>">
         
-			<div class="product" ng-repeat="product in products | filter: filterProducts">
+			<div class="product" ng-repeat="product in filteredProducts = (products | filter:filterProducts) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 				<div class="product-photo">
-					<a href="#">
-						<img src="<?php get_template_directory_uri()."/img/no-photo.png"; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />  
+					<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
+						<img src="{{product.image}}" alt="<?php echo esc_attr(get_the_title()); ?>" />  
 					</a>
 				</div>
 
 				<div class="product-desc">
 					<h2>
-						<a href="#">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
 							{{product.name}}
 						</a>
 					</h2>
@@ -195,18 +219,20 @@ get_header();
 								$222.00
 							</span>
 						</p>
-						<a href="<?php echo get_permalink($post->ID); ?>" class="retailers">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}" class="retailers">
 							1 merchant
 						</a>
 					</div>
 					<div class="medium primary btn metro rounded">
-						<a href="#">
+						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
 							<?php _e('Compare Prices', 'framework'); ?>
 						</a>
 					</div>
 				</div>
 			</div>
+	
         </div>
+			
     
     <?php endif; ?>
    
