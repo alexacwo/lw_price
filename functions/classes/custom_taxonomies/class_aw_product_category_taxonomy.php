@@ -37,7 +37,6 @@ class aw_product_category_taxonomy {
 		'show_ui' => true,
 		'query_var' => true,
 		'rewrite' => array(
-			/*'slug' => $slug,*/
 			'hierarchical' => true
 		)
 	);
