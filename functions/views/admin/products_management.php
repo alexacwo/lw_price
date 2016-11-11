@@ -653,7 +653,7 @@ if(isset($_POST['submit']['order']))
 				<?php endforeach; ?>
 			<?php endif; ?>
 			<?php
-			$q = "SELECT p.*, count(p.id_product) as merchants, pr.wp_post_id FROM ".$wpdb->prefix."pc_products p, ".$wpdb->prefix."pc_products_relationships pr WHERE p.id_product = pr.id_product".$where." GROUP BY id_product ORDER BY product_name $limit";
+			$q = "SELECT p.*, count(p.id_product) as merchants, pr.wp_post_id FROM ".$wpdb->prefix."pc_products p, ".$wpdb->prefix."pc_products_relationships pr WHERE p.id_product = pr.id_product".$where." GROUP BY id_product ORDER BY product_name";// $limit";
 			$products = $wpdb->get_results($q, OBJECT_K);
 			if(count($products_ko) == 0 && count($products) == 0):
 			?>

@@ -46,6 +46,7 @@ class TZ_product_search_widget extends WP_Widget {
 	/* ---------------------------- */
 	function widget( $args, $instance ) {
 		
+		 
 		global $wp_query;
 		extract( $args );
 		

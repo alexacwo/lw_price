@@ -911,6 +911,8 @@ function aw_custom_product_search_filter($query) {
 			}
 		}
     } 
+	
+				$query->set('posts_per_page', -1);
 }
 add_filter('pre_get_posts','aw_custom_product_search_filter');
 

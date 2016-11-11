@@ -1,7 +1,8 @@
 <?php
 global $wpdb, $wp_query, $post, $aw_theme_options;
+
 // determine the topmost parent of a term
-function get_product_topmost_parent_cat($term_id){
+/*function get_product_topmost_parent_cat($term_id){
 	$current_cat = get_term_by('id', $term_id, 'product_category');						
 	$parent = $current_cat->parent;
 	
@@ -25,12 +26,13 @@ $topmost_parent_cat_id = get_product_topmost_parent_cat($term_id);
 var_dump($term_id);
 var_dump($topmost_parent_cat_id);
 echo "<br><br>dddddddddddddddddddddddddddddddddddddddd<br><br>";
-				*/	
-$args = array(
+			 
+ $args = array(
     'post_type' => 'product',
 	'product_category' => $term_id
 );
 $products = get_posts( $args );
+var_dump($products);*/
 ?> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -42,12 +44,14 @@ $products = get_posts( $args );
 			$post_count = 0;
 			$scope_products = '';
 			$scope_filterSelectedOptions = '';
+			
 			while(have_posts())
-			{
+			{ 
+				the_post() ;
+				
 				$image = get_post_meta($post->ID, 'image_meta')[0];
 				
 				$post_terms = wp_get_post_terms($post->ID, 'product_category');
-				the_post();
 				$params = $wpdb->get_results( 
 					"
 					SELECT param_name, param_value 

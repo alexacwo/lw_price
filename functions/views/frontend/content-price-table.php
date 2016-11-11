@@ -6,10 +6,10 @@ $unicalPriceTableId = mt_rand();
 $current_blog_id = get_current_blog_id();
 ?>
 <script type="text/javascript">
-    jQuery(document).ready(function(){
+     jQuery(document).ready(function(){
             jQuery('.paginator-<?php echo $unicalPriceTableId; ?>').smartpaginator({ totalrecords: <?php echo $merchants_length; ?>, recordsperpage: <?php if (isset($aw_theme_options['tz_products_per_page']) && is_numeric($aw_theme_options['tz_products_per_page'])){ if($merchants_length >= $aw_theme_options['tz_products_per_page']) { echo $aw_theme_options['tz_products_per_page']; } else { echo $merchants_length; } } else {  echo "10"; }; ?>, datacontainer: 'price-comparison-table-<?php echo $unicalPriceTableId; ?>', dataelement: 'tr', initval: 0, next: 'Next', prev: 'Prev', first: 'First', last: 'Last', theme: 'black' });
 
-    });
+    }); 
 </script>
 <section id="retailers" class="row retailers-table">
     <div class="twelve columns">
