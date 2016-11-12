@@ -204,7 +204,7 @@ get_header();
 			<div class="product" ng-repeat="product in filteredProducts = (products | filter:filterProducts) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 				<div class="product-photo">
 					<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
-						<img src="{{product.image}}" alt="<?php echo esc_attr(get_the_title()); ?>" />  
+						<img ng-src="{{product.image}}" alt="<?php echo esc_attr(get_the_title()); ?>" />  
 					</a>
 				</div>
 

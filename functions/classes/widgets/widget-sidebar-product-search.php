@@ -299,7 +299,7 @@ class TZ_product_search_widget extends WP_Widget {
 		
 		<?php
                 // If at least one component visible
-                if($instance['hide_filter_btn'] != "1" || $instance['hide_keywords'] != "1" || $instance['hide_category'] != "1" || $instance['hide_brand'] != "1" || $instance['hide_price_slider'] != "1"){
+                if($instance['hide_filter_btn'] != "1" || $instance['hide_keywords'] != "1" || $instance['hide_category'] != "1" || $instance['hide_brand'] != "1" || $instance['hide_price_slider'] != "1" || 1==1){
                     /* Before widget (defined by themes). */
                     echo $before_widget;
                 }
@@ -308,7 +308,7 @@ class TZ_product_search_widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 		?>
-		<form <?php if($instance['hide_filter_btn'] == "1" && $instance['hide_keywords'] == "1" && $instance['hide_category'] == "1" && $instance['hide_brand'] == "1" && $instance['hide_price_slider'] == "1") echo " style='display:none;'"; ?>>
+		<form <?php if(($instance['hide_filter_btn'] == "1" && $instance['hide_keywords'] == "1" && $instance['hide_category'] == "1" && $instance['hide_brand'] == "1" && $instance['hide_price_slider'] == "1" ) || 1==0) echo " style='display:none;'"; ?>>
 		
 		<div class="product_order_select_wrapper" style="display:none;">
 		<?php $product_order_options = aw_get_product_order_options();
@@ -431,7 +431,7 @@ class TZ_product_search_widget extends WP_Widget {
 		echo '<input type="hidden" name="product" value="" />';		
 		?>
 			
-		<div style="<?php echo $hide_filter_btn_input; ?>">
+		<div style="<?php echo $hide_filter_btn_input; ?>;display: none !important;">
                         <div class="medium primary btn metro rounded ajax-filter-btn">
                             <a class="button" class="wrap" ><?php echo __('Filter','framework'); ?></a>
                         </div>

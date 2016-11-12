@@ -158,12 +158,34 @@ $tz_colorset1_c1 = $aw_theme_options['tz_colorset1_c1'];
             <?php
         ?>
 
- <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+ <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//1netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+ <style>
+ .pagination{margin:20px 0;}
+.pagination ul{display:inline-block;*display:inline;*zoom:1;margin-left:0;margin-bottom:0;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);-moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);}
+.pagination ul>li{display:inline;}
+.pagination ul>li>a,.pagination ul>li>span{float:left;padding:4px 12px;line-height:22px;text-decoration:none;background-color:#ffffff;border:1px solid #dddddd;border-left-width:0;}
+.pagination ul>li>a:hover,.pagination ul>li>a:focus,.pagination ul>.active>a,.pagination ul>.active>span{background-color:#f5f5f5;}
+.pagination ul>.active>a,.pagination ul>.active>span{color:#999999;cursor:default;}
+.pagination ul>.disabled>span,.pagination ul>.disabled>a,.pagination ul>.disabled>a:hover,.pagination ul>.disabled>a:focus{color:#999999;background-color:transparent;cursor:default;}
+.pagination ul>li:first-child>a,.pagination ul>li:first-child>span{border-left-width:1px;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px;}
+.pagination ul>li:last-child>a,.pagination ul>li:last-child>span{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px;}
+.pagination-centered{text-align:center;}
+.pagination-right{text-align:right;}
+.pagination-large ul>li>a,.pagination-large ul>li>span{padding:11px 19px;font-size:17.5px;}
+.pagination-large ul>li:first-child>a,.pagination-large ul>li:first-child>span{-webkit-border-top-left-radius:6px;-moz-border-radius-topleft:6px;border-top-left-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomleft:6px;border-bottom-left-radius:6px;}
+.pagination-large ul>li:last-child>a,.pagination-large ul>li:last-child>span{-webkit-border-top-right-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;-webkit-border-bottom-right-radius:6px;-moz-border-radius-bottomright:6px;border-bottom-right-radius:6px;}
+.pagination-mini ul>li:first-child>a,.pagination-small ul>li:first-child>a,.pagination-mini ul>li:first-child>span,.pagination-small ul>li:first-child>span{-webkit-border-top-left-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-bottomleft:3px;border-bottom-left-radius:3px;}
+.pagination-mini ul>li:last-child>a,.pagination-small ul>li:last-child>a,.pagination-mini ul>li:last-child>span,.pagination-small ul>li:last-child>span{-webkit-border-top-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px;-webkit-border-bottom-right-radius:3px;-moz-border-radius-bottomright:3px;border-bottom-right-radius:3px;}
+.pagination-small ul>li>a,.pagination-small ul>li>span{padding:2px 10px;font-size:16px;}
+.pagination-mini ul>li>a,.pagination-mini ul>li>span{padding:0 6px;font-size:10.5px;} 
+.pagination a { cursor: pointer !important; } 
+</style>
 </head>
 
 <body <?php body_class(); ?>>
 
 <header class="masterheader">
+	<div class="container">
 	<div class="row tophead">
 		<div class="twelve columns">
 			
@@ -203,7 +225,13 @@ $tz_colorset1_c1 = $aw_theme_options['tz_colorset1_c1'];
 		<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
                 <?php
                 if (has_nav_menu('main-nav')) {
-                    wp_nav_menu(array('theme_location' => 'main-nav', 'container' => '', 'items_wrap' => '<ul id="%1$s" class="twelve columns main-menu %2$s">%3$s</ul>', 'walker' => new aw_Walker_Page_Gumby() ));
+					
+                    wp_nav_menu(array(
+						'theme_location' => 'main-nav',
+						'container' => '',
+						'items_wrap' => '<ul id="%1$s" class="twelve columns main-menu %2$s">%3$s</ul>',
+						'walker' => new aw_Walker_Page_Gumby()
+					));
                 }
                 ?>
 	</nav>
@@ -215,7 +243,8 @@ $tz_colorset1_c1 = $aw_theme_options['tz_colorset1_c1'];
 			echo '</div></section>';
 		endif;
 	?>
-
+	</div>
 </header>
 
+<div class="container">
 <div class="row master-row">

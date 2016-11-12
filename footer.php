@@ -1,7 +1,8 @@
 <?php global $aw_theme_options; ?>	
-        </div>
-	<!-- .master-row -->
 
+        </div>
+		</div>
+	<!-- .master-row -->
 	<footer class="master-footer">
                 
                 <?php if(isset($aw_theme_options['tz_header_leaderboard']) && trim($aw_theme_options['tz_header_leaderboard']) != ""): ?>

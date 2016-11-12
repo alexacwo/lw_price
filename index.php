@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+ 
 
 	<div class="nine columns blog-column push_three">
 

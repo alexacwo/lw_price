@@ -6,7 +6,7 @@ class aw_products_merchants_management {
        $this->aw_add_filters();
     }
     
-    function aw_crete_menu_items(){
+    function aw_create_menu_items(){
         $icon_url = get_stylesheet_directory_uri().'/img/admin/admin-products.png';
         $position = 30;
         add_menu_page( 'Compare', 'Compare', 'edit_posts', 'compare', array( $this, 'c_compare_home' ), $icon_url, $position );
@@ -16,7 +16,7 @@ class aw_products_merchants_management {
     }
    
     function aw_add_actions(){
-        add_action('admin_menu', array( $this, 'aw_crete_menu_items' )); 
+        add_action('admin_menu', array( $this, 'aw_create_menu_items' )); 
     }
       
     
