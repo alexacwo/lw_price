@@ -158,7 +158,6 @@ $tz_colorset1_c1 = $aw_theme_options['tz_colorset1_c1'];
             <?php
         ?>
 
- <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//1netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
  <style>
  .pagination{margin:20px 0;}
 .pagination ul{display:inline-block;*display:inline;*zoom:1;margin-left:0;margin-bottom:0;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);-moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);box-shadow:0 1px 2px rgba(0, 0, 0, 0.05);}

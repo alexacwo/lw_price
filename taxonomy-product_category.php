@@ -59,11 +59,22 @@ var_dump($products);*/
 					WHERE wp_post_id = " . $post->ID
 				);
 				
+				$retailer_details = $wpdb->get_row( 
+					"
+					SELECT COUNT(p.id_merchant) AS count_retailers, MIN(p.price) AS lowest_price
+					FROM ".$wpdb->prefix."pc_products_relationships pr
+					LEFT JOIN ".$wpdb->prefix."pc_products p
+					ON pr.id_product = p.id_product
+					WHERE pr.wp_post_id = " . $post->ID
+				);
+				
 				$scope_products .= '
-				{ 	name: "' . $post->post_title . '",
+				{ 	name: "' . str_replace('"',"''", $post->post_title) . '",
 										image: "' . $image . '",
 										main_category: "' . $post_terms[1]->name . '",
 										category: "' . $post_terms[0]->name . '",
+										lowest_price: "' . $retailer_details->lowest_price . '",
+										count_retailers: "' . $retailer_details->count_retailers . '",
 										parameters: { ';
 											$count_params = count($params);
 											foreach ( $params as $param ) { 
@@ -91,6 +102,17 @@ app.filter('removeUnderscores', function() {
     }
 });
 
+app.filter('replaceChars', function() {
+    return function(input) {
+		formattedInput = input.replace(/"/g, "");
+		formattedInput = formattedInput.replace(/'/g, "");
+		formattedInput = formattedInput.replace(/\./g, "");
+		formattedInput = formattedInput.replace(/,/g, "");
+		formattedInput = formattedInput.replace(/ /g, "-");
+		return formattedInput;
+    }
+});
+
 app.filter('startFrom', function() {
     return function(input, start) {
         if(input) {
@@ -107,7 +129,7 @@ app.controller("myCtrl", function($scope, $timeout) {
 	
     $scope.currentPage = 1; //current page
     $scope.maxSize = 4; //pagination max size
-    $scope.entryLimit = 3; //max rows for data table
+    $scope.entryLimit = 2; //max rows for data table
 	
 	$scope.filterSelectedOptions = {<?php echo $scope_filterSelectedOptions; ?>};	
 	$scope.products = [<?php echo $scope_products; ?>];
@@ -153,13 +175,17 @@ app.controller("myCtrl", function($scope, $timeout) {
 		return keepGoing;		
 	}; 
 	
-	 var unique = {};
+	var unique = {};
 	var distinct = [];
 	for( var i in $scope.filterParameterOptions ){	
-		for( var j in $scope.products ){		
-			if( typeof(unique[$scope.products[j].parameters[i]]) == "undefined"){
-				$scope.filterParameterOptions[i].push($scope.products[j].parameters[i]);
-				unique[$scope.products[j].parameters[i]] = 1;
+		if( "undefined" === typeof(unique[i])){
+			unique[i] = [];
+		}
+		for( var j in $scope.products ){
+			//console.log('parameter: ' + i + ', value: ' + $scope.products[j].parameters[i] + ', unique: ' + unique[i][$scope.products[j].parameters[i]]);
+			if( "undefined" === typeof(unique[i][$scope.products[j].parameters[i]])){
+				if ($scope.products[j].parameters[i] != "") $scope.filterParameterOptions[i].push($scope.products[j].parameters[i]);
+				unique[i][$scope.products[j].parameters[i]] = 0;
 			}
 		}
 	} 
@@ -203,14 +229,14 @@ get_header();
         
 			<div class="product" ng-repeat="product in filteredProducts = (products | filter:filterProducts) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 				<div class="product-photo">
-					<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
+					<a href="<?php echo get_home_url(); ?>/{{product.main_category | lowercase | replaceChars}}/{{product.category | lowercase | replaceChars}}/{{product.name | lowercase | replaceChars}}">
 						<img ng-src="{{product.image}}" alt="<?php echo esc_attr(get_the_title()); ?>" />  
 					</a>
 				</div>
 
 				<div class="product-desc">
 					<h2>
-						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
+						<a href="<?php echo get_home_url(); ?>/{{product.main_category | lowercase | replaceChars}}/{{product.category | lowercase | replaceChars}}/{{product.name | lowercase | replaceChars}}">
 							{{product.name}}
 						</a>
 					</h2>
@@ -220,15 +246,15 @@ get_header();
 					<div>
 						<p class="price">
 							<span>
-								$222.00
+								<span ng-if="product.count_retailers > 1">from </span>${{product.lowest_price}}
 							</span>
 						</p>
-						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}" class="retailers">
-							1 merchant
+						<a href="<?php echo get_home_url(); ?>/{{product.main_category | lowercase | replaceChars}}/{{product.category | lowercase | replaceChars}}/{{product.name | lowercase | replaceChars}}" class="retailers">
+							{{product.count_retailers}} merchant<span ng-if="product.count_retailers > 1">s</span>
 						</a>
 					</div>
 					<div class="medium primary btn metro rounded">
-						<a href="<?php echo get_home_url(); ?>/product/{{product.main_category}}/{{product.category}}/{{product.name}}">
+						<a href="<?php echo get_home_url(); ?>/{{product.main_category | lowercase | replaceChars}}/{{product.category | lowercase | replaceChars}}/{{product.name | lowercase | replaceChars}}">
 							<?php _e('Compare Prices', 'framework'); ?>
 						</a>
 					</div>

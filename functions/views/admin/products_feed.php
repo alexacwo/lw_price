@@ -70,7 +70,7 @@ global $wpdb;
 					$sheet_index = $objPHPExcel->getIndex($worksheet);
 					$sheet_name = $sheet_names[$sheet_index];
 					
-					$highest_row = $worksheet->getHighestDataRow();
+					$highest_row = $worksheet->getHighestDataRow(); 
 					$highest_column = $worksheet->getHighestDataColumn();
 
 					$headings = $worksheet->rangeToArray('A1:' . $highest_column . 1, NULL, TRUE, FALSE)[0];
@@ -82,11 +82,12 @@ global $wpdb;
 						$replace_array = array(",", ":", ";","'");
 						$param_name = str_replace($replace_array, "", $param_name);
 						$param_name = str_replace(" ", "_", $param_name);
-						$params_names[] = $param_name;
+						if ($param_name != '') $params_names[] = $param_name;
 					}
 					
 					//skip reading the header, start from second row
 					for ($row = 2; $row <= $highest_row; $row++) {
+						
 						$next_row = $row + 1;
 						$row_data = $worksheet->rangeToArray('A' . $row . ':' . $highest_column . $next_row, NULL, TRUE, FALSE)[0];
 												
@@ -94,255 +95,292 @@ global $wpdb;
 						$params_values = array();  
 					
 						$uid = checkortransfromutf8(trim($row_data[0]));
-						$product_category = checkortransfromutf8(trim($row_data[1]));
-						$product_brand = checkortransfromutf8(trim($row_data[2]));
-						$product_full_name = checkortransfromutf8(trim($row_data[3]));
-						$merchant_price = checkortransfromutf8(trim($row_data[4]));
-						$merchant_shipping = checkortransfromutf8(trim($row_data[5]));
-						$product_image = checkortransfromutf8(trim($row_data[6]));
 						
-						$merchant_name = checkortransfromutf8(trim($row_data[7]));
-						$merchant_price = str_ireplace(',','.',$merchant_price);
-						
-						$merchant_deeplink = checkortransfromutf8(trim($row_data[8]));
-						$product_description = checkortransfromutf8(trim($row_data[9]));					
-						$product_global_description = checkortransfromutf8(trim($row_data[10]));
-						$merchant_voucher = checkortransfromutf8(trim($row_data[11]));
-			    						
-						for ($i = 12; $i < count($headings); $i++) {
-							$params_values[] = $row_data[$i];
-						}
-						var_dump($params_names);
-						var_dump($params_values);
-						
-						if(!in_array($uid, $uids)) {
-						
-							if($product_category == '') {
-								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('No category detected','framework').'</span>'."<br />";
-								$row++;
-								continue;
-							}
+						if ($uid != '') {
+							$product_category = checkortransfromutf8(trim($row_data[1]));
+							$product_brand = checkortransfromutf8(trim($row_data[2]));
+							$product_full_name = checkortransfromutf8(trim($row_data[3]));
+							$merchant_price = checkortransfromutf8(trim($row_data[4]));
+							$merchant_shipping = checkortransfromutf8(trim($row_data[5]));
+							$product_image = checkortransfromutf8(trim($row_data[6]));
 							
-							if($product_brand == '') {
-								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('No brand detected','framework').'</span>'."<br />";
-								$row++;
-								continue;
-							}
-						
-							if($product_full_name == '') {
-								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Full product name required','framework').'</span>'."<br />";
-								$row++;
-								continue;
-							}
+							$merchant_name = checkortransfromutf8(trim($row_data[7]));
+							$merchant_price = str_ireplace(',','.',$merchant_price);
+							
+							$merchant_deeplink = checkortransfromutf8(trim($row_data[8]));
+							$product_description = checkortransfromutf8(trim($row_data[9]));					
+							$product_global_description = checkortransfromutf8(trim($row_data[10]));
+							$merchant_voucher = checkortransfromutf8(trim($row_data[11]));
 											
-							//If there is no merchant this is a base feed product, as such mark this against it so Compare+ knows not to delete it
-							if($merchant_name == '')
-							{
-								$is_a_base_feed_product = 1;
-							} else {
-								$is_a_base_feed_product = 0;							
+							for ($i = 12; $i < count($headings); $i++) {
+								$params_values[] = $row_data[$i];
 							}
 							
-							if($is_a_base_feed_product==1)
-							{
-								$new_base_products_uids[] = $uid;
-							}
+							if(!in_array($uid, $uids)) {
 							
-							$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships WHERE product_ean = '".esc_sql($uid)."'";
-							$post_relation = $wpdb->get_row($q);
-								
-							if($post_relation == null) {
-								$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships WHERE product_name = '".esc_sql($product_full_name)."'";
-								$post_relation = $wpdb->get_row($q);
-							}
-											
-							if($post_relation == null) {
-								
-								$q = "
-									INSERT IGNORE INTO ".$wpdb->prefix."posts SET						
-										post_author = 1,
-										post_date = NOW(),
-										post_date_gmt = UTC_TIMESTAMP(),
-										post_title = '".esc_sql($product_full_name)."',
-										post_status = 'publish',
-										ping_status = 'open',
-										comment_status = 'open',
-										post_name = '".compare_slugify($product_full_name)."',
-										post_modified = NOW(),
-										post_modified_gmt = UTC_TIMESTAMP(),
-										post_parent = 0,
-										post_type = 'product',
-										post_content = '".esc_sql($product_description)."'
-									";
-								$wpdb->query($q);
-								$id = $wpdb->insert_id;
-								
-								// Reset for the next product
-								$wpdb->insert_id = 0; 
-								if($id == 0) {
+								if($product_category == '') {
+									echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('No category detected','framework').'</span>'."<br />";
 									$row++;
 									continue;
 								}
 								
-								if($product_global_description != '' && $product_global_description != null){
-									$q = "
-										INSERT INTO ".$wpdb->prefix."pc_products_custom SET
-											product_id = '".$id."',
-											product_description = '".esc_sql($product_global_description)."',
-											product_name = '".esc_sql($product_full_name)."',
-																					insertion_date = '".time()."'
-										ON DUPLICATE KEY UPDATE
-									
-											product_id = '".$id."',
-											product_description = '".esc_sql($product_global_description)."',
-											product_name = '".esc_sql($product_full_name)."',
-																					insertion_date = '".time()."'
-										";
-									$wpdb->query($q);
+								if($product_brand == '') {
+									echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('No brand detected','framework').'</span>'."<br />";
+									$row++;
+									continue;
 								}
-								if($product_full_name != '' && $product_full_name != null){
-									$q = "
-										INSERT INTO ".$wpdb->prefix."pc_products_relationships SET
-											wp_post_id = '".$id."',
-											product_ean = '".$uid."',
-											product_name = '".esc_sql($product_full_name)."',
-											last_update = '".time()."',
-																					base_feed_import =  '$is_a_base_feed_product'
-										ON DUPLICATE KEY UPDATE
-											wp_post_id = '".$id."',
-											product_ean = '".$uid."',
-											product_name = '".esc_sql($product_full_name)."',
-											last_update = '".time()."'
-										";
-									$wpdb->query($q);
-									$q = "UPDATE ".$wpdb->prefix."pc_products_relationships SET last_update = '".time()."' WHERE wp_post_id = '".$id."'";
-									$wpdb->query($q);
-									$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '".$id."'";
-									$post_relation = $wpdb->get_row($q);
-									//$counter_created++;
-								}
-								echo '<span style="color:green;">'. __('Line','framework') . ' ' . $row.': '.$product_full_name.' '.__('created','framework').($merchant_name != '' ? '' : __(', no retailer information was supplied','framework')).'</span>'."<br />";
-								 								 
-								for ($j = 0; $j < count($params_names); $j++) {
-									$wpdb->query( $wpdb->prepare( 
-										"
-										INSERT INTO ".$wpdb->prefix."pc_products_params
-										( id, wp_post_id, param_name, param_value )
-										VALUES ( %d, %d, %s, %s )
-										", 
-										'',
-										$id,
-										$params_names[$j], 
-										$params_values[$j]
-									) );
-								}
-							}
-							 
-							// Categories						
-							//sheet name is a main category name					
-							if(!($main_category_term = term_exists($sheet_name, 'product_category'))) {
-								$main_category_term = wp_insert_term($sheet_name, 'product_category');
-							}
-							wp_set_post_terms($id, intval($main_category_term['term_id']), 'product_category', false);
-
-							$categories = explode(',',$product_category);
 							
-							foreach($categories as $category) {
-								$category = trim($category);
-								if(!($term = term_exists($category, 'product_category'))) {
-									// set main category id as parent id
-									$term = wp_insert_term(
-										$category,
-										'product_category',
-										array ('parent' => $main_category_term['term_id'])
-									);
+								if($product_full_name == '') {
+									echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Full product name required','framework').'</span>'."<br />";
+									$row++;
+									continue;
 								}
-								// as we already inserted main category term, append all other category term (last parameter = true)
-								wp_set_post_terms($id, intval($term['term_id']), 'product_category', true);
-							}
-							
+												
+								//If there is no merchant this is a base feed product, as such mark this against it so Compare+ knows not to delete it
+								if($merchant_name == '')
+								{
+									$is_a_base_feed_product = 1;
+								} else {
+									$is_a_base_feed_product = 0;							
+								}
 								
-							update_post_meta($id,'image_meta',$product_image);
-							 
-							// Brand
-							/*$brand = trim($product_brand);
-							if($brand == '') $brand = 'N-A';
-							if(!($term = term_exists($brand, 'product_brand'))) {
-								$term = wp_insert_term($brand, 'product_brand');
+								if($is_a_base_feed_product==1)
+								{
+									$new_base_products_uids[] = $uid;
+								}
+								
+								$q = "
+									SELECT id_product, wp_post_id						
+									FROM ".$wpdb->prefix."pc_products_relationships
+									WHERE product_ean = '".esc_sql($uid)."'
+								";
+								$post_relation = $wpdb->get_row($q);
+									
+								/*if($post_relation == null) {
+									$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships WHERE product_name = '".esc_sql($product_full_name)."'";
+									$post_relation = $wpdb->get_row($q);
+								}*/
+												
+								if($post_relation == null) {
+									
+									$q = "
+										INSERT IGNORE INTO ".$wpdb->prefix."posts SET						
+											post_author = 1,
+											post_date = NOW(),
+											post_date_gmt = UTC_TIMESTAMP(),
+											post_title = '".esc_sql($product_full_name)."',
+											post_status = 'publish',
+											ping_status = 'open',
+											comment_status = 'open',
+											post_name = '".compare_slugify($product_full_name)."',
+											post_modified = NOW(),
+											post_modified_gmt = UTC_TIMESTAMP(),
+											post_parent = 0,
+											post_type = 'product',
+											post_content = '".esc_sql($product_description)."'
+										";
+									$wpdb->query($q);
+									$id = $wpdb->insert_id;
+									
+									// Reset for the next product
+									$wpdb->insert_id = 0; 
+									if($id == 0) {
+										$row++;
+										continue;
+									}
+									
+									if($product_global_description != '' && $product_global_description != null){
+										$q = "
+											INSERT INTO ".$wpdb->prefix."pc_products_custom SET
+												product_id = '".$id."',
+												product_description = '".esc_sql($product_global_description)."',
+												product_name = '".esc_sql($product_full_name)."',
+																						insertion_date = '".time()."'
+											ON DUPLICATE KEY UPDATE
+										
+												product_id = '".$id."',
+												product_description = '".esc_sql($product_global_description)."',
+												product_name = '".esc_sql($product_full_name)."',
+																						insertion_date = '".time()."'
+											";
+										$wpdb->query($q);
+									}
+									if($product_full_name != '' && $product_full_name != null){
+										$q = "
+											INSERT INTO ".$wpdb->prefix."pc_products_relationships SET
+												wp_post_id = '".$id."',
+												product_ean = '".$uid."',
+												product_name = '".esc_sql($product_full_name)."',
+												last_update = '".time()."',
+												base_feed_import =  '$is_a_base_feed_product'
+											ON DUPLICATE KEY UPDATE
+												wp_post_id = '".$id."',
+												product_ean = '".$uid."',
+												product_name = '".esc_sql($product_full_name)."',
+												last_update = '".time()."'
+											";
+										$wpdb->query($q);
+										$q = "UPDATE ".$wpdb->prefix."pc_products_relationships SET last_update = '".time()."' WHERE wp_post_id = '".$id."'";
+										$wpdb->query($q);
+										$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '".$id."'";
+										$post_relation = $wpdb->get_row($q);
+										//$counter_created++;
+									}
+									echo '<span style="color:green;">'. __('Line','framework') . ' ' . $row.': '.$product_full_name.' '.__('created','framework').($merchant_name != '' ? '' : __(', no retailer information was supplied','framework')).'</span>'."<br />";
+																	 
+									for ($j = 0; $j < count($params_names); $j++) {
+										$wpdb->query( $wpdb->prepare( 
+											"
+											INSERT INTO ".$wpdb->prefix."pc_products_params
+											( id, wp_post_id, param_name, param_value )
+											VALUES ( %d, %d, %s, %s )
+											", 
+											'',
+											$id,
+											$params_names[$j], 
+											$params_values[$j]
+										) );
+									}
+								} else {
+									
+									// Update wp_post
+									$id = $post_relation->wp_post_id;
+									$q = "
+										UPDATE ".$wpdb->prefix."posts SET
+											post_title = '".esc_sql($product_full_name)."',
+											post_name = '".compare_slugify($product_full_name)."',
+											post_modified = NOW(),
+											post_modified_gmt = UTC_TIMESTAMP(),
+											post_type = 'product',
+											post_content = '".esc_sql($product_description)."',
+											ping_status = 'open',
+											comment_status = 'open'
+										WHERE ID = '".$id."'
+										";
+									$wpdb->query($q);
+									if($product_global_description != '' && $product_global_description != null){
+										$q = "UPDATE ".$wpdb->prefix."pc_products_relationships SET last_update = '".time()."' WHERE id_product = '".$post_relation->id_product."'";
+										$wpdb->query($q);
+										
+										$q = "
+											INSERT INTO ".$wpdb->prefix."pc_products_custom SET
+												product_id = '".$id."',
+												product_description = '".esc_sql($product_global_description)."',
+												product_name = '".esc_sql($product_full_name)."'
+											ON DUPLICATE KEY UPDATE
+												product_id = '".$id."',
+												product_description = '".esc_sql($product_global_description)."',
+												product_name = '".esc_sql($product_full_name)."'
+											";
+										$wpdb->query($q);
+									}
+									//$counter_updated++;
+									echo '<span style="color:green;">'. __('Line','framework') . ' ' . $row.': '.$product_full_name.' '.__('updated','framework').($merchant_name != '' ? '' : __(', no retailer information was supplied','framework')).'</span>'."<br />";
+								} 
+									
+								 
+								// Categories						
+								//sheet name is a main category name					
+								if(!($main_category_term = term_exists($sheet_name, 'product_category'))) {
+									$main_category_term = wp_insert_term($sheet_name, 'product_category');
+								}
+								wp_set_post_terms($id, intval($main_category_term['term_id']), 'product_category', false);
+
+								$categories = explode(',',$product_category);
+								
+								foreach($categories as $category) {
+									$category = trim($category);
+									if(!($term = term_exists($category, 'product_category'))) {
+										// set main category id as parent id
+										$term = wp_insert_term(
+											$category,
+											'product_category',
+											array ('parent' => $main_category_term['term_id'])
+										);
+									}
+									// as we already inserted main category term, append all other category term (last parameter = true)
+									wp_set_post_terms($id, intval($term['term_id']), 'product_category', true);
+								}
+								
+									
+								update_post_meta($id,'image_meta',$product_image);
+								 
+								// Brand
+								/*$brand = trim($product_brand);
+								if($brand == '') $brand = 'N-A';
+								if(!($term = term_exists($brand, 'product_brand'))) {
+									$term = wp_insert_term($brand, 'product_brand');
+								}
+								wp_set_post_terms($id, intval($term['term_id']), 'product_brand',true);
+								if(!($term = term_exists($brand, 'product_bisbrand'))) {
+									$term = wp_insert_term($brand, 'product_bisbrand');
+								}
+								wp_set_post_terms($id, intval($term['term_id']), 'product_bisbrand',true);
+										*/				
+								$uids[] = $uid;
+							} // End if $post_relation == null
+							
+							
+							// Step 3 : create the merchant
+							
+							if($merchant_name == '') {
+								//echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer name required','framework').'</span>'."<br />";
+								$row++;
+								continue;
 							}
-							wp_set_post_terms($id, intval($term['term_id']), 'product_brand',true);
-							if(!($term = term_exists($brand, 'product_bisbrand'))) {
-								$term = wp_insert_term($brand, 'product_bisbrand');
+							
+							if(!is_numeric($merchant_price)) {
+								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retail price must be a number','framework').' ('.$merchant_price.')</span>'."<br />";
+								$row++;
+								continue;
 							}
-							wp_set_post_terms($id, intval($term['term_id']), 'product_bisbrand',true);
-									*/				
-							$uids[] = $uid;
-						} // End if $post_relation == null
-						
-						
-						// Step 3 : create the merchant
-						
-						if($merchant_name == '') {
-							//echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer name required','framework').'</span>'."<br />";
-							$row++;
-							continue;
+							
+							if($merchant_deeplink == '') {
+								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer product link required','framework').'</span>'."<br />";
+								$row++;
+								continue;
+							}
+							
+							$q = "
+								INSERT INTO ".$wpdb->prefix.'pc_products_merchants'." SET
+									name = '".$merchant_name."',
+									slug = '".compare_slugify($merchant_name)."'
+								ON DUPLICATE KEY UPDATE
+									name = '".$merchant_name."',
+									slug = '".compare_slugify($merchant_name)."'
+								";
+							$wpdb->query($q);
+							
+							$q = "
+								INSERT INTO ".$wpdb->prefix.'pc_products'." SET
+									id_product = '".$post_relation->id_product."',
+									id_merchant = '".compare_slugify($merchant_name)."',
+									feed_product_name = '".esc_sql($product_full_name)."',
+									feed_product_desc = '".esc_sql($product_description)."',
+									feed_product_image = '".esc_sql($product_image)."',
+									price = '".esc_sql($merchant_price)."',
+									deeplink = '".esc_sql($merchant_deeplink)."',
+									shipping = '".esc_sql($merchant_shipping)."',
+									voucher = '".esc_sql($merchant_voucher)."',
+									last_update = '".time()."'
+								ON DUPLICATE KEY UPDATE
+									id_product = '".$post_relation->id_product."',
+									id_merchant = '".compare_slugify($merchant_name)."',
+									feed_product_name = '".esc_sql($product_full_name)."',
+									feed_product_desc = '".esc_sql($product_description)."',
+									feed_product_image = '".esc_sql($product_image)."',
+									price = '".esc_sql($merchant_price)."',
+									deeplink = '".esc_sql($merchant_deeplink)."',
+									shipping = '".esc_sql($merchant_shipping)."',
+									voucher = '".esc_sql($merchant_voucher)."',
+									last_update = '".time()."'
+								";
+							$wpdb->query($q);
 						}
-						
-						if(!is_numeric($merchant_price)) {
-							echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retail price must be a number','framework').' ('.$merchant_price.')</span>'."<br />";
-							$row++;
-							continue;
-						}
-						
-						if($merchant_deeplink == '') {
-							echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer product link required','framework').'</span>'."<br />";
-							$row++;
-							continue;
-						}
-						
-						$q = "
-							INSERT INTO ".$wpdb->prefix.'pc_products_merchants'." SET
-								name = '".$merchant_name."',
-								slug = '".compare_slugify($merchant_name)."'
-							ON DUPLICATE KEY UPDATE
-								name = '".$merchant_name."',
-								slug = '".compare_slugify($merchant_name)."'
-							";
-						$wpdb->query($q);
-						
-						$q = "
-							INSERT INTO ".$wpdb->prefix.'pc_products'." SET
-								id_product = '".$post_relation->id_product."',
-								id_merchant = '".compare_slugify($merchant_name)."',
-								feed_product_name = '".esc_sql($product_full_name)."',
-								feed_product_desc = '".esc_sql($product_description)."',
-								feed_product_image = '".esc_sql($product_image)."',
-								price = '".esc_sql($merchant_price)."',
-								deeplink = '".esc_sql($merchant_deeplink)."',
-								shipping = '".esc_sql($merchant_shipping)."',
-								voucher = '".esc_sql($merchant_voucher)."',
-								last_update = '".time()."'
-							ON DUPLICATE KEY UPDATE
-								id_product = '".$post_relation->id_product."',
-								id_merchant = '".compare_slugify($merchant_name)."',
-								feed_product_name = '".esc_sql($product_full_name)."',
-								feed_product_desc = '".esc_sql($product_description)."',
-								feed_product_image = '".esc_sql($product_image)."',
-								price = '".esc_sql($merchant_price)."',
-								deeplink = '".esc_sql($merchant_deeplink)."',
-								shipping = '".esc_sql($merchant_shipping)."',
-								voucher = '".esc_sql($merchant_voucher)."',
-								last_update = '".time()."'
-							";
-						$wpdb->query($q);
 					}
 				}
 				
-				
-				
-				/*
-				
-			  while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE) {
+			 /*   while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE) {
 					
 			    	if($row == 1) {
 						$row++;
@@ -496,8 +534,6 @@ global $wpdb;
 							}
 						} else {
 							
-							Если делаем update posts, то 
-							
 							
 							// Update wp_post
 							$id = $post_relation->wp_post_id;
@@ -632,7 +668,7 @@ global $wpdb;
 			    fclose($handle);
 			    
 				// # patch wp_post_id = 0
-				/*$q = "DELETE FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '0'";
+			 $q = "DELETE FROM ".$wpdb->prefix."pc_products_relationships WHERE wp_post_id = '0'";
 				$wpdb->query($q);
 				
 				// Merchant out of date
@@ -655,7 +691,7 @@ global $wpdb;
 				
 				// Update terms count
 				$q = "UPDATE ".$wpdb->prefix."term_taxonomy SET count = (SELECT count(*) FROM ".$wpdb->prefix."term_relationships WHERE ".$wpdb->prefix."term_relationships.term_taxonomy_id = ".$wpdb->prefix."term_taxonomy.term_taxonomy_id)";
-				$wpdb->query($q);*/
+				$wpdb->query($q); 
 				
 				unlink($filePath);
 				
@@ -678,11 +714,11 @@ global $wpdb;
 		<a href="?page=products_feed" class="button-secondary"><?php _e('Feed Management','framework'); ?></a>
 	</div>
 
-<?php elseif(isset($_GET['action']) && $_GET['action'] == 'export'): // Export case ?>
+<?php elseif(isset($_GET['action']) && $_GET['action'] == 'export'): // Export case  
 
-	<?php
+	require_once('/download_xlsx.php'); 
 
-	$q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships pr 
+	 $q = "SELECT * FROM ".$wpdb->prefix."pc_products_relationships pr 
 	LEFT JOIN ".$wpdb->prefix."pc_products_custom pc ON (pr.wp_post_id = pc.product_id)  
 	ORDER BY pr.id_product ASC";
 	$prs = $wpdb->get_results($q);
@@ -736,7 +772,8 @@ global $wpdb;
 		echo implode(';',$products[$i]);
 		if($i != count($products) -1) echo "\n";
 	}
-	echo '</textarea>';
+	echo '</textarea>'; 
+	ob_clean();
 	?>
 
 <?php else: // Other cases ?>
@@ -823,12 +860,16 @@ global $wpdb;
 		</fieldset>
 	
 		<fieldset>
-			<legend><?php _e('Export','framework'); ?></legend>
-			
-			<!-- DOWNLOAD FEED -->
-			<h3><?php _e('Download feed','framework'); ?></h3>
-			<p><?php _e('Download feed to your computer in order to edit it manually','framework'); ?></p>
-			<p><a href="?page=products_feed&amp;action=export" class="button-secondary"><?php _e('Download','framework'); ?></a></p>
+			<form method="post" action="<?php echo get_template_directory_uri(); ?>/functions/views/admin/download_xlsx.php">
+				<legend><?php _e('Export','framework'); ?></legend>
+				
+				<!-- DOWNLOAD FEED -->
+				<h3><?php _e('Download feed','framework'); ?></h3>
+				<p><?php _e('Download feed to your computer in order to edit it manually','framework'); ?></p>
+				<p>
+					<input type="submit" value="<?php _e('Download','framework'); ?>" class="button-secondary" />
+				</p>
+			</form>
 		</fieldset>
 		
 	</div>
