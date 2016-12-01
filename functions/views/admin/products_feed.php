@@ -306,7 +306,7 @@ global $wpdb;
 								update_post_meta($id,'image_meta',$product_image);
 								 
 								// Brand
-								/*$brand = trim($product_brand);
+								$brand = trim($product_brand);
 								if($brand == '') $brand = 'N-A';
 								if(!($term = term_exists($brand, 'product_brand'))) {
 									$term = wp_insert_term($brand, 'product_brand');
@@ -316,7 +316,7 @@ global $wpdb;
 									$term = wp_insert_term($brand, 'product_bisbrand');
 								}
 								wp_set_post_terms($id, intval($term['term_id']), 'product_bisbrand',true);
-										*/				
+														
 								$uids[] = $uid;
 							} // End if $post_relation == null
 							
@@ -324,7 +324,7 @@ global $wpdb;
 							// Step 3 : create the merchant
 							
 							if($merchant_name == '') {
-								//echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer name required','framework').'</span>'."<br />";
+								echo '<span style="color:red;">'. __('Line','framework') . ' ' . $row.': '.__('Retailer name required','framework').'</span>'."<br />";
 								$row++;
 								continue;
 							}

@@ -2106,7 +2106,8 @@ table tr td, table tbody tr td { padding: 5px; }
 @media only screen and (max-width: 768px) { .product-listing-container .product .product-view { text-align: left; }
   .product-listing-container .product .product-view .retailers { display: block; } }
 .product-listing-container.grid-view .clearfix-1, .product-listing-container.grid-view .clearfix-2 { display: none; }
-.product-listing-container.grid-view .product { width: 30%; /*margin: 0 5% 30px 0;*/ min-width: 150px; border: 1px solid white; float: left; padding: 15px; }
+.product-listing-container.grid-view .product { width: 30%; /*margin: 0 5% 30px 0;*/ 
+    min-height: 380px; min-width: 150px; border: 1px solid white; float: left; padding: 15px; }
 .product-listing-container.grid-view .product:hover { border: 1px solid #d7d7d7; -webkit-box-shadow: 0 1px 5px #dddddd; -moz-box-shadow: 0 1px 5px #dddddd; box-shadow: 0 1px 5px #dddddd; }
 .product-listing-container.grid-view .product .clear-full, .product-listing-container.grid-view .product .product-photo, .product-listing-container.grid-view .product .product-desc, .product-listing-container.grid-view .product .product-view { width: 100%; float: none; margin: 0; }
 .product-listing-container.grid-view .product .product-photo { text-align: center; }
